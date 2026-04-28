@@ -117,12 +117,12 @@ export function Experience() {
                             className="w-full flex items-center justify-between p-4 md:p-5 h-auto rounded-none text-left group"
                             onClick={() => toggleProject(key)}
                           >
-                            <div>
+                            <div className="flex flex-col">
                               <span className="font-semibold text-foreground group-hover:text-accent transition-colors">
                                 {proj.name}
                               </span>
                               {proj.period && (
-                                <span className="ml-3 text-xs font-mono text-muted-foreground">{proj.period}</span>
+                                <span className="text-xs font-mono text-muted-foreground mt-0.5">{proj.period}</span>
                               )}
                             </div>
                             <ChevronDown
