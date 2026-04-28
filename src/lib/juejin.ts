@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser'
 import type { ExternalPost } from './types'
 
 // https://api.juejin.cn/content_api/v1/article/query_list?aid=2608&uuid=7537240873898509843&spider=0
-const JUEJIN_RSS_URL = 'https://juejin.cn/rss/user/JayDo257248'
+const JUEJIN_RSS_URL = 'https://juejin.cn/user/3554089909627287'
 
 export async function fetchJuejinPosts(): Promise<ExternalPost[]> {
   try {

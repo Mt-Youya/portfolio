@@ -8,8 +8,8 @@ export const personalInfo = {
   email: 'dd257248@proton.me',
   links: {
     yuque: 'https://yuque.com/yonjay',
-    juejin: 'https://juejin.cn/user/JayDo257248',
-    csdn: 'https://blog.csdn.net/Yonjay257248',
+    juejin: 'https://juejin.cn/user/3554089909627287',
+    csdn: 'https://blog.csdn.net/qq_44134222?type=blog',
   },
 }
 
