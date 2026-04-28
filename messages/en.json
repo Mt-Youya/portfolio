@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Yonjay Doyle — Senior Frontend Engineer",
+      "description": "Personal portfolio of Yonjay — Senior Frontend Engineer specializing in React, Three.js medical visualization and AI engineering"
+    },
+    "blog": {
+      "title": "Blog — Yonjay Doyle",
+      "description": "Technical insights on frontend engineering, 3D visualization and AI engineering"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "contactBtn": "Contact Me",
+    "toggleMenu": "Toggle menu"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System",
+    "ariaLabel": "Current theme: {theme}, click to switch"
+  },
+  "language": {
+    "zh": "中文",
+    "en": "English",
+    "switchTo": "切换到中文"
+  },
+  "hero": {
+    "badge": "{location} · {education} · Age {age}",
+    "subtitle": "Medical Visualization · AI Agent Engineering · Micro-Frontend · Full-Stack Delivery",
+    "contactBtn": "Contact Me",
+    "juejinBtn": "Juejin Profile",
+    "scrollHint": "scroll"
+  },
+  "about": {
+    "tag": "About Me",
+    "title": "About Me",
+    "subtitle": "Technical Depth · Independent Delivery · Rare Expertise",
+    "highlightsTitle": "— Highlights"
+  },
+  "skills": {
+    "tag": "Tech Stack",
+    "title": "Tech Stack",
+    "subtitle": "Production-proven experience across multiple specialized domains",
+    "productionNotePre": "All technologies listed have been deployed in",
+    "productionNoteHighlight": "production environments",
+    "productionNotePost": ", not just demo projects"
+  },
+  "experience": {
+    "tag": "Work Experience",
+    "title": "Experience",
+    "subtitle": "5+ years of engineering across healthcare, AI, and internet sectors",
+    "currentBadge": "Current"
+  },
+  "projects": {
+    "tag": "Projects",
+    "title": "Key Projects",
+    "subtitle": "Spanning medical visualization, AI engineering, and micro-frontend architecture"
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Contact Me",
+    "subtitle": "Open to new opportunities and collaborations",
+    "ctaHint": "Click to send email directly",
+    "builtWith": "Built with React 19 · Three.js · TypeScript · Next.js",
+    "links": {
+      "email": { "label": "Email", "desc": "ProtonMail encrypted inbox" },
+      "phone": { "label": "Phone", "desc": "Weekdays 9:00 — 18:00" },
+      "yuque": { "label": "Yuque", "desc": "Technical notes & docs" },
+      "juejin": { "label": "Juejin", "desc": "Technical articles" },
+      "csdn": { "label": "CSDN", "desc": "Blog & technical notes" }
+    }
+  },
+  "blog": {
+    "backHome": "Home",
+    "currentPage": "Blog",
+    "badge": "BLOG",
+    "title": "Technical Insights",
+    "subtitle": "Sharing experience in frontend engineering, 3D visualization, AI Agents and micro-frontends",
+    "localSection": "Original Articles",
+    "juejinSection": "Juejin Articles",
+    "yuqueSection": "Yuque Knowledge Base",
+    "empty": "// Articles coming soon",
+    "backToBlog": "Back to Blog",
+    "backToBlogAll": "View All Posts",
+    "author": "Yonjay Doyle"
+  },
+  "resume": {
+    "personalInfo": {
+      "title": "Senior Frontend Engineer",
+      "location": "Beijing, China",
+      "education": "Bachelor's Degree",
+      "bio": "Specialized in complex frontend engineering with deep technical expertise. Full production experience in rare domains including medical visualization (cephalometric analysis / 3D dental models), AI Agent engineering, and micro-frontend architecture. Capable of independently delivering complete solutions from technical design to full-stack deployment."
+    },
+    "stats": [
+      { "label": "Years Exp.", "value": "5+" },
+      { "label": "Companies", "value": "2" },
+      { "label": "Technologies", "value": "30+" },
+      { "label": "Age", "value": "26" }
+    ],
+    "skillCategories": [
+      { "category": "Frontend Frameworks" },
+      { "category": "Languages & Tools" },
+      { "category": "Visualization / 3D" },
+      { "category": "AI Engineering" },
+      { "category": "UI Libraries" },
+      { "category": "Backend & Architecture" }
+    ],
+    "highlights": [
+      {
+        "title": "Technical Depth",
+        "description": "Full production experience in rare domains including medical visualization, AI Agent engineering, and micro-frontend architecture — beyond typical CRUD development"
+      },
+      {
+        "title": "Independent Delivery",
+        "description": "Capable of independently delivering complete solutions from technical design to full-stack deployment. The Meituan intelligent ops alerting system (frontend + backend) was delivered solo"
+      },
+      {
+        "title": "Team Lead Experience",
+        "description": "Served as Frontend Tech Lead at Yayin for 2 years, driving micro-frontend refactoring, establishing CI/CD pipelines, and improving team iteration efficiency by 3x"
+      },
+      {
+        "title": "AI Engineering",
+        "description": "Production deployment of LangChain / MCP / Function Calling / SSE. Experience with Prompt engineering standards and data pipeline construction"
+      }
+    ],
+    "experiences": [
+      {
+        "company": "Wistron Software (Beijing) Co., Ltd.",
+        "role": "Senior Frontend Engineer",
+        "period": "2025.08 — Present",
+        "projects": [
+          {
+            "highlights": [
+              "Led HarmonyOS adaptation of core Meituan / Dianping hotel & travel H5 components, encapsulating platform abstraction layer to handle API parameter mapping and tracking SDK compatibility, ensuring zero-disruption launch on HarmonyOS",
+              "Independently delivered full-stack intelligent ops alerting system (Koa.js + React): built multi-tool Agent with LangChain + Function Calling, reducing manual investigation time from 15 minutes to under 2 minutes",
+              "Implemented AI streaming output with SSE and word-by-word rendering; used MCP protocol to unify multi-model context management with multi-turn tool call chains",
+              "Contributed to AI platform data pipeline: established Prompt engineering standards, improving structured JSON output parsing success rate to over 97%"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "Yayin (Shanghai) Medical Technology Co., Ltd.",
+        "role": "Frontend Tech Lead",
+        "period": "2020.06 — 2025.08",
+        "projects": [
+          {
+            "name": "Dental Medical Intelligence Platform",
+            "highlights": [
+              "Led full-cycle development of medical case workflow pages, independently responsible for complete delivery from requirements to production",
+              "Designed and implemented linked-list form rendering solution, reducing form module iteration cycle by ~40%",
+              "Implemented role-based permission control for dental chart components using strategy pattern, supporting three distinct permission systems for doctors, technicians, and administrators"
+            ]
+          },
+          {
+            "name": "Cephalometric Analysis System & Dental 3D Model System",
+            "highlights": [
+              "Built cephalometric analysis engine with react-konva: supports 20+ measurement types including point dragging, Bezier curves, angle and distance measurement",
+              "Abstracted diverse measurement calculations into composable math tool chains via strategy pattern, near-zero extension cost",
+              "Solved Three.js inability to load medical .vtp format, enabling precise zone coloring and lasso selection on dental models"
+            ]
+          },
+          {
+            "name": "Longmao Campus Fitness Assessment Platform (SaaS)",
+            "highlights": [
+              "Led micro-frontend refactoring with qiankun: decomposed tightly-coupled SaaS monolith into independent sub-applications, reducing new feature release cycle from 2 weeks to 3 days",
+              "Extracted shared utilities and components into private npm packages, eliminating ~30% duplicate code"
+            ]
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Intelligent Ops Alerting System",
+        "badge": "Full-Stack Solo Delivery",
+        "description": "Multi-tool AI Agent system built with LangChain + Function Calling, reducing manual investigation time from 15 minutes to under 2 minutes.",
+        "highlights": [
+          "Multi-tool Agent for automated alert root cause analysis and remediation suggestions",
+          "SSE streaming output + MCP protocol for unified multi-model context management",
+          "Solo full-stack delivery: frontend (React) + backend (Koa.js)"
+        ]
+      },
+      {
+        "name": "Cephalometric Analysis System",
+        "badge": "Medical Visualization",
+        "description": "Dental cephalometric analysis engine built with react-konva, supporting 20+ measurement types and resolving coordinate drift during zoom.",
+        "highlights": [
+          "Group-level hierarchy decouples image coordinate system from measurement logic",
+          "Strategy pattern abstracts measurements into composable math tool chains",
+          "Supports point dragging, Bezier curves, angle and distance measurement"
+        ]
+      },
+      {
+        "name": "Dental 3D Model System",
+        "badge": "3D Visualization",
+        "description": "Solved Three.js inability to load medical .vtp format, enabling precise zone coloring and lasso selection on dental models.",
+        "highlights": [
+          "vtk.js parses polygon mesh and converts to BufferGeometry",
+          "Raycaster triangle intersection for precise zone detection",
+          "Filled team's technical gap in medical 3D visualization"
+        ]
+      },
+      {
+        "name": "Dental Medical Intelligence Platform",
+        "description": "Full-cycle medical case workflow platform with linked-list form rendering, reducing iteration cycle by ~40%.",
+        "highlights": [
+          "Linked-list forms: each node only aware of predecessor condition, zero-intrusion extension",
+          "Strategy pattern for three-role differentiated permission control",
+          "Solo delivery from requirements to production"
+        ]
+      },
+      {
+        "name": "Longmao Campus Fitness Platform",
+        "badge": "Micro-Frontend",
+        "description": "Led micro-frontend refactoring with qiankun, decomposing SaaS monolith into independent sub-applications, reducing release cycle from 2 weeks to 3 days.",
+        "highlights": [
+          "qiankun micro-frontend: independent deployment and iteration per sub-app",
+          "Extracted shared utilities into private npm packages, eliminating 30% duplicate code",
+          "Led team to improve iteration efficiency by 3x"
+        ]
+      },
+      {
+        "name": "HarmonyOS H5 Adaptation",
+        "description": "HarmonyOS adaptation of Meituan / Dianping hotel & travel H5 core components, ensuring zero-disruption business launch.",
+        "highlights": [
+          "Platform abstraction layer for unified API parameter mapping",
+          "Tracking SDK HarmonyOS compatibility solution",
+          "Zero-disruption business launch on HarmonyOS"
+        ]
+      }
+    ]
+  }
+}

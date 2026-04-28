@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "home": {
+      "title": "窦扬杰 — 高级前端工程师",
+      "description": "Yonjay 的个人作品集 — 高级前端工程师，专注于 React、Three.js 医学可视化与 AI 工程"
+    },
+    "blog": {
+      "title": "博客 — 窦扬杰",
+      "description": "技术心得、前端工程、3D 可视化与 AI 工程实践"
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "skills": "技术栈",
+    "experience": "经历",
+    "projects": "项目",
+    "contact": "联系",
+    "contactBtn": "联系我",
+    "toggleMenu": "切换菜单"
+  },
+  "theme": {
+    "dark": "暗色",
+    "light": "亮色",
+    "system": "跟随系统",
+    "ariaLabel": "当前主题：{theme}，点击切换"
+  },
+  "language": {
+    "zh": "中文",
+    "en": "English",
+    "switchTo": "Switch to English"
+  },
+  "hero": {
+    "badge": "{location} · {education} · {age} 岁",
+    "subtitle": "医学可视化 · AI Agent 工程 · 微前端架构 · 全栈交付",
+    "contactBtn": "联系我",
+    "juejinBtn": "掘金主页",
+    "scrollHint": "scroll"
+  },
+  "about": {
+    "tag": "About Me",
+    "title": "关于我",
+    "subtitle": "技术深度 · 独立交付 · 稀缺经验",
+    "highlightsTitle": "— 个人亮点"
+  },
+  "skills": {
+    "tag": "Tech Stack",
+    "title": "技术栈",
+    "subtitle": "在多个稀缺方向具备完整的生产落地经验",
+    "productionNotePre": "以上技术均在",
+    "productionNoteHighlight": "生产环境",
+    "productionNotePost": "中有完整落地经验，非停留在 Demo 层面"
+  },
+  "experience": {
+    "tag": "Work Experience",
+    "title": "工作经历",
+    "subtitle": "5 年以上工程实战，覆盖医疗、AI、互联网多个领域",
+    "currentBadge": "在职"
+  },
+  "projects": {
+    "tag": "Projects",
+    "title": "核心项目",
+    "subtitle": "覆盖医学可视化、AI 工程、微前端架构等稀缺方向"
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "联系我",
+    "subtitle": "期待新的机会与合作",
+    "ctaHint": "点击直接发送邮件",
+    "builtWith": "Built with React 19 · Three.js · TypeScript · Next.js",
+    "links": {
+      "email": { "label": "邮箱", "desc": "ProtonMail 加密邮箱" },
+      "phone": { "label": "电话", "desc": "工作日 9:00 — 18:00" },
+      "yuque": { "label": "语雀", "desc": "技术笔记与文档" },
+      "juejin": { "label": "掘金", "desc": "技术文章与分享" },
+      "csdn": { "label": "CSDN", "desc": "博客与技术总结" }
+    }
+  },
+  "blog": {
+    "backHome": "首页",
+    "currentPage": "博客",
+    "badge": "BLOG",
+    "title": "技术心得",
+    "subtitle": "分享前端工程、3D 可视化、AI Agent 与微前端架构的实践经验",
+    "localSection": "原创文章",
+    "juejinSection": "掘金文章",
+    "yuqueSection": "语雀知识库",
+    "empty": "// 文章即将发布",
+    "backToBlog": "返回博客",
+    "backToBlogAll": "查看所有文章",
+    "author": "窦扬杰"
+  },
+  "resume": {
+    "personalInfo": {
+      "title": "高级前端工程师",
+      "location": "北京市",
+      "education": "本科",
+      "bio": "专注于复杂前端工程与技术深度，在医学可视化（头影测量 / 3D 口腔模型）、AI Agent 工程与微前端架构等稀缺方向具备完整落地经验。可独立完成从技术方案设计到全栈上线的完整闭环。"
+    },
+    "stats": [
+      { "label": "年工作经验", "value": "5+" },
+      { "label": "就职公司", "value": "2" },
+      { "label": "掌握技术", "value": "30+" },
+      { "label": "年龄", "value": "26" }
+    ],
+    "skillCategories": [
+      { "category": "前端框架" },
+      { "category": "语言 & 工具" },
+      { "category": "可视化 / 3D" },
+      { "category": "AI 工程" },
+      { "category": "UI 组件库" },
+      { "category": "后端 & 架构" }
+    ],
+    "highlights": [
+      {
+        "title": "技术深度",
+        "description": "具备医学可视化、AI Agent 工程、微前端架构等稀缺方向的完整落地经验，非普通 CRUD 业务背景"
+      },
+      {
+        "title": "独立交付",
+        "description": "可独立完成从技术方案设计到全栈上线的完整闭环，美团智能运维告警系统（前端 + 后端）由本人单独交付"
+      },
+      {
+        "title": "组长经验",
+        "description": "在牙颜担任前端技术经理 2 年，主导微前端重构、建立 CI/CD 流程，带领团队将迭代效率提升 3 倍以上"
+      },
+      {
+        "title": "AI 工程",
+        "description": "在生产环境落地 LangChain / MCP / Function Calling / SSE 等 AI 工程技术栈，具备 Prompt 规范设计与数据管道建设经验"
+      }
+    ],
+    "experiences": [
+      {
+        "company": "纬创软件（北京）有限公司",
+        "role": "高级前端工程师",
+        "period": "2025.08 — 至今",
+        "projects": [
+          {
+            "highlights": [
+              "主导美团 / 大众点评酒旅 H5 核心组件的鸿蒙端适配，封装平台差异层统一处理接口参数映射与埋点 SDK 兼容，保障鸿蒙端业务零中断上线",
+              "独立全栈交付智能运维告警系统（Koa.js + React）：基于 LangChain + Function Calling 构建多工具 Agent，将人工研判时间从 15 分钟压缩至 2 分钟以内",
+              "通过 SSE 实现 AI 流式输出与逐字渲染，结合 MCP 协议统一管理多模型上下文，支持多轮对话工具调用链路",
+              "参与 AI 平台数据管道建设：制定 Prompt 工程规范，使模型结构化输出 JSON 解析成功率提升至 97% 以上"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "牙颜（上海）医疗科技有限公司",
+        "role": "前端技术经理",
+        "period": "2020.06 — 2025.08",
+        "projects": [
+          {
+            "name": "口腔医学智能平台",
+            "highlights": [
+              "主导医学端病例工单全流程页面开发，独立负责从需求拆解到上线的完整交付",
+              "设计并实现链表结构表单渲染方案，将表单模块迭代周期缩短约 40%",
+              "基于策略模式实现牙列式组件的角色权限控制，支撑医生 / 技师 / 管理员三类角色差异化权限体系"
+            ]
+          },
+          {
+            "name": "医学头影测量系统 & 口腔模型系统",
+            "highlights": [
+              "使用 react-konva 实现头影测量核心引擎：支持点位拖拽、贝塞尔曲线、测角测距等 20+ 测量项",
+              "基于策略模式将差异化测量计算抽象为可组合的数学工具链，扩展成本接近零",
+              "攻克 Three.js 无法直接加载医学 .vtp 格式的问题，实现口腔模型的精准分区上色与套索选区"
+            ]
+          },
+          {
+            "name": "龙猫校园智能体测平台（SaaS）",
+            "highlights": [
+              "主导基于 qiankun 的微前端重构：将高度耦合的 SaaS 单体拆解为多个独立子应用，新功能上线周期从 2 周缩短至 3 天",
+              "抽取公共工具与组件为私有 npm 包，消除重复代码约 30%"
+            ]
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "智能运维告警系统",
+        "badge": "全栈独立交付",
+        "description": "基于 LangChain + Function Calling 构建的多工具 AI Agent 系统，将人工研判时间从 15 分钟压缩至 2 分钟以内。",
+        "highlights": [
+          "多工具 Agent 实现告警根因自动定位与处置建议生成",
+          "SSE 流式输出 + MCP 协议统一管理多模型上下文",
+          "独立完成前端（React）+ 后端（Koa.js）全栈交付"
+        ]
+      },
+      {
+        "name": "医学头影测量系统",
+        "badge": "医学可视化",
+        "description": "基于 react-konva 实现的口腔医学头影测量核心引擎，支持 20+ 测量项，彻底解决缩放时测量值漂移问题。",
+        "highlights": [
+          "Group 层级分组解耦图片坐标系与测量逻辑坐标系",
+          "策略模式抽象测量计算为可组合数学工具链",
+          "支持点位拖拽、贝塞尔曲线、测角测距等交互"
+        ]
+      },
+      {
+        "name": "口腔 3D 模型系统",
+        "badge": "3D 可视化",
+        "description": "攻克 Three.js 无法直接加载医学 .vtp 格式的技术难题，实现口腔模型精准分区上色与套索选区。",
+        "highlights": [
+          "vtk.js 解析多边形网格后转换为 BufferGeometry",
+          "Raycaster 射线检测三角面交叉实现精准分区",
+          "填补团队医学 3D 可视化方向技术空白"
+        ]
+      },
+      {
+        "name": "口腔医学智能平台",
+        "description": "医学端病例工单全流程平台，设计链表结构表单渲染方案，将迭代周期缩短约 40%。",
+        "highlights": [
+          "链表结构表单：每节点仅感知前驱条件，扩展零侵入",
+          "策略模式实现三类角色差异化权限控制",
+          "独立负责从需求拆解到上线的完整交付"
+        ]
+      },
+      {
+        "name": "龙猫校园体测平台",
+        "badge": "微前端架构",
+        "description": "主导基于 qiankun 的微前端重构，将 SaaS 单体拆解为多个独立子应用，上线周期从 2 周缩短至 3 天。",
+        "highlights": [
+          "qiankun 微前端：各子应用独立部署、独立迭代",
+          "抽取公共工具为私有 npm 包，消除重复代码 30%",
+          "带领团队将迭代效率提升 3 倍以上"
+        ]
+      },
+      {
+        "name": "鸿蒙端 H5 适配",
+        "description": "美团 / 大众点评酒旅 H5 核心组件鸿蒙端适配，封装平台差异层，保障业务零中断上线。",
+        "highlights": [
+          "封装平台差异层统一处理接口参数映射",
+          "埋点 SDK 鸿蒙端兼容方案",
+          "保障鸿蒙端业务零中断上线"
+        ]
+      }
+    ]
+  }
+}

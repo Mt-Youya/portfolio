@@ -1,0 +1,43 @@
+---
+title: "基于 Three.js 的医学 3D 可视化实践"
+date: "2025-03-15"
+summary: "探索 vtk.js 与 Three.js 在医学影像中的应用，实现 DICOM 数据的三维重建与交互测量"
+tags: ["Three.js", "医学可视化", "WebGL", "vtk.js"]
+cover: "/blog/threejs-medical.jpg"
+---
+
+## 背景
+
+在医学影像系统中，三维可视化是提升诊断效率的关键技术。本文分享在实际项目中使用 Three.js 和 vtk.js 实现医学 3D 可视化的经验。
+
+## 技术选型
+
+- **vtk.js**：处理 DICOM 数据解析与体渲染
+- **Three.js**：自定义几何体与交互控制
+- **@react-three/fiber**：React 集成层
+
+## 核心实现
+
+### 1. DICOM 数据加载
+
+```typescript
+import vtkHttpDataSetReader from '@kitware/vtk.js/IO/Core/HttpDataSetReader'
+
+const reader = vtkHttpDataSetReader.newInstance({ fetchGzip: true })
+await reader.setUrl('/data/chest.vti')
+await reader.loadData()
+```
+
+### 2. 三维测量工具
+
+通过射线检测（Raycaster）实现点到点的空间测量，精度达到 0.1mm。
+
+## 性能优化
+
+- 使用 LOD（Level of Detail）动态调整渲染精度
+- Web Worker 处理 DICOM 解析，避免主线程阻塞
+- GPU 实例化渲染批量处理切片
+
+## 总结
+
+Three.js 在医学可视化领域有很大的应用空间，结合 vtk.js 可以实现专业级的影像处理能力。
