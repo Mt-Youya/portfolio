@@ -1,16 +1,15 @@
 'use client'
 
-import { Moon, Sun, Monitor } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useAppStore, type Theme } from '@/store/useAppStore'
 
-const CYCLE: Theme[] = ['dark', 'light', 'system']
+const CYCLE: Theme[] = ['dark', 'light']
 
 const icons: Record<Theme, React.ReactNode> = {
-  dark:   <Moon size={16} />,
-  light:  <Sun size={16} />,
-  system: <Monitor size={16} />,
+  dark:  <Moon size={16} />,
+  light: <Sun size={16} />,
 }
 
 export function ThemeToggle() {

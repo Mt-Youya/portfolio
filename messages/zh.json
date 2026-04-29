@@ -22,7 +22,6 @@
   "theme": {
     "dark": "暗色",
     "light": "亮色",
-    "system": "跟随系统",
     "ariaLabel": "当前主题：{theme}，点击切换"
   },
   "language": {

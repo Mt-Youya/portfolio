@@ -18,6 +18,7 @@ export interface StairsPreloaderProps {
   loading?: boolean
   duration?: number
   bgColor?: string
+  textColor?: string
   className?: string
   loadingText?: string
   textFadeThreshold?: number
@@ -34,6 +35,7 @@ export function StairsPreloader({
   loading = false,
   duration = 2200,
   bgColor = '#0a0a0a',
+  textColor = '#ffffff',
   className = '',
   loadingText = 'Loading...',
   textFadeThreshold = 80,
@@ -103,18 +105,21 @@ export function StairsPreloader({
         }}
       >
         <p
-          className="text-white font-mono text-sm tracking-[0.15em] select-none"
-          style={{ fontFamily: "'DM Mono', 'Courier New', monospace" }}
+          className="font-mono text-sm tracking-[0.15em] select-none"
+          style={{ color: textColor, fontFamily: "'DM Mono', 'Courier New', monospace" }}
         >
           {loadingText}
         </p>
       </div>
 
       {/* 进度条 */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 h-0.5 bg-white/10">
+      <div
+        className="absolute bottom-0 left-0 right-0 z-10 h-0.5"
+        style={{ backgroundColor: `${textColor}1a` }}
+      >
         <div
-          className="h-full bg-white/60 transition-all duration-100"
-          style={{ width: `${progress}%` }}
+          className="h-full transition-all duration-100"
+          style={{ width: `${progress}%`, backgroundColor: `${textColor}99` }}
         />
       </div>
     </div>

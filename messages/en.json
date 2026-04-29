@@ -22,7 +22,6 @@
   "theme": {
     "dark": "Dark",
     "light": "Light",
-    "system": "System",
     "ariaLabel": "Current theme: {theme}, click to switch"
   },
   "language": {
