@@ -8,7 +8,9 @@ import { useAppStore } from '@/store/useAppStore'
 import { scrollToSection } from '@/lib/scroll'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Link } from '@/i18n/navigation'
 
 export function Navbar() {
   const t = useTranslations('nav')
@@ -78,6 +80,16 @@ export function Navbar() {
                 )}
               </Button>
             ))}
+            <Link
+              key="blog"
+              href="/blog"
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'relative text-sm font-medium text-muted-foreground/70 hover:text-foreground'
+              )}
+            >
+              {t('blog')}
+            </Link>
           </div>
 
           {/* 语言切换 + 主题切换 + 联系按钮（桌面） */}
@@ -137,6 +149,19 @@ export function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.06 }}
+            >
+              <Link
+                href="/blog"
+                onClick={() => setMenuOpen(false)}
+                className="text-2xl font-bold text-foreground/70 hover:text-foreground transition-colors"
+              >
+                {t('blog')}
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: (navItems.length + 1) * 0.06 }}
               className="mt-4 flex items-center gap-3"
             >
               <LanguageSwitcher />

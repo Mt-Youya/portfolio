@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, Mail, ExternalLink } from 'lucide-react'
 import dynamic from 'next/dynamic'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { personalInfo } from '@/data/resume'
 import { scrollToSection } from '@/lib/scroll'
 import { containerVariants, itemVariants } from '@/lib/animations'
@@ -15,6 +15,7 @@ const HeroScene = dynamic(
 )
 
 export function Hero() {
+  const locale = useLocale()
   const t = useTranslations('hero')
   const tResume = useTranslations('resume.personalInfo')
 
@@ -56,7 +57,7 @@ export function Hero() {
           className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-4"
           variants={itemVariants}
         >
-          <span className="text-foreground">{personalInfo.name}</span>
+          <span className="text-foreground">{locale === 'zh' ? personalInfo.name : personalInfo['nameEn']}</span>
         </motion.h1>
 
         {/* 英文名 */}

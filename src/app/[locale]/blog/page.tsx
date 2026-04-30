@@ -43,7 +43,7 @@ export default async function BlogPage() {
             <Link href="/" className="hover:text-foreground transition-colors">
               {t('backHome')}
             </Link>
-            <span className="text-accent font-semibold text-foreground">{t('currentPage')}</span>
+            <span className="font-semibold text-foreground">{t('currentPage')}</span>
           </nav>
         }
       />
