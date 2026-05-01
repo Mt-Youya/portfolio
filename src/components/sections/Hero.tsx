@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronDown, Mail, ExternalLink } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowDown01Icon, Mail01Icon, Link01Icon } from '@hugeicons/core-free-icons'
 import dynamic from 'next/dynamic'
 import { useLocale, useTranslations } from 'next-intl'
 import { personalInfo } from '@/data/resume'
@@ -92,7 +93,7 @@ export function Hero() {
             href={`mailto:${personalInfo.email}`}
             className="group inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
-            <Mail size={16} />
+            <HugeiconsIcon icon={Mail01Icon} size={16} />
             {t('contactBtn')}
           </a>
           <a
@@ -102,7 +103,7 @@ export function Hero() {
             className="group inline-flex items-center gap-2 border border-border hover:border-accent text-foreground hover:text-accent px-6 py-3 rounded-full transition-all duration-300 backdrop-blur-sm bg-surface/30"
           >
             {t('juejinBtn')}
-            <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <HugeiconsIcon icon={Link01Icon} size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </motion.div>
       </motion.div>
@@ -120,7 +121,7 @@ export function Hero() {
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ChevronDown size={20} />
+          <HugeiconsIcon icon={ArrowDown01Icon} size={20} />
         </motion.div>
       </motion.button>
     </section>

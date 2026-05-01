@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Briefcase } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowDown01Icon, Briefcase01Icon } from '@hugeicons/core-free-icons'
 import { useTranslations } from 'next-intl'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { experienceMeta } from '@/data/resume'
@@ -81,7 +82,7 @@ export function Experience() {
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
-                        <Briefcase size={16} className="text-accent" />
+                        <HugeiconsIcon icon={Briefcase01Icon} size={16} className="text-accent" />
                       </div>
                       <div>
                         <h3 className="font-bold text-foreground text-lg">{exp.company}</h3>
@@ -125,7 +126,8 @@ export function Experience() {
                                 <span className="text-xs font-mono text-muted-foreground mt-0.5">{proj.period}</span>
                               )}
                             </div>
-                            <ChevronDown
+                            <HugeiconsIcon
+                              icon={ArrowDown01Icon}
                               size={16}
                               className={`text-muted-foreground transition-transform duration-300 shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
                             />

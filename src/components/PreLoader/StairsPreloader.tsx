@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Phase, usePreloader } from './usePreloader'
 
@@ -47,7 +48,7 @@ export function StairsPreloader({
   onLoadingComplete,
   children,
 }: StairsPreloaderProps) {
-  const { exiting, progress, done, phase, textOpacity, textBlur } = usePreloader({
+  const { exiting, progress, done, phase } = usePreloader({
     loading,
     duration,
     textFadeThreshold,
@@ -98,17 +99,40 @@ export function StairsPreloader({
       <div
         aria-hidden="true"
         className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
-        style={{
-          opacity: textOpacity,
-          filter: `blur(${textBlur.toFixed(2)}px)`,
-          transition: 'opacity 0.3s ease, filter 0.3s ease',
-        }}
       >
         <p
-          className="font-mono text-sm tracking-[0.15em] select-none"
+          className="font-mono text-sm tracking-[0.15em] select-none flex flex-wrap justify-center gap-x-[0.3em]"
           style={{ color: textColor, fontFamily: "'DM Mono', 'Courier New', monospace" }}
         >
-          {loadingText}
+          {loadingText.split(' ').map((word, i, arr) => {
+            const isExiting = progress >= 75
+            const enterDelay = i * 0.08
+            const exitDelay = (arr.length - 1 - i) * 0.06
+            return (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
+                animate={
+                  isExiting
+                    ? {
+                        opacity: 0,
+                        filter: 'blur(8px)',
+                        y: -10,
+                        transition: { delay: exitDelay, duration: 0.4, ease: 'easeIn' },
+                      }
+                    : {
+                        opacity: 1,
+                        filter: 'blur(0px)',
+                        y: 0,
+                        transition: { delay: enterDelay, duration: 0.5, ease: 'easeOut' },
+                      }
+                }
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            )
+          })}
         </p>
       </div>
 

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Menu01Icon, Cancel01Icon, Github01Icon } from '@hugeicons/core-free-icons'
 import { useTranslations } from 'next-intl'
 import { useAppStore } from '@/store/useAppStore'
 import { scrollToSection } from '@/lib/scroll'
@@ -94,6 +95,15 @@ export function Navbar() {
 
           {/* 语言切换 + 主题切换 + 联系按钮（桌面） */}
           <div className="hidden md:flex items-center gap-2">
+            <a
+              href="https://github.com/Mt-Youya"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="flex items-center justify-center w-8 h-8 rounded-lg text-muted-foreground/70 hover:text-foreground hover:bg-border/50 transition-colors duration-200"
+            >
+              <HugeiconsIcon icon={Github01Icon} size={18} />
+            </a>
             <LanguageSwitcher />
             <ThemeToggle />
             <Button
@@ -113,7 +123,7 @@ export function Navbar() {
             onClick={() => setMenuOpen(!isMenuOpen)}
             aria-label={t('toggleMenu')}
           >
-            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMenuOpen ? <HugeiconsIcon icon={Cancel01Icon} size={22} /> : <HugeiconsIcon icon={Menu01Icon} size={22} />}
           </Button>
         </div>
       </motion.nav>
@@ -164,6 +174,15 @@ export function Navbar() {
               transition={{ delay: (navItems.length + 1) * 0.06 }}
               className="mt-4 flex items-center gap-3"
             >
+              <a
+                href="https://github.com/Mt-Youya"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-muted-foreground/70 hover:text-foreground transition-colors"
+              >
+                <HugeiconsIcon icon={Github01Icon} size={22} />
+              </a>
               <LanguageSwitcher />
               <ThemeToggle />
             </motion.div>

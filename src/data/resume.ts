@@ -7,6 +7,7 @@ export const personalInfo = {
   phone: '+86-15795096824',
   email: 'dd257248@proton.me',
   links: {
+    github: 'https://github.com/Mt-Youya',
     yuque: 'https://yuque.com/yonjay',
     juejin: 'https://juejin.cn/user/3554089909627287',
     csdn: 'https://blog.csdn.net/qq_44134222?type=blog',

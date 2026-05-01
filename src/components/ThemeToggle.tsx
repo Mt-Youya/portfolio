@@ -1,6 +1,7 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Moon01Icon, Sun01Icon } from '@hugeicons/core-free-icons'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useAppStore, type Theme } from '@/store/useAppStore'
@@ -8,8 +9,8 @@ import { useAppStore, type Theme } from '@/store/useAppStore'
 const CYCLE: Theme[] = ['dark', 'light']
 
 const icons: Record<Theme, React.ReactNode> = {
-  dark:  <Moon size={16} />,
-  light: <Sun size={16} />,
+  dark:  <HugeiconsIcon icon={Moon01Icon} size={16} />,
+  light: <HugeiconsIcon icon={Sun01Icon} size={16} />,
 }
 
 export function ThemeToggle() {

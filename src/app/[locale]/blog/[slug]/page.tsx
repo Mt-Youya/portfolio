@@ -1,7 +1,8 @@
 import { allPosts } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
-import { ArrowLeft } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowLeft01Icon } from '@hugeicons/core-free-icons'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { mdxComponents } from '@/components/blog/mdx'
@@ -53,7 +54,7 @@ export default async function PostPage({ params }: PageProps) {
             href="/blog"
             className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-foreground transition-colors"
           >
-            <ArrowLeft size={14} />
+            <HugeiconsIcon icon={ArrowLeft01Icon} size={14} />
             {t('backToBlog')}
           </Link>
         }
@@ -102,7 +103,7 @@ export default async function PostPage({ params }: PageProps) {
             href="/blog"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground/60 hover:text-accent transition-colors"
           >
-            <ArrowLeft size={14} />
+            <HugeiconsIcon icon={ArrowLeft01Icon} size={14} />
             {t('backToBlogAll')}
           </Link>
         </footer>

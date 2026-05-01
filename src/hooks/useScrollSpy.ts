@@ -11,9 +11,9 @@ export function useScrollSpy() {
   useEffect(() => {
     const observers: IntersectionObserver[] = []
 
-    SECTIONS.forEach((id) => {
+    for (const id of SECTIONS) {
       const el = document.getElementById(id)
-      if (!el) return
+      if (!el) continue
 
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -25,7 +25,7 @@ export function useScrollSpy() {
       )
       observer.observe(el)
       observers.push(observer)
-    })
+    }
 
     return () => observers.forEach((o) => o.disconnect())
   }, [setActiveSection])

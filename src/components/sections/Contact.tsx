@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, BookOpen, FileCode2, Code2 } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Mail01Icon, Call02Icon, Book01Icon, FileCodeIcon, CodeSimpleIcon } from '@hugeicons/core-free-icons'
 import { useTranslations } from 'next-intl'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { personalInfo } from '@/data/resume'
@@ -12,35 +13,35 @@ export function Contact() {
 
   const contactLinks = [
     {
-      icon: Mail,
+      icon: Mail01Icon,
       label: t('links.email.label'),
       value: personalInfo.email,
       href: `mailto:${personalInfo.email}`,
       desc: t('links.email.desc'),
     },
     {
-      icon: Phone,
+      icon: Call02Icon,
       label: t('links.phone.label'),
       value: personalInfo.phone,
       href: `tel:${personalInfo.phone}`,
       desc: t('links.phone.desc'),
     },
     {
-      icon: BookOpen,
+      icon: Book01Icon,
       label: t('links.yuque.label'),
       value: 'yuque.com/yonjay',
       href: personalInfo.links.yuque,
       desc: t('links.yuque.desc'),
     },
     {
-      icon: FileCode2,
+      icon: FileCodeIcon,
       label: t('links.juejin.label'),
       value: 'JayDo257248',
       href: personalInfo.links.juejin,
       desc: t('links.juejin.desc'),
     },
     {
-      icon: Code2,
+      icon: CodeSimpleIcon,
       label: t('links.csdn.label'),
       value: 'Yonjay257248',
       href: personalInfo.links.csdn,
@@ -69,7 +70,7 @@ export function Contact() {
           href={`mailto:${personalInfo.email}`}
           className="group inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-black font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:scale-105"
         >
-          <Mail size={20} />
+          <HugeiconsIcon icon={Mail01Icon} size={20} />
           {personalInfo.email}
         </a>
         <p className="mt-3 text-sm text-muted-foreground">{t('ctaHint')}</p>
@@ -77,9 +78,7 @@ export function Contact() {
 
       {/* 联系方式列表 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {contactLinks.map((link, i) => {
-          const Icon = link.icon
-          return (
+        {contactLinks.map((link, i) => (
             <motion.a
               key={link.label}
               href={link.href}
@@ -93,7 +92,7 @@ export function Contact() {
               <Card className="card-hover group rounded-xl p-5 gap-0">
                 <CardContent className="px-0 flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <Icon size={18} className="text-accent" />
+                    <HugeiconsIcon icon={link.icon} size={18} className="text-accent" />
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs text-muted-foreground mb-0.5">{link.label}</div>
@@ -105,8 +104,7 @@ export function Contact() {
                 </CardContent>
               </Card>
             </motion.a>
-          )
-        })}
+        ))}
       </div>
 
       {/* 底部文字 */}

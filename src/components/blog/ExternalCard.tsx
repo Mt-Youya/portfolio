@@ -1,4 +1,5 @@
-import { ExternalLink } from 'lucide-react'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Link01Icon } from '@hugeicons/core-free-icons'
 import type { ExternalPost } from '@/lib/types'
 import { Badge } from '@/components/ui/badge'
 
@@ -37,7 +38,7 @@ export function ExternalCard({ title, url, date, summary, platform }: ExternalCa
           <Badge className={`font-mono ${config.className}`}>
             {config.label}
           </Badge>
-          <ExternalLink size={14} className="text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
+          <HugeiconsIcon icon={Link01Icon} size={14} className="text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
         </div>
 
         <h2 className="text-base font-semibold text-foreground group-hover:text-foreground transition-colors mb-2 line-clamp-2">
