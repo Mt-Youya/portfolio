@@ -111,8 +111,8 @@ export function HeroScene() {
     <Canvas
       camera={{ position: [0, 0, 8], fov: 55 }}
       style={{ position: 'absolute', inset: 0 }}
-      dpr={[1, 1.5]}
-      frameloop="demand"
+      dpr={[1, 1]}
+      frameloop="always"
     >
       {/* ambientLight 足够支撑 meshBasicMaterial；pointLight 留给未来切换材质用 */}
       <ambientLight intensity={0.3} />
@@ -121,7 +121,7 @@ export function HeroScene() {
         <Stars
           radius={80}
           depth={50}
-          count={3000}
+          count={1500}
           factor={3}
           saturation={0}
           fade

@@ -15,7 +15,7 @@ export function PreloaderWrapper({ children }: { children: React.ReactNode }) {
   return (
     <StairsPreloader
       loading={loading}
-      duration={2200}
+      duration={1200}
       loadingText="Loading..."
       stairCount={10}
       bgColor={bgColor}
