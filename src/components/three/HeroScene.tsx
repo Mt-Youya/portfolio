@@ -12,9 +12,7 @@ function IcosahedronMesh() {
 
   useFrame((_, delta) => {
     if (!meshRef.current) return
-    // 使用 getState() 避免订阅 Zustand 导致的 re-render
     const { mousePosition } = useAppStore.getState()
-    // 持续缓慢旋转
     meshRef.current.rotation.x += delta * 0.12
     meshRef.current.rotation.y += delta * 0.18
     // 鼠标视差（lerp）
@@ -25,7 +23,8 @@ function IcosahedronMesh() {
   return (
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.8}>
       <mesh ref={meshRef} position={[0, 0, 0]}>
-        <icosahedronGeometry args={[2.2, 1]} />
+        {/* detail 1→0，顶点从 ~80 降到 12，视觉几乎无差异 */}
+        <icosahedronGeometry args={[2.2, 0]} />
         <meshBasicMaterial color="#f59e0b" wireframe transparent opacity={0.55} />
       </mesh>
     </Float>
@@ -44,7 +43,8 @@ function OuterSphere() {
 
   return (
     <mesh ref={meshRef} position={[0, 0, 0]}>
-      <icosahedronGeometry args={[4, 2]} />
+      {/* detail 2→1 */}
+      <icosahedronGeometry args={[4, 1]} />
       <meshBasicMaterial color="#f59e0b" wireframe transparent opacity={0.07} />
     </mesh>
   )
@@ -56,7 +56,6 @@ function TorusKnotMesh() {
 
   useFrame((_, delta) => {
     if (!meshRef.current) return
-    // 使用 getState() 避免订阅 Zustand 导致的 re-render
     const { mousePosition } = useAppStore.getState()
     meshRef.current.rotation.x += delta * 0.25
     meshRef.current.rotation.z += delta * 0.15
@@ -67,20 +66,22 @@ function TorusKnotMesh() {
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1.2}>
       <mesh ref={meshRef} position={[3.5, -1.5, -1]}>
-        <torusKnotGeometry args={[0.6, 0.18, 80, 12]} />
+        {/* tubularSegments 80→48，radialSegments 12→8 */}
+        <torusKnotGeometry args={[0.6, 0.18, 48, 8]} />
         <meshBasicMaterial color="#fbbf24" wireframe transparent opacity={0.5} />
       </mesh>
     </Float>
   )
 }
 
-// 粒子群：使用 drei <Points> + <PointMaterial> 简化实现
+// 粒子群
 function ParticleField() {
   const ref = useRef<THREE.Points>(null)
 
   const positions = useMemo(() => {
-    const arr = new Float32Array(180 * 3)
-    for (let i = 0; i < 180; i++) {
+    // 180→120 粒子
+    const arr = new Float32Array(120 * 3)
+    for (let i = 0; i < 120; i++) {
       arr[i * 3]     = (Math.random() - 0.5) * 20
       arr[i * 3 + 1] = (Math.random() - 0.5) * 20
       arr[i * 3 + 2] = (Math.random() - 0.5) * 10
@@ -113,15 +114,16 @@ export function HeroScene() {
       style={{ position: 'absolute', inset: 0 }}
       dpr={[1, 1]}
       frameloop="always"
+      // 禁用默认 color management，减少 shader 编译开销
+      gl={{ antialias: false }}
     >
-      {/* ambientLight 足够支撑 meshBasicMaterial；pointLight 留给未来切换材质用 */}
       <ambientLight intensity={0.3} />
 
       <Suspense fallback={null}>
         <Stars
           radius={80}
           depth={50}
-          count={1500}
+          count={800}
           factor={3}
           saturation={0}
           fade

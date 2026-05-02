@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import { getTranslations } from 'next-intl/server'
@@ -20,20 +21,66 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+// 掘金文章 — 独立 async 组件，Suspense 流式加载
+async function JuejinSection() {
+  const t = await getTranslations('blog')
+  const posts = await fetchJuejinPosts()
+  if (posts.length === 0) return null
+  return (
+    <section className="mb-20">
+      <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
+        <span className="w-1 h-5 bg-blue-400 rounded-full" />
+        {t('juejinSection')}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <ExternalCard key={post.url} {...post} platform="juejin" />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// 语雀文档 — 独立 async 组件，Suspense 流式加载
+async function YuqueSection() {
+  const t = await getTranslations('blog')
+  const docs = await fetchYuqueDocs()
+  if (docs.length === 0) return null
+  return (
+    <section className="mb-20">
+      <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
+        <span className="w-1 h-5 bg-green-400 rounded-full" />
+        {t('yuqueSection')}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {docs.map((doc) => (
+          <ExternalCard key={doc.url} {...doc} platform="yuque" />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// 外部内容骨架屏
+function ExternalSectionSkeleton() {
+  return (
+    <section className="mb-20">
+      <div className="h-7 w-32 bg-muted/40 rounded mb-8 animate-pulse" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <div key={i} className="h-40 rounded-xl bg-muted/30 animate-pulse" />
+        ))}
+      </div>
+    </section>
+  )
+}
+
 export default async function BlogPage() {
   const t = await getTranslations('blog')
 
   const localPosts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   )
-
-  const [juejinPosts, yuqueDocs] = await Promise.allSettled([
-    fetchJuejinPosts(),
-    fetchYuqueDocs(),
-  ])
-
-  const juejin = juejinPosts.status === 'fulfilled' ? juejinPosts.value : []
-  const yuque = yuqueDocs.status === 'fulfilled' ? yuqueDocs.value : []
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -61,6 +108,7 @@ export default async function BlogPage() {
           </p>
         </div>
 
+        {/* 本地文章 — 同步渲染，不影响 TTFB */}
         {localPosts.length > 0 && (
           <section className="mb-20">
             <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
@@ -75,35 +123,15 @@ export default async function BlogPage() {
           </section>
         )}
 
-        {juejin.length > 0 && (
-          <section className="mb-20">
-            <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
-              <span className="w-1 h-5 bg-blue-400 rounded-full" />
-              {t('juejinSection')}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {juejin.map((post) => (
-                <ExternalCard key={post.url} {...post} platform="juejin" />
-              ))}
-            </div>
-          </section>
-        )}
+        {/* 掘金 & 语雀 — Suspense 流式加载，不阻塞 TTFB */}
+        <Suspense fallback={<ExternalSectionSkeleton />}>
+          <JuejinSection />
+        </Suspense>
+        <Suspense fallback={<ExternalSectionSkeleton />}>
+          <YuqueSection />
+        </Suspense>
 
-        {yuque.length > 0 && (
-          <section className="mb-20">
-            <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
-              <span className="w-1 h-5 bg-green-400 rounded-full" />
-              {t('yuqueSection')}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {yuque.map((doc) => (
-                <ExternalCard key={doc.url} {...doc} platform="yuque" />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {localPosts.length === 0 && juejin.length === 0 && yuque.length === 0 && (
+        {localPosts.length === 0 && (
           <div className="text-center py-24 text-muted-foreground/50">
             <p className="text-lg font-mono">{t('empty')}</p>
           </div>

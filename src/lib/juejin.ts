@@ -6,10 +6,15 @@ const JUEJIN_RSS_URL = 'https://juejin.cn/user/3554089909627287'
 
 export async function fetchJuejinPosts(): Promise<ExternalPost[]> {
   try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 3000)
+
     const res = await fetch(JUEJIN_RSS_URL, {
       next: { revalidate: 3600 },
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; portfolio/1.0)' },
+      signal: controller.signal,
     })
+    clearTimeout(timeout)
 
     if (!res.ok) return []
 

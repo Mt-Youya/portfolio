@@ -7,13 +7,18 @@ export async function fetchYuqueDocs(): Promise<ExternalPost[]> {
   if (!token || !repo) return []
 
   try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 3000)
+
     const res = await fetch(`https://www.yuque.com/api/v2/repos/${repo}/docs`, {
       headers: {
         'X-Auth-Token': token,
         'Content-Type': 'application/json',
       },
       next: { revalidate: 3600 },
+      signal: controller.signal,
     })
+    clearTimeout(timeout)
 
     if (!res.ok) return []
 

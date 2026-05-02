@@ -9,6 +9,7 @@ import { personalInfo } from '@/data/resume'
 import { scrollToSection } from '@/lib/scroll'
 import { containerVariants, itemVariants } from '@/lib/animations'
 import { Badge } from '@/components/ui/badge'
+import { useAppStore } from '@/store/useAppStore'
 
 const HeroScene = dynamic(
   () => import('@/components/three/HeroScene').then((m) => ({ default: m.HeroScene })),
@@ -19,14 +20,16 @@ export function Hero() {
   const locale = useLocale()
   const t = useTranslations('hero')
   const tResume = useTranslations('resume.personalInfo')
+  // PreLoader 完成后才挂载 Three.js，避免 WebGL 初始化与 PreLoader 动画竞争主线程
+  const isLoaded = useAppStore((s) => s.isLoaded)
 
   return (
     <section
       id="hero"
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Three.js 背景 */}
-      <HeroScene />
+      {/* Three.js 背景：等 PreLoader 退场后再初始化 WebGL */}
+      {isLoaded && <HeroScene />}
 
       {/* 渐变遮罩 */}
       <div className="absolute inset-0 bg-linear-to-b from-background/20 via-transparent to-background pointer-events-none" />
