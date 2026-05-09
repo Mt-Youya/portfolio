@@ -7,7 +7,7 @@
     "dev": "PORT=3033 next dev",
     "build": "contentlayer2 build && next build",
     "start": "PORT=3034 next start",
-    "lint": "next lint"
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
