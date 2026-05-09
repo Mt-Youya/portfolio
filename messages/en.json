@@ -136,11 +136,13 @@
         "period": "2025.08 — Present",
         "projects": [
           {
+            "name": "Meituan / Dianping Hotel H5 HarmonyOS Adaptation",
             "highlights": [
-              "Led HarmonyOS adaptation of core Meituan / Dianping hotel & travel H5 components, encapsulating platform abstraction layer to handle API parameter mapping and tracking SDK compatibility, ensuring zero-disruption launch on HarmonyOS",
+              "Led HarmonyOS adaptation of core hotel & travel H5 components; built a platform abstraction layer to normalize API parameter mapping and tracking SDK behavior, bridging ArkWeb vs. WebView differences in event bubbling and CSS rendering — zero business disruption on launch",
+              "Audited and resolved H5 bundle size issues: used rollup-plugin-visualizer to identify redundant dependencies, applied code splitting and dynamic imports to reduce initial JS by ~28%, cutting FCP from 3.2s to 1.8s",
               "Independently delivered full-stack intelligent ops alerting system (Koa.js + React): built multi-tool Agent with LangChain + Function Calling, reducing manual investigation time from 15 minutes to under 2 minutes",
-              "Implemented AI streaming output with SSE and word-by-word rendering; used MCP protocol to unify multi-model context management with multi-turn tool call chains",
-              "Contributed to AI platform data pipeline: established Prompt engineering standards, improving structured JSON output parsing success rate to over 97%"
+              "Implemented AI streaming output with SSE and word-by-word rendering; used MCP protocol to unify multi-model context management with multi-turn tool call chains — chat-like experience with first-token latency under 300ms",
+              "Built AI data pipeline: authored four parser types for full-coverage data cleaning; established Prompt engineering standards (prompt templates + few-shot examples), achieving 97% structured JSON parse success with versioned gray-release mechanism"
             ]
           }
         ]

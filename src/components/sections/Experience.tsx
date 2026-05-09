@@ -19,6 +19,22 @@ function TechTag({ tech }: { tech: string }) {
   )
 }
 
+// 将 "X→Y" 和百分比数字高亮为 accent 色
+function HighlightText({ text }: { text: string }) {
+  const parts = text.split(/(\d+\s*(?:分钟|min|%|倍|天|周|ms)\b|\d+\s*[→]\s*\d+\s*(?:分钟|min|天|周|ms)?|97%以上)/g)
+  return (
+    <>
+      {parts.map((part, i) =>
+        /\d/.test(part) ? (
+          <span key={i} className="text-accent font-semibold">{part}</span>
+        ) : (
+          part
+        )
+      )}
+    </>
+  )
+}
+
 type TranslatedProject = {
   name?: string
   highlights: string[]
@@ -60,7 +76,7 @@ export function Experience() {
 
       <div className="relative">
         {/* 时间轴竖线 */}
-        <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-border to-transparent" />
+        <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/60 via-border/40 to-transparent" />
 
         <div className="space-y-10">
           {experiences.map((exp, ei) => (
@@ -73,10 +89,10 @@ export function Experience() {
               transition={{ delay: ei * 0.15, duration: 0.6 }}
             >
               {/* 时间轴圆点 */}
-              <div className="absolute left-2.5 md:left-4 top-2 w-3 h-3 rounded-full bg-accent border-2 border-background shadow-[0_0_10px_#f59e0b66]" />
+              <div className="absolute left-2 md:left-3.5 top-3 w-4 h-4 rounded-full bg-accent border-2 border-background shadow-[0_0_14px_oklch(0.75_0.18_70/0.5)]" />
 
               {/* 公司卡片 */}
-              <Card className="overflow-hidden rounded-2xl gap-0 py-0">
+              <Card className="overflow-hidden rounded-lg gap-0 py-0">
                 {/* 头部 */}
                 <div className="p-5 md:p-6 border-b border-border">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -149,7 +165,7 @@ export function Experience() {
                                   {proj.highlights.map((h, hi) => (
                                     <li key={hi} className="flex items-start gap-2 text-sm text-muted-foreground">
                                       <span className="text-accent mt-1 shrink-0">▸</span>
-                                      <span className="leading-relaxed">{h}</span>
+                                      <span className="leading-relaxed"><HighlightText text={h} /></span>
                                     </li>
                                   ))}
                                 </ul>

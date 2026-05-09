@@ -28,9 +28,9 @@ async function JuejinSection() {
   if (posts.length === 0) return null
   return (
     <section className="mb-20">
-      <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
-        <span className="w-1 h-5 bg-blue-400 rounded-full" />
+      <h2 className="text-xl font-bold text-foreground mb-8">
         {t('juejinSection')}
+        <span className="ml-2 text-xs font-mono font-normal text-muted-foreground tracking-widest uppercase align-middle">juejin</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
@@ -48,9 +48,9 @@ async function YuqueSection() {
   if (docs.length === 0) return null
   return (
     <section className="mb-20">
-      <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
-        <span className="w-1 h-5 bg-green-400 rounded-full" />
+      <h2 className="text-xl font-bold text-foreground mb-8">
         {t('yuqueSection')}
+        <span className="ml-2 text-xs font-mono font-normal text-muted-foreground tracking-widest uppercase align-middle">yuque</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {docs.map((doc) => (
@@ -97,7 +97,7 @@ export default async function BlogPage() {
 
       <main className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         <div className="mb-16">
-          <span className="text-xs font-mono tracking-widest uppercase text-accent border border-accent/30 px-4 py-1.5 rounded-full">
+          <span className="text-xs font-mono tracking-widest uppercase text-accent border border-accent/30 px-4 py-1.5 rounded-md">
             {t('badge')}
           </span>
           <h1 className="text-5xl md:text-6xl font-black mt-6 mb-4 text-foreground">
@@ -111,8 +111,7 @@ export default async function BlogPage() {
         {/* 本地文章 — 同步渲染，不影响 TTFB */}
         {localPosts.length > 0 && (
           <section className="mb-20">
-            <h2 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
-              <span className="w-1 h-5 bg-accent rounded-full" />
+            <h2 className="text-xl font-bold text-foreground mb-8">
               {t('localSection')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

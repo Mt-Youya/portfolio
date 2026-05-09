@@ -2,11 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { Mail01Icon, Call02Icon, Book01Icon, FileCodeIcon, CodeSimpleIcon } from '@hugeicons/core-free-icons'
+import { Mail01Icon, Call02Icon, Book01Icon, FileCodeIcon, CodeSimpleIcon, ArrowUpRight01Icon } from '@hugeicons/core-free-icons'
 import { useTranslations } from 'next-intl'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { personalInfo } from '@/data/resume'
-import { Card, CardContent } from '@/components/ui/card'
 
 export function Contact() {
   const t = useTranslations('contact')
@@ -50,7 +49,7 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="section-padding px-6 max-w-4xl mx-auto">
+    <section id="contact" className="section-padding px-6 max-w-3xl mx-auto">
       <SectionTitle
         tag={t('tag')}
         title={t('title')}
@@ -68,48 +67,60 @@ export function Contact() {
       >
         <a
           href={`mailto:${personalInfo.email}`}
-          className="group inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-black font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:scale-105"
+          className="group inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-black font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
         >
-          <HugeiconsIcon icon={Mail01Icon} size={20} />
+          <HugeiconsIcon icon={Mail01Icon} size={18} />
           {personalInfo.email}
         </a>
-        <p className="mt-3 text-sm text-muted-foreground">{t('ctaHint')}</p>
+        <p className="mt-3 text-xs text-muted-foreground font-mono tracking-wide">{t('ctaHint')}</p>
       </motion.div>
 
-      {/* 联系方式列表 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* 联系方式列表——无卡片，用分隔线 */}
+      <motion.div
+        className="divide-y divide-border border-t border-border"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         {contactLinks.map((link, i) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-            >
-              <Card className="card-hover group rounded-xl p-5 gap-0">
-                <CardContent className="px-0 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <HugeiconsIcon icon={link.icon} size={18} className="text-accent" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs text-muted-foreground mb-0.5">{link.label}</div>
-                    <div className="font-medium text-foreground text-sm truncate group-hover:text-accent transition-colors">
-                      {link.value}
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-0.5">{link.desc}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.a>
+          <motion.a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 py-4 group hover:bg-transparent transition-colors"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.07, duration: 0.4 }}
+          >
+            <div className="w-8 h-8 flex items-center justify-center shrink-0">
+              <HugeiconsIcon icon={link.icon} size={16} className="text-accent/60 group-hover:text-accent transition-colors" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs text-muted-foreground/50 font-mono mb-0.5">{link.label}</div>
+              <div className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors truncate">
+                {link.value}
+              </div>
+            </div>
+            <div className="text-xs text-muted-foreground/40 hidden sm:block shrink-0">
+              {link.desc}
+            </div>
+            {link.href.startsWith('http') && (
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                size={14}
+                className="text-muted-foreground/30 group-hover:text-accent transition-colors shrink-0"
+              />
+            )}
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
 
       {/* 底部文字 */}
       <motion.p
-        className="text-center text-muted-foreground/40 text-xs mt-16 font-mono"
+        className="text-center text-muted-foreground/30 text-xs mt-14 font-mono"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

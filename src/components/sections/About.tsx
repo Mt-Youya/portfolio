@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { personalInfo, highlightIcons } from '@/data/resume'
-import { Card, CardContent } from '@/components/ui/card'
 
 export function About() {
   const t = useTranslations('about')
@@ -22,90 +21,88 @@ export function About() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* 左侧：简介 + 统计 */}
+        {/* 左侧：简介 + 统计 + 联系信息 */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-foreground/90 text-base md:text-lg leading-relaxed mb-8">
+          <p className="text-foreground/80 text-base md:text-lg leading-relaxed mb-10">
             {tResume('personalInfo.bio')}
           </p>
 
-          {/* 统计数据 */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* 统计数字——直排，无卡片容器 */}
+          <dl className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
               >
-                <Card className="card-hover p-5 gap-1">
-                  <CardContent className="px-0">
-                    <div className="text-3xl font-black text-gradient mb-1">{stat.value}</div>
-                    <div className="text-xs text-muted-foreground tracking-wide">{stat.label}</div>
-                  </CardContent>
-                </Card>
+                <dt className="text-5xl font-black text-accent tabular-nums leading-none mb-1">
+                  {stat.value}
+                </dt>
+                <dd className="text-xs text-muted-foreground tracking-wide uppercase font-mono">
+                  {stat.label}
+                </dd>
               </motion.div>
             ))}
-          </div>
+          </dl>
 
           {/* 联系信息 */}
-          <div className="mt-8 space-y-2">
+          <div className="space-y-2 border-t border-border pt-6">
             <div className="flex items-center gap-3 text-sm">
-              <span className="text-accent font-mono">📍</span>
+              <span className="text-accent font-mono w-4">📍</span>
               <span className="text-muted-foreground">{tResume('personalInfo.location')}</span>
             </div>
             <div className="flex items-center gap-3 text-sm">
-              <span className="text-accent font-mono">📧</span>
+              <span className="text-accent font-mono w-4">📧</span>
               <a href={`mailto:${personalInfo.email}`} className="text-muted-foreground hover:text-accent transition-colors">
                 {personalInfo.email}
               </a>
             </div>
             <div className="flex items-center gap-3 text-sm">
-              <span className="text-accent font-mono">📱</span>
+              <span className="text-accent font-mono w-4">📱</span>
               <span className="text-muted-foreground">{personalInfo.phone}</span>
             </div>
           </div>
         </motion.div>
 
-        {/* 右侧：个人亮点 */}
+        {/* 右侧：个人亮点——序号列表，无 Card */}
         <motion.div
-          className="space-y-4"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <h3 className="text-sm font-mono tracking-widest uppercase text-accent mb-6">
+          <h3 className="text-xs font-mono tracking-widest uppercase text-accent mb-6">
             {t('highlightsTitle')}
           </h3>
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.5 }}
-            >
-              <Card className="card-hover group p-5 gap-0">
-                <CardContent className="px-0">
-                  <div className="flex items-start gap-4">
-                    <span className="text-2xl mt-0.5">{highlightIcons[i]}</span>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1 group-hover:text-accent transition-colors">
-                        {h.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{h.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          <div className="divide-y divide-border">
+            {highlights.map((h, i) => (
+              <motion.div
+                key={h.title}
+                className="py-5 flex items-start gap-5 group"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+              >
+                <span className="text-xs font-mono text-accent/50 tabular-nums pt-0.5 shrink-0 w-6 group-hover:text-accent transition-colors">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1.5 group-hover:text-accent transition-colors">
+                    {h.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{h.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

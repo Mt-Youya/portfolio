@@ -33,7 +33,7 @@ export function Hero() {
 
       {/* 渐变遮罩 */}
       <div className="absolute inset-0 bg-linear-to-b from-background/20 via-transparent to-background pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background/60 pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, transparent 40%, oklch(0.08 0.006 70 / 0.6) 100%)' }} />
 
       {/* 内容 */}
       <motion.div
@@ -64,28 +64,37 @@ export function Hero() {
           <span className="text-foreground">{locale === 'zh' ? personalInfo.name : personalInfo['nameEn']}</span>
         </motion.h1>
 
-        {/* 英文名 */}
-        <motion.p
-          className="text-lg md:text-xl font-mono text-muted-foreground tracking-[0.3em] uppercase mb-4"
-          variants={itemVariants}
-        >
-          {personalInfo.nameEn}
-        </motion.p>
+        {/* 英文名 — zh 로케일에서만 표시 */}
+        {locale === 'zh' && (
+          <motion.p
+            className="text-lg md:text-xl font-mono text-muted-foreground tracking-[0.3em] uppercase mb-4"
+            variants={itemVariants}
+          >
+            {personalInfo.nameEn}
+          </motion.p>
+        )}
 
         {/* 职位 */}
         <motion.div variants={itemVariants}>
-          <h2 className="text-xl md:text-2xl font-semibold text-gradient mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold text-accent mb-6">
             {tResume('title')}
           </h2>
         </motion.div>
 
-        {/* 简介 */}
-        <motion.p
-          className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10"
+        {/* 专业方向 chips */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-2 mb-10"
           variants={itemVariants}
         >
-          {t('subtitle')}
-        </motion.p>
+          {t('subtitle').split(' · ').map((chip) => (
+            <span
+              key={chip}
+              className="px-3 py-1 text-xs font-mono tracking-wide text-foreground/60 border border-border/60 rounded-sm"
+            >
+              {chip}
+            </span>
+          ))}
+        </motion.div>
 
         {/* 按钮组 */}
         <motion.div
@@ -94,7 +103,7 @@ export function Hero() {
         >
           <a
             href={`mailto:${personalInfo.email}`}
-            className="group inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+            className="group inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
             <HugeiconsIcon icon={Mail01Icon} size={16} />
             {t('contactBtn')}
@@ -103,7 +112,7 @@ export function Hero() {
             href={personalInfo.links.juejin}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 border border-border hover:border-accent text-foreground hover:text-accent px-6 py-3 rounded-full transition-all duration-300 backdrop-blur-sm bg-surface/30"
+            className="group inline-flex items-center gap-2 border border-border hover:border-accent text-foreground hover:text-accent px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm bg-background/30"
           >
             {t('juejinBtn')}
             <HugeiconsIcon icon={Link01Icon} size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

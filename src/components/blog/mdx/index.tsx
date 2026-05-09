@@ -45,7 +45,7 @@ export const mdxComponents: Record<string, unknown> = {
   ),
   li: ({ children }: C) => <li className="leading-relaxed">{children}</li>,
   blockquote: ({ children }: C) => (
-    <blockquote className="border-l-4 border-accent pl-4 py-1 my-6 text-foreground/60 italic">
+    <blockquote className="border border-border/50 bg-card rounded-md px-5 py-4 my-6 text-foreground/60 italic">
       {children}
     </blockquote>
   ),

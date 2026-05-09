@@ -75,46 +75,46 @@
 /* ── Dark Premium 主题 ────────────────────────────────── */
 :root,
 .dark {
-  --background:         oklch(0.08 0 0);
-  --foreground:         oklch(0.985 0 0);
-  --card:               oklch(0.13 0 0);
-  --card-foreground:    oklch(0.985 0 0);
-  --popover:            oklch(0.11 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  --background:         oklch(0.08 0.006 70);
+  --foreground:         oklch(0.985 0.006 70);
+  --card:               oklch(0.13 0.005 70);
+  --card-foreground:    oklch(0.985 0.006 70);
+  --popover:            oklch(0.11 0.005 70);
+  --popover-foreground: oklch(0.985 0.006 70);
   --primary:            oklch(0.75 0.18 70);
-  --primary-foreground: oklch(0.08 0 0);
-  --secondary:          oklch(0.16 0 0);
-  --secondary-foreground: oklch(0.9 0 0);
-  --muted:              oklch(0.56 0 0);
-  --muted-foreground:   oklch(0.56 0 0);
+  --primary-foreground: oklch(0.08 0.006 70);
+  --secondary:          oklch(0.16 0.005 70);
+  --secondary-foreground: oklch(0.9 0.005 70);
+  --muted:              oklch(0.56 0.005 70);
+  --muted-foreground:   oklch(0.56 0.005 70);
   --accent:             oklch(0.75 0.18 70);
-  --accent-foreground:  oklch(0.08 0 0);
+  --accent-foreground:  oklch(0.08 0.006 70);
   --destructive:        oklch(0.577 0.245 27.325);
-  --border:             oklch(0.22 0 0);
-  --input:              oklch(0.22 0 0);
+  --border:             oklch(0.22 0.005 70);
+  --input:              oklch(0.22 0.005 70);
   --ring:               oklch(0.75 0.18 70);
   --radius:             0.625rem;
 }
 
 /* ── Light 主题 ───────────────────────────────────────── */
 .light {
-  --background:         oklch(0.98 0 0);
-  --foreground:         oklch(0.14 0 0);
-  --card:               oklch(1 0 0);
-  --card-foreground:    oklch(0.14 0 0);
-  --popover:            oklch(1 0 0);
-  --popover-foreground: oklch(0.14 0 0);
+  --background:         oklch(0.98 0.005 70);
+  --foreground:         oklch(0.14 0.006 70);
+  --card:               oklch(0.995 0.004 70);
+  --card-foreground:    oklch(0.14 0.006 70);
+  --popover:            oklch(0.995 0.004 70);
+  --popover-foreground: oklch(0.14 0.006 70);
   --primary:            oklch(0.68 0.18 70);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary:          oklch(0.94 0 0);
-  --secondary-foreground: oklch(0.14 0 0);
-  --muted:              oklch(0.92 0 0);
-  --muted-foreground:   oklch(0.46 0 0);
+  --primary-foreground: oklch(0.98 0.005 70);
+  --secondary:          oklch(0.94 0.004 70);
+  --secondary-foreground: oklch(0.14 0.006 70);
+  --muted:              oklch(0.92 0.004 70);
+  --muted-foreground:   oklch(0.46 0.005 70);
   --accent:             oklch(0.68 0.18 70);
-  --accent-foreground:  oklch(0.98 0 0);
+  --accent-foreground:  oklch(0.98 0.005 70);
   --destructive:        oklch(0.577 0.245 27.325);
-  --border:             oklch(0.88 0 0);
-  --input:              oklch(0.88 0 0);
+  --border:             oklch(0.88 0.004 70);
+  --input:              oklch(0.88 0.004 70);
   --ring:               oklch(0.68 0.18 70);
   --radius:             0.625rem;
 }
@@ -125,8 +125,8 @@
   50%       { transform: translateY(-20px); }
 }
 @keyframes glow {
-  0%   { box-shadow: 0 0 5px #f59e0b33; }
-  100% { box-shadow: 0 0 20px #f59e0b66, 0 0 40px #f59e0b33; }
+  0%   { box-shadow: 0 0 5px oklch(0.75 0.18 70 / 0.2); }
+  100% { box-shadow: 0 0 20px oklch(0.75 0.18 70 / 0.4), 0 0 40px oklch(0.75 0.18 70 / 0.2); }
 }
 @keyframes slideUp {
   0%   { opacity: 0; transform: translateY(30px); }
@@ -152,7 +152,7 @@
     cursor: pointer;
   }
   html {
-    @apply font-serif;
+    @apply font-sans;
     scroll-behavior: smooth;
   }
   a {
@@ -168,26 +168,9 @@
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: oklch(0.11 0 0); }
 ::-webkit-scrollbar-thumb { background: oklch(0.22 0 0); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-::selection { background: #f59e0b33; color: #f59e0b; }
-
-/* ── 工具类 ─────────────────────────────────────────── */
-.text-gradient {
-  background: linear-gradient(135deg, #f59e0b, #fbbf24);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.card-hover {
-  transition: all 0.3s ease;
-}
-.card-hover:hover {
-  transform: translateY(-4px);
-  border-color: #f59e0b;
-  box-shadow: 0 8px 32px #f59e0b22;
-}
+::selection { background: oklch(0.75 0.18 70 / 0.2); color: var(--accent); }
 
 .section-padding {
   padding-top: 5rem;

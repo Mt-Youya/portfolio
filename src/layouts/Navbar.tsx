@@ -76,7 +76,7 @@ export function Navbar() {
                   <motion.div
                     className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent"
                     layoutId="nav-dot"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    transition={{ duration: 0.25, ease: 'easeOut' }}
                   />
                 )}
               </Button>
@@ -109,7 +109,7 @@ export function Navbar() {
             <Button
               variant="outline"
               onClick={() => scrollToSection('contact')}
-              className="text-sm font-semibold border-accent/40 text-accent hover:bg-accent hover:text-black rounded-full"
+              className="text-sm font-semibold border-accent/40 text-accent hover:bg-accent hover:text-black rounded-lg"
             >
               {t('contactBtn')}
             </Button>

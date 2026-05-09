@@ -15,9 +15,9 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Link href={post.url} className="group block h-full">
-      <article className="h-full p-6 rounded-2xl border border-border/50 bg-surface/30 hover:border-accent/40 hover:bg-surface/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5">
+      <article className="h-full p-6 rounded-lg border border-border/50 bg-card hover:border-accent/40 transition-colors duration-300">
         {post.cover && (
-          <div className="aspect-video rounded-xl overflow-hidden mb-4 bg-background/50">
+          <div className="aspect-video rounded-md overflow-hidden mb-4 bg-background/50">
             <img
               src={post.cover}
               alt={post.title}

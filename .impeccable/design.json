@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-09T00:00:00+08:00",
+  "title": "Design System: 窦扬杰 Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "amber-signal": {
+        "role": "primary",
+        "displayName": "Amber Signal",
+        "canonical": "oklch(0.75 0.18 70)",
+        "tonalRamp": [
+          "oklch(0.15 0.06 70)",
+          "oklch(0.25 0.09 70)",
+          "oklch(0.35 0.12 70)",
+          "oklch(0.45 0.15 70)",
+          "oklch(0.55 0.17 70)",
+          "oklch(0.65 0.18 70)",
+          "oklch(0.75 0.18 70)",
+          "oklch(0.88 0.12 70)"
+        ]
+      },
+      "near-black": {
+        "role": "neutral",
+        "displayName": "Near-Black Amber",
+        "canonical": "oklch(0.08 0.006 70)",
+        "tonalRamp": [
+          "oklch(0.08 0.006 70)",
+          "oklch(0.13 0.005 70)",
+          "oklch(0.16 0.005 70)",
+          "oklch(0.22 0.005 70)",
+          "oklch(0.40 0.005 70)",
+          "oklch(0.56 0.005 70)",
+          "oklch(0.75 0.005 70)",
+          "oklch(0.92 0.004 70)"
+        ]
+      },
+      "near-white": {
+        "role": "neutral",
+        "displayName": "Near-White Amber",
+        "canonical": "oklch(0.985 0.006 70)",
+        "tonalRamp": [
+          "oklch(0.20 0.006 70)",
+          "oklch(0.35 0.006 70)",
+          "oklch(0.50 0.006 70)",
+          "oklch(0.65 0.006 70)",
+          "oklch(0.78 0.006 70)",
+          "oklch(0.88 0.006 70)",
+          "oklch(0.94 0.006 70)",
+          "oklch(0.985 0.006 70)"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Surface Raised",
+        "canonical": "oklch(0.13 0.005 70)",
+        "tonalRamp": [
+          "oklch(0.08 0.005 70)",
+          "oklch(0.11 0.005 70)",
+          "oklch(0.13 0.005 70)",
+          "oklch(0.16 0.005 70)",
+          "oklch(0.22 0.005 70)",
+          "oklch(0.35 0.005 70)",
+          "oklch(0.60 0.005 70)",
+          "oklch(0.90 0.004 70)"
+        ]
+      },
+      "muted-text": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "canonical": "oklch(0.56 0.005 70)",
+        "tonalRamp": [
+          "oklch(0.20 0.005 70)",
+          "oklch(0.30 0.005 70)",
+          "oklch(0.40 0.005 70)",
+          "oklch(0.46 0.005 70)",
+          "oklch(0.56 0.005 70)",
+          "oklch(0.66 0.005 70)",
+          "oklch(0.78 0.005 70)",
+          "oklch(0.90 0.004 70)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only — one instance per page. Functions as visual anchor." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2 titles via SectionTitle component." },
+      "title": { "displayName": "Title", "purpose": "Company names, card headings, sub-section titles." },
+      "body": { "displayName": "Body", "purpose": "All descriptive copy. Max 65ch line length." },
+      "label": { "displayName": "Label / Mono", "purpose": "JetBrains Mono for all metadata: badges, timestamps, skill tags, scroll hints." }
+    },
+    "shadows": [
+      {
+        "name": "amber-glow-node",
+        "value": "0 0 14px oklch(0.75 0.18 70 / 0.5)",
+        "purpose": "Timeline current-position dot only. The one luminance accent in the system."
+      },
+      {
+        "name": "cta-hover",
+        "value": "0 4px 24px oklch(0.75 0.18 70 / 0.25)",
+        "purpose": "Primary CTA button hover state. Ties amber identity to the action."
+      },
+      {
+        "name": "keyframe-glow-start",
+        "value": "0 0 5px oklch(0.75 0.18 70 / 0.2)",
+        "purpose": "Start keyframe for the @keyframes glow animation. Used on Three.js accent nodes."
+      },
+      {
+        "name": "keyframe-glow-end",
+        "value": "0 0 20px oklch(0.75 0.18 70 / 0.4), 0 0 40px oklch(0.75 0.18 70 / 0.2)",
+        "purpose": "End keyframe for the @keyframes glow animation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "easeOut",
+        "duration": "0.7s",
+        "purpose": "Default Framer Motion item entrance. opacity 0→1, translateY 30→0."
+      },
+      {
+        "name": "stagger-container",
+        "value": "staggerChildren: 0.15, delayChildren: 0.3",
+        "purpose": "containerVariants — staggers child item entrances in Hero and section reveals."
+      },
+      {
+        "name": "scroll-hint-float",
+        "value": "translateY: [0, 6px, 0], duration: 1.5s, repeat: Infinity, ease: easeInOut",
+        "purpose": "Scroll hint arrow gentle bob animation."
+      },
+      {
+        "name": "transition-state",
+        "value": "300ms easeOut",
+        "purpose": "Default CSS transition for color/border state changes (hover, focus)."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single most important action on any screen. Amber fill, near-black text, squared corners.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#contact\">联系我 <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\"/><polyline points=\"22,6 12,12 2,6\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #f5a623; color: #120e08; font-family: 'Inter Variable', sans-serif; font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 0.625rem; border: none; text-decoration: none; transition: background 300ms ease-out, box-shadow 300ms ease-out; cursor: pointer; } .ds-btn-primary:hover { background: #e0930f; box-shadow: 0 4px 24px oklch(0.75 0.18 70 / 0.25); } .ds-btn-primary:focus-visible { outline: 2px solid #f5a623; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action. No fill, border stroke, text color transitions to amber on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">掘金主页 <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M7 17L17 7M17 7H7M17 7v10\"/></svg></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #fefcf8; font-family: 'Inter Variable', sans-serif; font-weight: 400; font-size: 14px; padding: 12px 24px; border-radius: 0.625rem; border: 1px solid #2f2b22; text-decoration: none; transition: border-color 300ms ease-out, color 300ms ease-out; cursor: pointer; } .ds-btn-ghost:hover { border-color: #f5a623; color: #f5a623; } .ds-btn-ghost:focus-visible { outline: 2px solid #f5a623; outline-offset: 2px; } .ds-btn-ghost svg { transition: transform 300ms ease-out; } .ds-btn-ghost:hover svg { transform: translateX(2px) translateY(-2px); }"
+    },
+    {
+      "name": "Section Badge",
+      "kind": "chip",
+      "refersTo": "badge-tag",
+      "description": "Section eyebrow label. Monospace uppercase, amber color, transparent fill.",
+      "html": "<span class=\"ds-badge-section\">About Me</span>",
+      "css": ".ds-badge-section { display: inline-flex; align-items: center; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #f5a623; background: transparent; border: 1px solid oklch(0.75 0.18 70 / 0.3); border-radius: 0.375rem; padding: 4px 14px; }"
+    },
+    {
+      "name": "Specialty Chip",
+      "kind": "chip",
+      "refersTo": "chip-specialty",
+      "description": "Hero section specialty direction chip. Muted, non-interactive, minimal.",
+      "html": "<span class=\"ds-chip-specialty\">Medical Visualization</span>",
+      "css": ".ds-chip-specialty { display: inline-flex; align-items: center; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 12px; font-weight: 400; letter-spacing: 0.05em; color: oklch(0.56 0.005 70); background: transparent; border: 1px solid oklch(0.22 0.005 70 / 0.6); border-radius: 2px; padding: 4px 12px; }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Eyebrow badge + h2 headline + subtitle + amber accent line. Reusable section opener.",
+      "html": "<div class=\"ds-section-title\"><span class=\"ds-badge-section\">Work Experience</span><h2 class=\"ds-section-heading\">工作经历</h2><p class=\"ds-section-subtitle\">5 年以上工程实战，覆盖医疗、AI、互联网多个领域</p><div class=\"ds-section-rule\"></div></div>",
+      "css": ".ds-section-title { margin-bottom: 48px; } .ds-section-heading { font-family: 'Inter Variable', sans-serif; font-weight: 700; font-size: clamp(1.875rem, 4vw, 2.25rem); color: #fefcf8; line-height: 1.2; letter-spacing: -0.01em; margin: 12px 0 12px; } .ds-section-subtitle { font-family: 'Inter Variable', sans-serif; font-weight: 400; font-size: 1rem; color: oklch(0.56 0.005 70); line-height: 1.6; max-width: 42rem; margin: 0 0 16px; } .ds-section-rule { width: 64px; height: 1px; background: linear-gradient(90deg, #f5a623 0%, transparent 100%); }"
+    },
+    {
+      "name": "Contact List Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Borderless list row for contact links. Icon + label + value + optional external arrow.",
+      "html": "<a class=\"ds-contact-row\" href=\"mailto:example@example.com\"><div class=\"ds-contact-icon\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\"/><polyline points=\"22,6 12,12 2,6\"/></svg></div><div class=\"ds-contact-content\"><div class=\"ds-contact-label\">邮箱</div><div class=\"ds-contact-value\">dd257248@proton.me</div></div><div class=\"ds-contact-desc\">ProtonMail 加密邮箱</div></a>",
+      "css": ".ds-contact-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; text-decoration: none; border-bottom: 1px solid #2f2b22; transition: color 300ms ease-out; } .ds-contact-row:last-child { border-bottom: none; } .ds-contact-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: oklch(0.75 0.18 70 / 0.6); transition: color 300ms ease-out; } .ds-contact-row:hover .ds-contact-icon { color: #f5a623; } .ds-contact-content { flex: 1; min-width: 0; } .ds-contact-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: oklch(0.56 0.005 70 / 0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; } .ds-contact-value { font-family: 'Inter Variable', sans-serif; font-size: 14px; font-weight: 500; color: oklch(0.985 0.006 70 / 0.8); transition: color 300ms ease-out; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ds-contact-row:hover .ds-contact-value { color: #fefcf8; } .ds-contact-desc { font-family: 'Inter Variable', sans-serif; font-size: 12px; color: oklch(0.56 0.005 70 / 0.4); flex-shrink: 0; }"
+    },
+    {
+      "name": "Timeline Node",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The single luminance accent in the system — current-position marker on the Experience timeline.",
+      "html": "<div class=\"ds-timeline-node\"></div>",
+      "css": ".ds-timeline-node { width: 16px; height: 16px; border-radius: 50%; background: #f5a623; border: 2px solid #120e08; box-shadow: 0 0 14px oklch(0.75 0.18 70 / 0.5); position: absolute; left: -2px; top: 12px; }"
+    },
+    {
+      "name": "Tech Tag (Badge)",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "Technology stack tag used in Experience and Projects. Muted outline, monospace.",
+      "html": "<span class=\"ds-tech-tag\">React</span>",
+      "css": ".ds-tech-tag { display: inline-flex; align-items: center; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; color: oklch(0.56 0.005 70); background: transparent; border: 1px solid #2f2b22; border-radius: 0.375rem; padding: 2px 10px; white-space: nowrap; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Precision Instrument Manual",
+    "overview": "This system is modeled after the printed documentation of a high-precision Japanese instrument: dense information arranged with strict hierarchy, nothing decorative, the quality self-evident before a single word is read. Every spacing decision is load-bearing. Every typographic choice has a reason. The absence of ornament is the ornament.\n\nThe palette is near-black with amber-tinted neutrals and a single amber accent. That accent is rare — used on ≤10% of any screen — and its rarity is the argument. When visitors see amber, they are looking at something that matters. The typography is Inter Variable at maximum weight contrast: display names at 900 weight and 9rem, body copy at 400 weight and 14px, monospace labels for all metadata. Two families maximum: Inter for structure and hierarchy, JetBrains Mono for code-adjacent annotation.\n\nThis system explicitly rejects: Bootstrap resume templates (time-axis layouts, skill progress bars), SaaS landing-page marketing patterns (hero-metric grids, gradient accent statistics, oversaturated feature cards), dark geek aesthetics (terminal green, neon purple, scan-line effects), and shadcn clone default patterns (identical card grids, hero-with-big-number templates, gradient text applied as decoration).",
+    "keyCharacteristics": [
+      "Dark-first (near-black base); light mode available as inversion",
+      "Single amber accent; every other surface is neutral",
+      "Inter Variable at extreme weight contrast (900 display, 400 body)",
+      "JetBrains Mono for all labels, timestamps, tags, metadata",
+      "Flat-by-default surfaces; amber glow used only on interactive focus/glow states",
+      "Asymmetric layout rhythm; not every element is centered or card-wrapped",
+      "Framer Motion entrance animations staggered and purposeful, not decorative"
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Amber appears on ≤10% of any given screen. When everything is amber, nothing is amber. Guard the accent by keeping everything else neutral.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Neutral Rule",
+        "body": "Pure #000 and #fff are prohibited. Every neutral must carry a trace of amber chroma (≥0.004). The difference is invisible in isolation and decisive in aggregate.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono-Only-for-Metadata Rule",
+        "body": "JetBrains Mono is reserved for machine-readable context: dates, tags, codes, labels. Using it for prose signals 'this person doesn't understand voice.'",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight Gap Rule",
+        "body": "Adjacent text elements must have a weight gap of ≥200 (e.g., 700 headline followed by 400 body). A gap of 100 reads as accidental variation, not hierarchy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-by-Default Rule",
+        "body": "Surfaces are flat at rest. The amber glow appears only on the timeline current-position dot and the primary CTA button hover state — two places, no more.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use oklch(0.75 0.18 70) amber as the single accent color. Amber on a dark neutral surface is the entire visual identity.",
+      "Do use JetBrains Mono exclusively for metadata: timestamps, skill tags, section badges, scroll hints. Nothing else.",
+      "Do leave cards flat at rest. Elevation communicates state change, not category.",
+      "Do let white space carry structural weight. Sections are separated by 80px. Do not collapse this.",
+      "Do use Inter Variable at 900 weight for the hero name. The extreme weight is the point.",
+      "Do show amber glow only on the timeline current-position node and the primary CTA button hover shadow.",
+      "Do write the amber tint into every neutral (≥0.004 chroma, hue 70). Pure #000 and #fff are absent.",
+      "Do constrain body text to 65ch max line length for readability.",
+      "Do use divide-y list patterns for contact links and other list content. Cards for lists add noise."
+    ],
+    "donts": [
+      "Don't use background-clip: text with gradient backgrounds on any heading or label. Gradient text is decoration masquerading as hierarchy.",
+      "Don't use border-left or border-right greater than 1px as a colored accent stripe.",
+      "Don't create identical card grids — same-sized cards with icon + heading + text, repeated identically.",
+      "Don't use the hero-metric template: big number, small label, gradient accent background.",
+      "Don't use Bootstrap-style resume templates with timeline + skill progress bars.",
+      "Don't use SaaS Landing Page patterns: large hero CTA stacked on feature cards stacked on testimonials.",
+      "Don't use dark geek aesthetics: terminal green, neon purple, scan-line textures, matrix effects.",
+      "Don't use glassmorphism as a default pattern. Backdrop-blur is used once (hero badge) for a specific contextual reason.",
+      "Don't add gradients to text for emphasis. Use weight or size.",
+      "Don't nest cards. A Card containing Card components is always wrong.",
+      "Don't animate layout properties (height, width, top, left). Use transform and opacity only.",
+      "Don't use bounce or elastic easing. All motion eases out."
+    ]
+  }
+}
