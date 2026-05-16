@@ -2,7 +2,7 @@
 
 export const personalInfo = {
   name: '辞鸢',
-  nameEn: 'Yonjay Doyle',
+  nameEn: 'Cyrus',
   age: 26,
   phone: '+86-15795096824',
   email: 'dd257248@proton.me',

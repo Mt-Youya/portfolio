@@ -1,5 +1,5 @@
 ---
-name: Yonjay Doyle Portfolio
+name: Cyrus Portfolio
 description: Senior frontend engineer portfolio — precise, restrained, earned.
 colors:
   amber-signal: "#f5a623"
@@ -85,7 +85,7 @@ components:
     padding: "4px 14px"
 ---
 
-# Design System: Yonjay Doyle Portfolio
+# Design System: Cyrus Portfolio
 
 ## 1. Overview
 
