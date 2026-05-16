@@ -49,14 +49,14 @@ export function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Button
-            variant="ghost"
+          <button
             onClick={() => scrollToSection('hero')}
-            className="px-2"
+            className="flex items-baseline gap-px select-none group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-sm"
+            aria-label="回到顶部"
           >
-            <span className="text-accent">Y</span>
-            <span className="text-foreground">D</span>
-          </Button>
+            <span className="font-black text-xl tracking-tight text-accent leading-none group-hover:opacity-80 transition-opacity duration-200">Y</span>
+            <span className="font-light text-xl tracking-tight text-foreground/60 leading-none group-hover:opacity-80 transition-opacity duration-200">D</span>
+          </button>
 
           {/* 桌面导航 */}
           <div className="hidden md:flex items-center gap-1">
