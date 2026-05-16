@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug, locale } = await params
   const post = allPosts.find((p) => p.slug === slug)
   if (!post) return {}
-  const authorName = locale === 'en' ? 'Yonjay Doyle' : '窦扬杰'
+  const authorName = locale === 'en' ? 'Cyrus' : '辞鸢'
   return {
     title: `${post.title} — ${authorName}`,
     description: post.summary,

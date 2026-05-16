@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "窦扬杰 — 高级前端工程师",
+      "title": "辞鸢 — 高级前端工程师",
       "description": "Yonjay 的个人作品集 — 高级前端工程师，专注于 React、Three.js 医学可视化与 AI 工程"
     },
     "blog": {
-      "title": "博客 — 窦扬杰",
+      "title": "博客 — 辞鸢",
       "description": "技术心得、前端工程、3D 可视化与 AI 工程实践"
     }
   },
@@ -88,7 +88,7 @@
     "empty": "// 文章即将发布",
     "backToBlog": "返回博客",
     "backToBlogAll": "查看所有文章",
-    "author": "窦扬杰"
+    "author": "辞鸢"
   },
   "resume": {
     "personalInfo": {

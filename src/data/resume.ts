@@ -1,7 +1,7 @@
 // 不需要翻译的静态数据（技术名词、链接、联系方式等）
 
 export const personalInfo = {
-  name: '窦扬杰',
+  name: '辞鸢',
   nameEn: 'Yonjay Doyle',
   age: 26,
   phone: '+86-15795096824',
