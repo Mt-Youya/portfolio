@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "Yonjay Doyle — Senior Frontend Engineer",
+      "title": "Cyrus — Senior Frontend Engineer",
       "description": "Personal portfolio of Yonjay — Senior Frontend Engineer specializing in React, Three.js medical visualization and AI engineering"
     },
     "blog": {
-      "title": "Blog — Yonjay Doyle",
+      "title": "Blog — Cyrus",
       "description": "Technical insights on frontend engineering, 3D visualization and AI engineering"
     }
   },
@@ -88,7 +88,7 @@
     "empty": "// Articles coming soon",
     "backToBlog": "Back to Blog",
     "backToBlogAll": "View All Posts",
-    "author": "Yonjay Doyle"
+    "author": "Cyrus"
   },
   "resume": {
     "personalInfo": {
