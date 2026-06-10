@@ -99,7 +99,7 @@
     },
     "stats": [
       { "label": "Years Exp.", "value": "5+" },
-      { "label": "Companies", "value": "2" },
+      { "label": "Companies", "value": "1" },
       { "label": "Technologies", "value": "30+" },
       { "label": "Age", "value": "26" }
     ],
@@ -131,26 +131,9 @@
     ],
     "experiences": [
       {
-        "company": "Wistron Software (Beijing) Co., Ltd.",
-        "role": "Senior Frontend Engineer",
-        "period": "2025.08 — Present",
-        "projects": [
-          {
-            "name": "Meituan / Dianping Hotel H5 HarmonyOS Adaptation",
-            "highlights": [
-              "Led HarmonyOS adaptation of core hotel & travel H5 components; built a platform abstraction layer to normalize API parameter mapping and tracking SDK behavior, bridging ArkWeb vs. WebView differences in event bubbling and CSS rendering — zero business disruption on launch",
-              "Audited and resolved H5 bundle size issues: used rollup-plugin-visualizer to identify redundant dependencies, applied code splitting and dynamic imports to reduce initial JS by ~28%, cutting FCP from 3.2s to 1.8s",
-              "Independently delivered full-stack intelligent ops alerting system (Koa.js + React): built multi-tool Agent with LangChain + Function Calling, reducing manual investigation time from 15 minutes to under 2 minutes",
-              "Implemented AI streaming output with SSE and word-by-word rendering; used MCP protocol to unify multi-model context management with multi-turn tool call chains — chat-like experience with first-token latency under 300ms",
-              "Built AI data pipeline: authored four parser types for full-coverage data cleaning; established Prompt engineering standards (prompt templates + few-shot examples), achieving 97% structured JSON parse success with versioned gray-release mechanism"
-            ]
-          }
-        ]
-      },
-      {
         "company": "Yayan (Shanghai) Medical Technology Co., Ltd.",
-        "role": "Frontend Tech Lead",
-        "period": "2020.06 — 2025.08",
+        "role": "Frontend Tech Leader",
+        "period": "2020.06 — Present",
         "projects": [
           {
             "name": "Dental Medical Intelligence Platform",
@@ -173,6 +156,13 @@
             "highlights": [
               "Led micro-frontend refactoring with qiankun: decomposed tightly-coupled SaaS monolith into independent sub-applications, reducing new feature release cycle from 2 weeks to 3 days",
               "Extracted shared utilities and components into private npm packages, eliminating ~30% duplicate code"
+            ]
+          },
+          {
+            "name": "Longmao Campus Intelligent Physical Fitness Testing Platform (SaaS)",
+            "highlights": [
+              "Led the micro-frontend refactoring based on qiankun: decomposed the highly coupled SaaS monolith into multiple independent sub-applications, shortening the new feature launch cycle from 2 weeks to 3 days",
+              "Extracted common tools and components into private npm packages, eliminating approximately 30% of duplicate code"
             ]
           }
         ]

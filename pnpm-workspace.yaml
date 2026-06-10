@@ -1,0 +1,10 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  contentlayer2: true
+  esbuild: true
+  msw: true
+  protobufjs: true
+  sharp: true
+nodeVersion: 24.14.0
+pnpm: 11.5.2
