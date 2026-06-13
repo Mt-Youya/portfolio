@@ -5,7 +5,7 @@ export const personalInfo = {
   nameEn: 'Cyrus',
   age: 26,
   phone: '+86-15795096824',
-  email: 'dd257248@proton.me',
+  email: 'contact@yonjay.me',
   links: {
     github: 'https://github.com/Mt-Youya',
     yuque: 'https://yuque.com/yonjay',
