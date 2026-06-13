@@ -76,6 +76,17 @@
       "csdn": { "label": "CSDN", "desc": "Blog & technical notes" }
     }
   },
+  "footer": {
+    "title": "Friendly Links",
+    "links": {
+      "tubepilot":    "YouTube video management & analytics",
+      "agentLearning": "AI Agent learning notes & practice",
+      "rustLearning": "Rust language learning path",
+      "subGen":       "Automatic subtitle generation tool",
+      "developerTools":       "Developer tools collection",
+      "streamgrab":       "Live stream recording and clipping tool"
+    }
+  },
   "blog": {
     "backHome": "Home",
     "currentPage": "Blog",

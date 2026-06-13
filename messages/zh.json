@@ -76,6 +76,17 @@
       "csdn": { "label": "CSDN", "desc": "博客与技术总结" }
     }
   },
+  "footer": {
+    "title": "友情链接",
+    "links": {
+      "tubepilot":    "YouTube 视频管理与分析工具",
+      "agentLearning": "AI Agent 学习笔记与实践",
+      "rustLearning": "Rust 语言学习路径",
+      "subGen":       "字幕自动生成工具",
+      "developerTools":       "开发者工具集合",
+      "streamgrab":       "直播录制与剪辑工具"
+    }
+  },
   "blog": {
     "backHome": "首页",
     "currentPage": "博客",

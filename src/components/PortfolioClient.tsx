@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { Navbar } from '@/layouts/Navbar'
+import { Footer } from '@/layouts/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { useMousePosition } from '@/hooks/useMousePosition'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
@@ -37,6 +38,7 @@ export function PortfolioClient() {
         <Projects />
         <Contact />
       </main>
+      <Footer />
     </>
   )
 }

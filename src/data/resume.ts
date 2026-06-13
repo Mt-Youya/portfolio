@@ -53,3 +53,13 @@ export const projectsMeta = [
 
 // 高亮卡片的 icon 不需要翻译；title/description 从翻译文件读取
 export const highlightIcons = ['🔬', '🚀', '👥', '🤖']
+
+// 友情链接：url/name 不需要翻译；desc 从翻译文件读取
+export const friendlyLinks = [
+  { name: 'TubePilot',      url: 'https://tubepilot.yonjay.me',    key: 'tubepilot' },
+  { name: 'Agent Learning', url: 'https://agent-learning.yonjay.me', key: 'agentLearning' },
+  { name: 'Rust Learning',  url: 'https://rust-learning.yonjay.me',  key: 'rustLearning' },
+  { name: 'Sub Gen',        url: 'https://sub-gen.yonjay.me',        key: 'subGen' },
+  { name: 'Developer Tools',url: 'https://developer-tools.yonjay.me', key: 'developerTools' },
+  { name: 'Stream Grab',url: 'https://stream-grab.yonjay.me', key: 'streamgrab' },
+]
