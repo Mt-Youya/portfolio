@@ -11,20 +11,20 @@ export function Contact() {
   const t = useTranslations('contact')
 
   const contactLinks = [
-    {
-      icon: Mail01Icon,
-      label: t('links.email.label'),
-      value: personalInfo.email,
-      href: `mailto:${personalInfo.email}`,
-      desc: t('links.email.desc'),
-    },
-    {
-      icon: Call02Icon,
-      label: t('links.phone.label'),
-      value: personalInfo.phone,
-      href: `tel:${personalInfo.phone}`,
-      desc: t('links.phone.desc'),
-    },
+    // {
+    //   icon: Mail01Icon,
+    //   label: t('links.email.label'),
+    //   value: personalInfo.email,
+    //   href: `mailto:${personalInfo.email}`,
+    //   desc: t('links.email.desc'),
+    // },
+    // {
+    //   icon: Call02Icon,
+    //   label: t('links.phone.label'),
+    //   value: personalInfo.phone,
+    //   href: `tel:${personalInfo.phone}`,
+    //   desc: t('links.phone.desc'),
+    // },
     {
       icon: Book01Icon,
       label: t('links.yuque.label'),
@@ -58,7 +58,7 @@ export function Contact() {
       />
 
       {/* 主邮箱 CTA */}
-      <motion.div
+      {/* <motion.div
         className="text-center mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export function Contact() {
           {personalInfo.email}
         </a>
         <p className="mt-3 text-xs text-muted-foreground font-mono tracking-wide">{t('ctaHint')}</p>
-      </motion.div>
+      </motion.div> */}
 
       {/* 联系方式列表——无卡片，用分隔线 */}
       <motion.div
