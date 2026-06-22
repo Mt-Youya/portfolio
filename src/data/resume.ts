@@ -3,7 +3,7 @@
 export const personalInfo = {
   name: '辞鸢',
   nameEn: 'Cyrus',
-  age: 26,
+  age: 27,
   phone: '+86-15795096824',
   email: 'contact@yonjay.me',
   links: {
