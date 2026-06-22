@@ -124,20 +124,20 @@
     ],
     "highlights": [
       {
+        "title": "AI 工程",
+        "description": "在生产环境落地 LangChain / MCP / Function Calling / SSE 等 AI 工程技术栈，具备 Prompt 规范设计与数据管道建设经验"
+      },
+      {
         "title": "技术深度",
         "description": "具备医学可视化、AI Agent 工程、微前端架构等稀缺方向的完整落地经验，非普通 CRUD 业务背景"
       },
       {
         "title": "独立交付",
-        "description": "可独立完成从技术方案设计到全栈上线的完整闭环，美团智能运维告警系统（前端 + 后端）由本人单独交付"
+        "description": "可独立完成从技术方案设计到全栈上线的完整闭环，智能运维告警系统（前端 + 后端）由本人单独交付"
       },
       {
         "title": "组长经验",
         "description": "在牙颜担任前端技术经理 2 年，主导微前端重构、建立 CI/CD 流程，带领团队将迭代效率提升 3 倍以上"
-      },
-      {
-        "title": "AI 工程",
-        "description": "在生产环境落地 LangChain / MCP / Function Calling / SSE 等 AI 工程技术栈，具备 Prompt 规范设计与数据管道建设经验"
       }
     ],
     "experiences": [
@@ -229,15 +229,6 @@
           "qiankun 微前端：各子应用独立部署、独立迭代",
           "抽取公共工具为私有 npm 包，消除重复代码 30%",
           "带领团队将迭代效率提升 3 倍以上"
-        ]
-      },
-      {
-        "name": "鸿蒙端 H5 适配",
-        "description": "美团 / 大众点评酒旅 H5 核心组件鸿蒙端适配，封装平台差异层，保障业务零中断上线。",
-        "highlights": [
-          "封装平台差异层统一处理接口参数映射",
-          "埋点 SDK 鸿蒙端兼容方案",
-          "保障鸿蒙端业务零中断上线"
         ]
       }
     ]
