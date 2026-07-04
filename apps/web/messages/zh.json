@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "title": "辞鸢 · 全栈偏前端 · AI Agent 工程",
+    "description": "基于 React、Koa、LangChain、MCP 与 SSE 的全栈偏前端 AI Agent 工程实践。"
+  },
+  "site": {
+    "nav": {
+      "label": "主导航",
+      "items": [
+        {
+          "href": "#agent",
+          "label": "AI Agent"
+        },
+        {
+          "href": "#skills",
+          "label": "技能"
+        },
+        {
+          "href": "#projects",
+          "label": "项目"
+        },
+        {
+          "href": "#contact",
+          "label": "联系"
+        }
+      ]
+    },
+    "controls": {
+      "themeLight": "切换到浅色图纸",
+      "themeDark": "切换到夜间图纸",
+      "localeSwitch": "English"
+    },
+    "hero": {
+      "sheet": "SHEET 01 — AGENT-FIRST PORTFOLIO",
+      "name": "辞鸢",
+      "roleBadge": "全栈偏前端 · AI Agent 工程",
+      "title": "用前端体验把 AI Agent 变成可交付产品",
+      "subtitle": "我从复杂前端和工程化出发，向 Koa.js、实时通信、LangChain、Function Calling 与 MCP 扩展，能独立完成 AI 助手从界面、工具调用、上下文管理到上线验收的全栈闭环。",
+      "primaryCta": "查看 Agent 能力",
+      "resumeCta": "下载简历 PDF",
+      "terminalTitle": "live agent trace",
+      "seal": "AI READY",
+      "loopLabels": ["感知", "规划", "工具", "观察"],
+      "stats": [
+        {
+          "value": "<300ms",
+          "label": "智能运维 AI 助手首 token 延迟"
+        },
+        {
+          "value": "97%",
+          "label": "结构化 JSON 输出解析成功率"
+        },
+        {
+          "value": "15min→2min",
+          "label": "告警根因人工研判时间压缩"
+        }
+      ],
+      "terminal": {
+        "plan": "▸ [plan] 读取告警、日志、知识库上下文",
+        "tool": "▸ [tool] LangChain + Function Calling 调用多工具",
+        "observe": "▸ [observe] MCP 统一多模型上下文并回写结果",
+        "answer": "▸ [answer] 生成根因定位、处置建议与可读的前端结果卡片"
+      }
+    },
+    "agent": {
+      "sheet": "SHEET 02 — AI AGENT ENGINEERING",
+      "title": "重点不是接一个聊天框，而是把 Agent 跑进真实业务流程",
+      "summary": "简历里的 AI 助手不是 Demo：它覆盖前端交互、Koa 后端、SSE 流式输出、工具调用、日志检索、知识库检索、Prompt 规范、灰度发布和数据清洗管道。",
+      "capabilities": [
+        {
+          "label": "Agent 编排",
+          "text": "基于 LangChain 与 Function Calling 构建多工具 Agent，串联监控系统 API、日志检索工具与知识库检索工具，实现告警根因定位与处置建议生成。"
+        },
+        {
+          "label": "上下文协议",
+          "text": "结合 MCP 协议统一管理多模型上下文，支持多轮对话里的工具调用链路，降低多模型接入与上下文传递的工程复杂度。"
+        },
+        {
+          "label": "AI 前端体验",
+          "text": "建设生产级 AI 助手界面：SSE 流式渲染、逐字输出、Markdown 与代码块高亮、上下文操作面板、工具结果卡片。"
+        },
+        {
+          "label": "Prompt 工程",
+          "text": "制定模板与 Few-shot 示例库，建立版本管理与灰度发布机制，将结构化 JSON 输出解析成功率稳定到 97%。"
+        }
+      ],
+      "runtimeSteps": [
+        {
+          "label": "runtime step 1",
+          "text": "告警进入后先标准化上下文，把日志、监控指标、知识库命中结果整理成 Agent 可消费的状态。"
+        },
+        {
+          "label": "runtime step 2",
+          "text": "规划阶段由 LangChain 决定工具调用顺序，Function Calling 负责把意图转成稳定参数。"
+        },
+        {
+          "label": "runtime step 3",
+          "text": "MCP 负责跨模型上下文同步，前端把工具结果渲染成可读、可追踪、可继续操作的卡片。"
+        },
+        {
+          "label": "runtime step 4",
+          "text": "最终输出根因定位、处置建议和结构化 JSON，并进入灰度发布与版本治理。"
+        }
+      ]
+    },
+    "skills": {
+      "sheet": "SHEET 03 — FRONTEND-LED FULL STACK",
+      "title": "前端是优势，全栈是交付方式",
+      "summary": "定位不是泛泛的全栈，而是以前端复杂交互、性能与工程化为根基，向 Node.js 后端、实时通信、AI 工具链与桌面端能力延伸。",
+      "groups": [
+        {
+          "title": "前端框架与产品界面",
+          "items": [
+            "React 18 + TypeScript，Redux / Zustand，熟悉 Fiber 调度与 Hooks 设计模式",
+            "Vue 2/3，Pinia / VueRouter，掌握 Composition API 与响应式原理",
+            "Next.js 13+、Tailwind CSS、shadcn/ui，能快速搭建可维护的产品界面"
+          ]
+        },
+        {
+          "title": "复杂组件与可视化",
+          "items": [
+            "React Flow / react-konva Canvas 分层渲染，图形编排与测量交互",
+            "动态表单引擎、跨字段联动校验、看板与拖拽排序",
+            "虚拟列表、高性能表格、富文本编辑器接入与扩展"
+          ]
+        },
+        {
+          "title": "AI 与实时通信",
+          "items": [
+            "LangChain Agent 编排、Tool Calling、多轮上下文管理",
+            "MCP、Function Calling、Prompt 工程规范与结构化输出治理",
+            "WebSocket 心跳重连、SSE 流式输出、任务状态实时同步"
+          ]
+        },
+        {
+          "title": "全栈后端与工程化",
+          "items": [
+            "Node.js / Koa.js 中间件设计、RESTful API、JWT 鉴权",
+            "Vite / Webpack 插件开发、构建优化、分包策略",
+            "pnpm Monorepo、Jenkins CI/CD、ApiFox 接口契约、私有 npm 包发布"
+          ]
+        },
+        {
+          "title": "架构与性能治理",
+          "items": [
+            "qiankun 微前端拆分、主子应用通信、沙箱隔离与独立部署",
+            "Core Web Vitals 治理、懒加载、Tree-shaking、长任务拆分",
+            "从需求拆解、架构设计、编码实现到上线验收的闭环交付"
+          ]
+        },
+        {
+          "title": "图形与桌面端扩展",
+          "items": [
+            "react-three-fiber / Three.js / vtk.js，医学模型网格解析与交互",
+            "Raycaster 射线检测、BufferGeometry 转换、模型分区上色",
+            "了解 Electron 桌面端打包与进程通信基础"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "sheet": "SHEET 04 — SELECTED WORK",
+      "title": "项目经历按 Agent 与交付闭环重新组织",
+      "summary": "内容来自简历 PDF，但展示顺序做了调整：先讲 AI Agent，再讲复杂前端、设计系统、图形系统与工程化重构。",
+      "primary": "AI CORE",
+      "delivery": "DELIVERED",
+      "items": [
+        {
+          "eyebrow": "PROJECT 01 · 智能运维 AI 助手",
+          "title": "Koa + React 的生产级多工具 Agent",
+          "summary": "独立全栈交付智能运维 AI 助手，覆盖交互界面、后端服务、工具调用、上下文治理、Prompt 规范和上线机制。",
+          "bullets": [
+            "支持 SSE 流式渲染、Markdown / 代码块高亮、上下文操作与工具结果卡片，首 token 延迟低于 300ms",
+            "LangChain + Function Calling 集成监控 API、日志检索与知识库检索，将告警研判从 15 分钟压缩到 2 分钟以内",
+            "MCP 统一多模型上下文，Prompt 模板与 Few-shot 示例库让结构化输出解析成功率达到 97%"
+          ],
+          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / Koa.js / LangChain / MCP / SSE / WebSocket"
+        },
+        {
+          "eyebrow": "PROJECT 02 · 口腔医学智能平台",
+          "title": "工单系统、管理后台与动态表单引擎",
+          "summary": "主导医学端病例工单全流程页面与管理后台，支撑医生、技师、管理员三类角色的差异化权限体系。",
+          "bullets": [
+            "实现策略配置面板、角色权限管理、审计日志检索与业务数据看板",
+            "用链表结构设计动态表单引擎，解决子项依赖父项状态的校验难题，迭代周期缩短约 40%",
+            "建设公共设计系统与组件库，抽取私有 npm 包供多子应用复用，消除重复代码约 30%"
+          ],
+          "stack": "Vue3 / Pinia / VueRouter / Element Plus / TypeScript / Vite / pnpm"
+        },
+        {
+          "eyebrow": "PROJECT 03 · 医学头影测量系统",
+          "title": "Canvas 测量引擎与 3D 医学模型交互",
+          "summary": "围绕医学测量和口腔模型建立图形交互能力，处理坐标系、测量计算、模型解析与选区交互。",
+          "bullets": [
+            "使用 react-konva 通过 Group 层级解耦图片坐标系与测量逻辑坐标系，解决缩放时测量值漂移",
+            "基于策略模式将差异化测量计算抽象成可组合数学工具链，新增测量项无需修改核心逻辑",
+            "引入 vtk.js 解析 .vtp 多边形网格并转换为 BufferGeometry，用 Raycaster 实现精准分区上色与套索选区"
+          ],
+          "stack": "React / Redux / react-konva / react-three-fiber / Three.js / vtk.js / TypeScript / Vite"
+        },
+        {
+          "eyebrow": "PROJECT 04 · 龙猫校园智能体测平台",
+          "title": "SaaS 微前端重构与 CI/CD 流水线",
+          "summary": "主导 qiankun 微前端重构，把高度耦合的 SaaS 单体拆解为多个独立子应用，支撑独立部署与快速迭代。",
+          "bullets": [
+            "新功能上线周期从 2 周缩短到 3 天",
+            "搭建 Jenkins + Docker CI/CD 流水线，实现分支合并自动构建与灰度发布",
+            "配合 ApiFox 建立接口契约规范，前后端联调效率提升约 50%"
+          ],
+          "stack": "Vue2 / React / qiankun / React-Redux / Ant Design / ECharts / Jenkins / Docker"
+        }
+      ]
+    },
+    "highlights": {
+      "sheet": "SHEET 05 — HIGHLIGHTS",
+      "title": "可以被复用的能力，不只是项目经历",
+      "summary": "这些能力决定了我适合做 AI Agent 产品化：前端体验能打磨到位，后端和工程链路也能独立推进。",
+      "items": [
+        {
+          "title": "复杂组件",
+          "text": "完整交付 Canvas / react-konva 图形编排、动态表单引擎、管理后台看板、虚拟列表等高难度组件。"
+        },
+        {
+          "title": "AI 界面",
+          "text": "生产落地 AI 助手交互界面，覆盖流式渲染、Markdown / 代码块、工具结果卡片和多轮上下文操作。"
+        },
+        {
+          "title": "独立交付",
+          "text": "智能运维 AI 助手的前端与后端由本人单独交付，具备需求拆解、架构设计、编码实现、上线验收全链路执行能力。"
+        },
+        {
+          "title": "组长经验",
+          "text": "担任前端技术经理 2 年，主导微前端重构、CI/CD 流程与接口文档规范，建立技术方案与 Code Review 机制。"
+        },
+        {
+          "title": "工程化",
+          "text": "主导 pnpm Monorepo 与私有 npm 包发布，推行 Jenkins CI/CD + ApiFox 接口契约规范；FCP 优化实测提升 44%。"
+        }
+      ]
+    },
+    "contact": {
+      "sheet": "SHEET 06 — CONTACT",
+      "title": "想找一个能把 Agent 做进业务系统的人，可以从这里开始。",
+      "summary": "武汉科技大学本科，当前在牙颜（上海）医疗科技有限公司担任前端技术经理。",
+      "resume": "下载完整简历",
+      "yuque": "语雀",
+      "juejin": "掘金：JayDo257248",
+      "github": "GitHub",
+      "email": "邮箱",
+      "phone": "电话",
+      "works": "开源作品",
+      "stamp": "辞鸢 · APPROVED"
+    }
+  }
+}

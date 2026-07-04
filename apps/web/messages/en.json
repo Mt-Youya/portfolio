@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "title": "Dou Yangjie · Frontend-leaning Full-stack · AI Agent Engineering",
+    "description": "A frontend-leaning full-stack portfolio focused on React, Koa, LangChain, MCP, SSE, and AI Agent delivery."
+  },
+  "site": {
+    "nav": {
+      "label": "Primary navigation",
+      "items": [
+        {
+          "href": "#agent",
+          "label": "AI Agent"
+        },
+        {
+          "href": "#skills",
+          "label": "Skills"
+        },
+        {
+          "href": "#projects",
+          "label": "Work"
+        },
+        {
+          "href": "#contact",
+          "label": "Contact"
+        }
+      ]
+    },
+    "controls": {
+      "themeLight": "Switch to light drawing",
+      "themeDark": "Switch to night drawing",
+      "localeSwitch": "中文"
+    },
+    "hero": {
+      "sheet": "SHEET 01 — AGENT-FIRST PORTFOLIO",
+      "name": "Dou Yangjie / Ciyuan",
+      "roleBadge": "Frontend-leaning full-stack · AI Agent engineering",
+      "title": "Turning AI Agents into product-grade frontend experiences",
+      "subtitle": "I start from complex frontend systems and engineering practice, then extend into Koa.js, real-time communication, LangChain, Function Calling, and MCP. I can deliver an AI assistant end to end: interface, tool calls, context management, and production rollout.",
+      "primaryCta": "View Agent capability",
+      "resumeCta": "Download resume PDF",
+      "terminalTitle": "live agent trace",
+      "seal": "AI READY",
+      "loopLabels": ["Sense", "Plan", "Tool", "Observe"],
+      "stats": [
+        {
+          "value": "<300ms",
+          "label": "First-token latency in the operations AI assistant"
+        },
+        {
+          "value": "97%",
+          "label": "Structured JSON parsing success rate"
+        },
+        {
+          "value": "15min→2min",
+          "label": "Alert diagnosis time reduction"
+        }
+      ],
+      "terminal": {
+        "plan": "▸ [plan] Read alerts, logs, and knowledge context",
+        "tool": "▸ [tool] Call multiple tools through LangChain + Function Calling",
+        "observe": "▸ [observe] Unify model context through MCP and write back results",
+        "answer": "▸ [answer] Produce root-cause analysis, remediation advice, and readable result cards"
+      }
+    },
+    "agent": {
+      "sheet": "SHEET 02 — AI AGENT ENGINEERING",
+      "title": "The point is not a chat box. It is an Agent inside a real workflow.",
+      "summary": "The AI assistant in the resume is not a demo. It covers frontend interaction, Koa backend services, SSE streaming, tool calling, log search, knowledge retrieval, prompt governance, staged rollout, and data cleaning pipelines.",
+      "capabilities": [
+        {
+          "label": "Agent orchestration",
+          "text": "Built a multi-tool Agent with LangChain and Function Calling, connecting monitoring APIs, log search tools, and knowledge-base retrieval to generate alert root-cause analysis and remediation advice."
+        },
+        {
+          "label": "Context protocol",
+          "text": "Used MCP to manage multi-model context and support tool-call chains in multi-turn conversations, reducing the engineering complexity of model integration and context transfer."
+        },
+        {
+          "label": "AI frontend UX",
+          "text": "Shipped a production AI assistant interface with SSE streaming, token-by-token rendering, Markdown and code highlighting, context actions, and tool-result cards."
+        },
+        {
+          "label": "Prompt engineering",
+          "text": "Created prompt templates and a Few-shot example library, with versioning and staged rollout, stabilizing structured JSON parsing at 97%."
+        }
+      ],
+      "runtimeSteps": [
+        {
+          "label": "runtime step 1",
+          "text": "After an alert enters the system, normalize logs, monitoring metrics, and knowledge-base matches into Agent-consumable context."
+        },
+        {
+          "label": "runtime step 2",
+          "text": "LangChain decides the tool-call order, while Function Calling turns the intent into stable parameters."
+        },
+        {
+          "label": "runtime step 3",
+          "text": "MCP synchronizes cross-model context, and the frontend renders tool results as readable, traceable, follow-up-ready cards."
+        },
+        {
+          "label": "runtime step 4",
+          "text": "The final output includes root-cause analysis, remediation advice, structured JSON, and versioned staged rollout."
+        }
+      ]
+    },
+    "skills": {
+      "sheet": "SHEET 03 — FRONTEND-LED FULL STACK",
+      "title": "Frontend is the edge. Full-stack is the delivery model.",
+      "summary": "This is not generic full-stack positioning. The foundation is complex frontend interaction, performance, and engineering, extended into Node.js services, real-time communication, AI tooling, and desktop-adjacent work.",
+      "groups": [
+        {
+          "title": "Frontend frameworks and product UI",
+          "items": [
+            "React 18 + TypeScript with Redux / Zustand, plus solid understanding of Fiber scheduling and Hooks patterns",
+            "Vue 2/3 with Pinia / VueRouter, Composition API, and reactivity internals",
+            "Next.js 13+, Tailwind CSS, and shadcn/ui for maintainable product interfaces"
+          ]
+        },
+        {
+          "title": "Complex components and visualization",
+          "items": [
+            "React Flow and react-konva Canvas layered rendering for diagram and measurement interactions",
+            "Dynamic form engines, cross-field validation, Kanban boards, and drag sorting",
+            "Virtual lists, high-performance tables, and rich-text editor integration"
+          ]
+        },
+        {
+          "title": "AI and real-time communication",
+          "items": [
+            "LangChain Agent orchestration, Tool Calling, and multi-turn context management",
+            "MCP, Function Calling, prompt standards, and structured output governance",
+            "WebSocket heartbeat and reconnection, SSE streaming, and real-time task status sync"
+          ]
+        },
+        {
+          "title": "Backend and engineering systems",
+          "items": [
+            "Node.js / Koa.js middleware design, RESTful APIs, and JWT authentication",
+            "Vite / Webpack plugin development, build optimization, and code splitting",
+            "pnpm Monorepo, Jenkins CI/CD, ApiFox contracts, and private npm package releases"
+          ]
+        },
+        {
+          "title": "Architecture and performance",
+          "items": [
+            "qiankun micro-frontend decomposition, app communication, sandboxing, and independent deployment",
+            "Core Web Vitals governance, lazy loading, Tree-shaking, and long-task splitting",
+            "End-to-end delivery from requirement breakdown and architecture to implementation and launch verification"
+          ]
+        },
+        {
+          "title": "Graphics and desktop-adjacent work",
+          "items": [
+            "react-three-fiber / Three.js / vtk.js for medical model mesh parsing and interaction",
+            "Raycaster hit testing, BufferGeometry conversion, and model region coloring",
+            "Basic Electron packaging and process communication knowledge"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "sheet": "SHEET 04 — SELECTED WORK",
+      "title": "Resume projects reorganized around Agent delivery",
+      "summary": "The facts come from the resume PDF, but the display order changes: AI Agent first, then complex frontend systems, design systems, graphics, and platform engineering.",
+      "primary": "AI CORE",
+      "delivery": "DELIVERED",
+      "items": [
+        {
+          "eyebrow": "PROJECT 01 · Operations AI Assistant",
+          "title": "A production multi-tool Agent with Koa + React",
+          "summary": "Independently delivered the operations AI assistant end to end, covering UI, backend services, tool calls, context governance, prompt standards, and rollout mechanics.",
+          "bullets": [
+            "Supported SSE streaming, Markdown and code highlighting, context actions, and tool-result cards, with first-token latency under 300ms",
+            "Integrated monitoring APIs, log search, and knowledge retrieval through LangChain + Function Calling, reducing alert diagnosis from 15 minutes to under 2 minutes",
+            "Used MCP for unified multi-model context; prompt templates and Few-shot examples brought structured JSON parsing to 97%"
+          ],
+          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / Koa.js / LangChain / MCP / SSE / WebSocket"
+        },
+        {
+          "eyebrow": "PROJECT 02 · Oral Medical Intelligence Platform",
+          "title": "Ticket workflows, admin console, and dynamic form engine",
+          "summary": "Led the full medical ticket workflow and admin console, supporting differentiated permissions for doctors, technicians, and administrators.",
+          "bullets": [
+            "Built strategy configuration, role permission management, audit-log search, and business dashboards",
+            "Designed a linked-list-style dynamic form engine to solve parent-child validation dependencies, shortening iteration cycles by about 40%",
+            "Built a shared design system and component library, packaged as private npm modules, reducing repeated code by about 30%"
+          ],
+          "stack": "Vue3 / Pinia / VueRouter / Element Plus / TypeScript / Vite / pnpm"
+        },
+        {
+          "eyebrow": "PROJECT 03 · Cephalometric and Oral Model Systems",
+          "title": "Canvas measurement engine and 3D medical model interaction",
+          "summary": "Built graphics interaction capabilities for medical measurement and oral models, handling coordinate systems, measurement math, mesh parsing, and region selection.",
+          "bullets": [
+            "Used react-konva Group layers to decouple image coordinates from measurement coordinates, fixing value drift during scaling",
+            "Abstracted measurement calculations into composable strategy-based math tools, allowing new measurement items without changing core logic",
+            "Parsed .vtp polygon meshes with vtk.js, converted them to BufferGeometry, and used Raycaster for accurate region coloring and lasso selection"
+          ],
+          "stack": "React / Redux / react-konva / react-three-fiber / Three.js / vtk.js / TypeScript / Vite"
+        },
+        {
+          "eyebrow": "PROJECT 04 · Longmao Campus Fitness SaaS",
+          "title": "Micro-frontend refactor and CI/CD pipeline",
+          "summary": "Led a qiankun micro-frontend refactor, splitting a tightly coupled SaaS monolith into independently deployed sub-applications.",
+          "bullets": [
+            "Reduced new-feature release cycles from 2 weeks to 3 days",
+            "Built Jenkins + Docker CI/CD for automatic branch-merge builds and staged releases",
+            "Established API contract standards with ApiFox, improving frontend-backend collaboration efficiency by about 50%"
+          ],
+          "stack": "Vue2 / React / qiankun / React-Redux / Ant Design / ECharts / Jenkins / Docker"
+        }
+      ]
+    },
+    "highlights": {
+      "sheet": "SHEET 05 — HIGHLIGHTS",
+      "title": "Reusable capability, not just project history",
+      "summary": "These are the reasons I fit AI Agent productization: the frontend experience can be polished deeply, while backend and engineering delivery can still move independently.",
+      "items": [
+        {
+          "title": "Complex UI",
+          "text": "Delivered Canvas / react-konva graphics, dynamic form engines, admin dashboards, virtual lists, and other high-complexity frontend modules."
+        },
+        {
+          "title": "AI interface",
+          "text": "Shipped production AI assistant interaction covering streaming, Markdown and code blocks, tool-result cards, and multi-turn context actions."
+        },
+        {
+          "title": "Independent delivery",
+          "text": "Delivered both frontend and backend for the operations AI assistant, covering requirements, architecture, implementation, launch, and acceptance."
+        },
+        {
+          "title": "Team leadership",
+          "text": "Served as frontend technical manager for 2 years, leading micro-frontend refactoring, CI/CD, API documentation, technical planning, and code review."
+        },
+        {
+          "title": "Engineering",
+          "text": "Led pnpm Monorepo management and private npm publishing, promoted Jenkins CI/CD and ApiFox contract standards, and improved FCP by 44%."
+        }
+      ]
+    },
+    "contact": {
+      "sheet": "SHEET 06 — CONTACT",
+      "title": "If you need someone who can put Agents into business systems, start here.",
+      "summary": "B.S. from Wuhan University of Science and Technology. Currently frontend technical manager at Yayan Medical Technology.",
+      "resume": "Download full resume",
+      "yuque": "Yuque",
+      "juejin": "Juejin: JayDo257248",
+      "github": "GitHub",
+      "email": "Email",
+      "phone": "Phone",
+      "works": "Open-source work",
+      "stamp": "CIYUAN · APPROVED"
+    }
+  }
+}
