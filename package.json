@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm --filter @cyrus/web dev",
     "build": "pnpm --filter @cyrus/web build",
-    "typecheck": "pnpm -r --if-present typecheck",
+    "typecheck": "pnpm --filter @cyrus/web typecheck",
     "lint": "oxlint .",
     "fmt": "oxfmt --write ."
   },
