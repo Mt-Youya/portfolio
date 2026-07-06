@@ -8,7 +8,6 @@ export function ContactSection({
   sheet,
   title,
   summary,
-  resumeLabel,
   githubLabel,
   yuqueLabel,
   juejinLabel,

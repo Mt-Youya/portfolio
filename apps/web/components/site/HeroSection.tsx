@@ -14,7 +14,6 @@ export function HeroSection({
   title,
   subtitle,
   primaryCta,
-  resumeCta,
   terminalTitle,
   seal,
   loopLabels,
