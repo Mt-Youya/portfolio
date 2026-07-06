@@ -30,7 +30,12 @@ export function ContactSection({
   stampLabel: string
 }) {
   return (
-    <footer id="contact" data-motion-section data-contact-section className="relative overflow-hidden px-5 py-12 sm:px-8">
+    <footer
+      id="contact"
+      data-motion-section
+      data-contact-section
+      className="relative overflow-hidden px-5 py-12 sm:px-8"
+    >
       <div data-section-scan />
       <div
         data-card
