@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Dou Yangjie · Frontend-leaning Full-stack · AI Agent Engineering",
+    "title": "Frontend-leaning Full-stack · AI Agent Engineering",
     "description": "A frontend-leaning full-stack portfolio focused on React, Koa, LangChain, MCP, SSE, and AI Agent delivery."
   },
   "site": {
@@ -32,7 +32,7 @@
     },
     "hero": {
       "sheet": "SHEET 01 — AGENT-FIRST PORTFOLIO",
-      "name": "Dou Yangjie / Ciyuan",
+      "name": "Cyrus",
       "roleBadge": "Frontend-leaning full-stack · AI Agent engineering",
       "title": "Turning AI Agents into product-grade frontend experiences",
       "subtitle": "I start from complex frontend systems and engineering practice, then extend into Koa.js, real-time communication, LangChain, Function Calling, and MCP. I can deliver an AI assistant end to end: interface, tool calls, context management, and production rollout.",
