@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint ."
+    "lint": "next lint"
   },
   "dependencies": {
     "@cyrus/ui": "workspace:*",
