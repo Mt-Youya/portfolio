@@ -161,7 +161,7 @@
     "projects": {
       "sheet": "SHEET 04 — SELECTED WORK",
       "title": "Resume projects reorganized around Agent delivery",
-      "summary": "The facts come from the resume PDF, but the display order changes: AI Agent first, then complex frontend systems, design systems, graphics, and platform engineering.",
+      "summary": "AI Agent first, then complex frontend systems, design systems, graphics, and platform engineering.",
       "primary": "AI CORE",
       "delivery": "DELIVERED",
       "items": [

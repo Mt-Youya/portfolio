@@ -161,7 +161,7 @@
     "projects": {
       "sheet": "SHEET 04 — SELECTED WORK",
       "title": "项目经历按 Agent 与交付闭环重新组织",
-      "summary": "内容来自简历 PDF，但展示顺序做了调整：先讲 AI Agent，再讲复杂前端、设计系统、图形系统与工程化重构。",
+      "summary": "先讲 AI Agent，再讲复杂前端、设计系统、图形系统与工程化重构。",
       "primary": "AI CORE",
       "delivery": "DELIVERED",
       "items": [
