@@ -3,7 +3,7 @@ export const social = {
 }
 
 export const contact = {
-  email: "contact@cyrus.me",
+  email: "contact@yonjay.me",
   phone: "+86-15795096824",
 }
 
