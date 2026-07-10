@@ -1,20 +1,35 @@
 import { NextResponse } from "next/server"
+import { Redis } from "@upstash/redis"
 
 import type { Locale } from "@/i18n/routing"
 import profile from "@content/profile.json"
 import zhMessages from "@/messages/zh.json"
 import enMessages from "@/messages/en.json"
 
-export const runtime = "edge"
 export const dynamic = "force-dynamic"
 
-const CACHE_TTL = 10 * 60 * 1000
-type CacheEntry = { answer: string; repoCount: number | null; expires: number }
+const CACHE_TTL_SECONDS = 10 * 60
+const CACHE_TTL = CACHE_TTL_SECONDS * 1000
+type CacheValue = { answer: string; repoCount: number | null }
+type CacheEntry = CacheValue & { expires: number }
 const memCache = new Map<string, CacheEntry>()
 
 const DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
-const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL ?? "deepseek-chat"
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL ?? "deepseek-v4-pro"
 const GITHUB_LOGIN = profile.identity.github
+
+const redis =
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+    ? new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+      })
+    : process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
+      ? new Redis({
+          url: process.env.KV_REST_API_URL,
+          token: process.env.KV_REST_API_TOKEN,
+        })
+      : null
 
 type Lang = Locale
 
@@ -174,7 +189,7 @@ async function callDeepSeek(lang: Lang, repoCount: number): Promise<string> {
   return answer
 }
 
-async function getCached(key: string): Promise<CacheEntry | null> {
+async function getCached(key: string): Promise<CacheValue | null> {
   const entry = memCache.get(key)
   if (entry && entry.expires > Date.now()) {
     return entry
@@ -182,11 +197,32 @@ async function getCached(key: string): Promise<CacheEntry | null> {
   if (entry) {
     memCache.delete(key)
   }
+
+  if (redis) {
+    try {
+      const cached = await redis.get<CacheValue>(key)
+      if (cached?.answer) {
+        return cached
+      }
+    } catch {
+      return null
+    }
+  }
+
   return null
 }
 
 async function setCached(key: string, answer: string, repoCount: number | null) {
-  memCache.set(key, { answer, repoCount, expires: Date.now() + CACHE_TTL })
+  const value = { answer, repoCount }
+  memCache.set(key, { ...value, expires: Date.now() + CACHE_TTL })
+
+  if (redis) {
+    try {
+      await redis.set(key, value, { ex: CACHE_TTL_SECONDS })
+    } catch {
+      // Redis cache is best-effort; the in-memory cache still covers local/dev fallback.
+    }
+  }
 }
 
 export async function GET(request: Request): Promise<Response> {
