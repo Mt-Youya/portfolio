@@ -15,7 +15,7 @@ type CacheEntry = CacheValue & { expires: number }
 type AgentSource = "cache" | "deepseek" | "fallback"
 const memCache = new Map<string, CacheEntry>()
 
-const DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL ?? "deepseek-v4-pro"
 const GITHUB_LOGIN = profile.identity.github
 
@@ -173,6 +173,9 @@ async function callDeepSeek(lang: Lang, repoCount: number): Promise<string> {
     body: JSON.stringify({
       model: DEEPSEEK_MODEL,
       stream: false,
+      // This endpoint needs a short final sentence; reasoning mode can consume
+      // the small output budget before producing message.content.
+      thinking: { type: "disabled" },
       temperature: 0.7,
       max_tokens: 120,
       messages: [
@@ -187,11 +190,12 @@ async function callDeepSeek(lang: Lang, repoCount: number): Promise<string> {
   }
 
   const data = (await res.json()) as {
-    choices?: { message?: { content?: string } }[]
+    choices?: { finish_reason?: string; message?: { content?: string | null } }[]
   }
   const answer = data.choices?.[0]?.message?.content?.trim()
   if (!answer) {
-    throw new Error("deepseek: empty answer")
+    const finishReason = data.choices?.[0]?.finish_reason ?? "unknown"
+    throw new Error(`deepseek: empty answer (finish_reason=${finishReason})`)
   }
   return answer
 }
