@@ -18,18 +18,24 @@ const DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL ?? "deepseek-v4-pro"
 const GITHUB_LOGIN = profile.identity.github
 
-const redis =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? new Redis({
-        url: process.env.UPSTASH_REDIS_REST_URL,
-        token: process.env.UPSTASH_REDIS_REST_TOKEN,
-      })
-    : process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
-      ? new Redis({
-          url: process.env.KV_REST_API_URL,
-          token: process.env.KV_REST_API_TOKEN,
-        })
-      : null
+let redis: Redis | null | undefined
+
+function getRedis() {
+  if (redis !== undefined) {
+    return redis
+  }
+
+  const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN
+
+  if (!url || !token || !url.startsWith("https://")) {
+    redis = null
+    return redis
+  }
+
+  redis = new Redis({ url, token })
+  return redis
+}
 
 type Lang = Locale
 
@@ -198,6 +204,7 @@ async function getCached(key: string): Promise<CacheValue | null> {
     memCache.delete(key)
   }
 
+  const redis = getRedis()
   if (redis) {
     try {
       const cached = await redis.get<CacheValue>(key)
@@ -216,6 +223,7 @@ async function setCached(key: string, answer: string, repoCount: number | null) 
   const value = { answer, repoCount }
   memCache.set(key, { ...value, expires: Date.now() + CACHE_TTL })
 
+  const redis = getRedis()
   if (redis) {
     try {
       await redis.set(key, value, { ex: CACHE_TTL_SECONDS })
