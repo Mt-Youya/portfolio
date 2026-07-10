@@ -3,20 +3,20 @@
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 
-import { gsap, registerGsapPlugins, ScrollTrigger } from "@/lib/gsap"
+import { ensurePlugins, gsap, ScrollTrigger } from "@/lib/gsap"
 
 type Cleanup = () => void
 
 export function PortfolioMotion() {
   const layerRef = useRef<HTMLDivElement>(null)
 
-  useGSAP(() => {
-    registerGsapPlugins()
-
+  useGSAP(async () => {
     const root = document.querySelector<HTMLElement>("[data-portfolio-root]")
     if (!root) {
       return
     }
+
+    await ensurePlugins("motionPath", "drawSVG")
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     const q = gsap.utils.selector(root)
@@ -194,7 +194,12 @@ function animateHeroCore(q: ReturnType<typeof gsap.utils.selector>, cleanup: Cle
     const x = (event.clientX / window.innerWidth - 0.5) * 28
     const y = (event.clientY / window.innerHeight - 0.5) * 28
 
-    gsap.to(q("[data-agent-core]"), {
+    const core = q("[data-agent-core]")
+    if (!core.length) {
+      return
+    }
+
+    gsap.to(core, {
       x,
       y,
       duration: 0.7,

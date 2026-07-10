@@ -1,0 +1,1 @@
+D:/Codes/github/portfolio/.agents/commands/gen-commit.md

@@ -9,6 +9,7 @@ export function AgentSection({
   capabilities,
   loopLabels,
   runtimeSteps,
+  runtimeAnnotations,
 }: {
   sheet: string
   title: string
@@ -16,6 +17,7 @@ export function AgentSection({
   capabilities: Capability[]
   loopLabels: string[]
   runtimeSteps: RuntimeStep[]
+  runtimeAnnotations?: string[]
 }) {
   return (
     <section id="agent" className="border-b border-grid px-5 py-16 sm:px-8 lg:py-20">
@@ -29,7 +31,7 @@ export function AgentSection({
             </article>
           ))}
         </div>
-        <AgentRuntimeStage labels={loopLabels} steps={runtimeSteps} />
+        <AgentRuntimeStage labels={loopLabels} steps={runtimeSteps} annotations={runtimeAnnotations} />
       </div>
     </section>
   )

@@ -1,6 +1,12 @@
 import type { RuntimeStep } from "@/components/site/types"
 
-export function AgentRuntimeStage({ labels, steps }: { labels: string[]; steps: RuntimeStep[] }) {
+type AgentRuntimeStageProps = {
+  labels: string[]
+  steps: RuntimeStep[]
+  annotations?: string[]
+}
+
+export function AgentRuntimeStage({ labels, steps, annotations }: AgentRuntimeStageProps) {
   const [perceive, plan, tool, observe] = labels
 
   return (
@@ -50,22 +56,42 @@ export function AgentRuntimeStage({ labels, steps }: { labels: string[]; steps: 
             [360, 134, plan],
             [588, 258, tool],
             [360, 386, observe],
-          ].map(([x, y, label]) => (
-            <g key={label as string} data-runtime-node transform={`translate(${x} ${y})`}>
-              <circle r="46" fill="var(--paper-raised)" stroke="var(--blueprint)" strokeWidth="2" />
-              <circle
-                r="60"
-                fill="none"
-                stroke="var(--blueprint)"
-                strokeWidth="1"
-                strokeDasharray="4 10"
-                opacity="0.55"
-              />
-              <text textAnchor="middle" y="5" fill="var(--ink)" fontSize="15" fontFamily="monospace">
-                {label as string}
-              </text>
-            </g>
-          ))}
+          ].map(([x, y, label], index) => {
+            const isToolNode = index === 2
+            const stroke = isToolNode ? "var(--seal)" : "var(--blueprint)"
+            const annotation = annotations?.[index]
+
+            return (
+              <g key={label as string} data-runtime-node transform={`translate(${x} ${y})`}>
+                <circle r="46" fill="var(--paper-raised)" stroke={stroke} strokeWidth={isToolNode ? 2.5 : 2} />
+                <circle
+                  r="60"
+                  fill="none"
+                  stroke={stroke}
+                  strokeWidth="1"
+                  strokeDasharray="4 10"
+                  opacity="0.55"
+                />
+                <text textAnchor="middle" y="5" fill="var(--ink)" fontSize="15" fontFamily="monospace">
+                  {label as string}
+                </text>
+                {annotation ? (
+                  <text
+                    data-runtime-annotation
+                    textAnchor="middle"
+                    y="78"
+                    fill={isToolNode ? "var(--seal)" : "var(--ink-soft)"}
+                    fontSize="11"
+                    fontFamily="monospace"
+                    letterSpacing="1"
+                  >
+                    {isToolNode ? "本站驱动 · " : ""}
+                    {annotation}
+                  </text>
+                ) : null}
+              </g>
+            )
+          })}
           <g data-runtime-token>
             <rect x="-18" y="-18" width="36" height="36" fill="var(--seal)" opacity="0.92" />
             <path d="M-10 0H10M0 -10V10" stroke="var(--paper-raised)" strokeWidth="2" />

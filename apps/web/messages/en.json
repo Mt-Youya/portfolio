@@ -40,6 +40,15 @@
       "resumeCta": "Download resume PDF",
       "terminalTitle": "live agent trace",
       "seal": "AI READY",
+      "positioning": "Full-Stack Engineer, AI Agent Focused",
+      "fallbackAnswer": "Hi, I'm Cyrus's agent. He started in frontend, ships Tauri desktop and Node backends, and now mostly has me run his agent-engineering work — like TubePilot, a pipeline that moves YouTube to Bilibili. Mostly on domestic LLMs.",
+      "terminalTrace": {
+        "command": "$ agent run introduce --lang {lang}",
+        "plan": "▸ [plan]    read profile.json … done",
+        "fetch": "▸ [tool]    github.fetch(Mt-Youya) → {n} repos",
+        "select": "▸ [ctx]     deepseek.select(model=deepseek-v4-pro)",
+        "answerPrefix": "▸ [answer]  "
+      },
       "loopLabels": ["Sense", "Plan", "Tool", "Observe"],
       "stats": [
         {
@@ -84,6 +93,7 @@
           "text": "Created prompt templates and a Few-shot example library, with versioning and staged rollout, stabilizing structured JSON parsing at 97%."
         }
       ],
+      "runtimeAnnotations": ["github.fetch", "profile prefilter", "DeepSeek V4 Pro", "10min cache"],
       "runtimeSteps": [
         {
           "label": "runtime step 1",
@@ -107,6 +117,14 @@
       "sheet": "SHEET 03 — FRONTEND-LED FULL STACK",
       "title": "Frontend is the edge. Full-stack is the delivery model.",
       "summary": "This is not generic full-stack positioning. The foundation is complex frontend interaction, performance, and engineering, extended into Node.js services, real-time communication, AI tooling, and desktop-adjacent work.",
+      "layerLabels": {
+        "ui": "UI Layer",
+        "state": "State Layer",
+        "api": "API Layer",
+        "data": "Data Layer",
+        "infra": "Infra Layer"
+      },
+      "caption": "Full-stack = able to take this machine apart and put it back together.",
       "groups": [
         {
           "title": "Frontend frameworks and product UI",
@@ -161,7 +179,7 @@
     "projects": {
       "sheet": "SHEET 04 — SELECTED WORK",
       "title": "Resume projects reorganized around Agent delivery",
-      "summary": "The facts come from the resume PDF, but the display order changes: AI Agent first, then complex frontend systems, design systems, graphics, and platform engineering.",
+      "summary": "AI Agent first, then complex frontend systems, design systems, graphics, and platform engineering.",
       "primary": "AI CORE",
       "delivery": "DELIVERED",
       "items": [
@@ -211,8 +229,13 @@
         }
       ]
     },
+    "timeline": {
+      "sheet": "SHEET 05 — CAREER WAYPOINT",
+      "title": "Current delivery record",
+      "summary": "Current work at Yayan Medical, anchored by complex frontend delivery and a production AI assistant."
+    },
     "highlights": {
-      "sheet": "SHEET 05 — HIGHLIGHTS",
+      "sheet": "SHEET 06 — HIGHLIGHTS",
       "title": "Reusable capability, not just project history",
       "summary": "These are the reasons I fit AI Agent productization: the frontend experience can be polished deeply, while backend and engineering delivery can still move independently.",
       "items": [
@@ -239,7 +262,7 @@
       ]
     },
     "contact": {
-      "sheet": "SHEET 06 — CONTACT",
+      "sheet": "SHEET 07 — CONTACT",
       "title": "If you need someone who can put Agents into business systems, start here.",
       "summary": "B.S. from Wuhan University of Science and Technology. Currently frontend technical manager at Yayan Medical Technology.",
       "resume": "Download full resume",

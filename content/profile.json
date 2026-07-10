@@ -1,0 +1,102 @@
+{
+  "$schema": "./profile.schema.json",
+  "identity": {
+    "nameZh": "辞鸢",
+    "nameEn": "Cyrus",
+    "github": "Mt-Youya"
+  },
+  "positioning": {
+    "zh": "全栈工程师 · AI Agent 方向",
+    "en": "Full-Stack Engineer, AI Agent Focused"
+  },
+  "stack": {
+    "ui": ["React 18", "Vue 2/3", "TypeScript", "Next.js", "Tailwind CSS", "shadcn/ui"],
+    "state": ["Redux", "Zustand", "Pinia"],
+    "api": ["Node.js", "Koa.js"],
+    "data": ["MySQL", "Redis", "知识库检索", "日志检索", "Function Calling", "MCP"],
+    "infra": ["Vite", "Webpack", "qiankun", "Jenkins", "Docker", "pnpm Monorepo", "私有 npm"]
+  },
+  "projects": [
+    {
+      "id": "ops-agent",
+      "name": "智能运维 AI 助手",
+      "tagline": {
+        "zh": "独立全栈交付智能运维 AI 助手,覆盖交互界面、后端服务、工具调用、上下文治理、Prompt 规范和上线机制。",
+        "en": "Independently delivered the operations AI assistant end to end, covering UI, backend services, tool calls, context governance, prompt standards, and rollout mechanics."
+      },
+      "stack": ["React 18", "Redux", "Zustand", "TypeScript", "Next.js", "Koa.js", "LangChain", "MCP", "SSE", "WebSocket"],
+      "highlights": [
+        "支持 SSE 流式渲染、Markdown / 代码块高亮、上下文操作与工具结果卡片,首 token 延迟低于 300ms",
+        "LangChain + Function Calling 集成监控 API、日志检索与知识库检索,将告警研判从 15 分钟压缩到 2 分钟以内",
+        "MCP 统一多模型上下文,Prompt 模板与 Few-shot 示例库让结构化输出解析成功率达到 97%"
+      ],
+      "isFlagship": true
+    },
+    {
+      "id": "oral-medical",
+      "name": "口腔医学智能平台",
+      "tagline": {
+        "zh": "主导医学端病例工单全流程页面与管理后台,支撑医生、技师、管理员三类角色的差异化权限体系。",
+        "en": "Led the full medical ticket workflow and admin console, supporting differentiated permissions for doctors, technicians, and administrators."
+      },
+      "stack": ["Vue3", "Pinia", "VueRouter", "Element Plus", "TypeScript", "Vite", "pnpm"],
+      "highlights": [
+        "实现策略配置面板、角色权限管理、审计日志检索与业务数据看板",
+        "用链表结构设计动态表单引擎,解决子项依赖父项状态的校验难题,迭代周期缩短约 40%",
+        "建设公共设计系统与组件库,抽取私有 npm 包供多子应用复用,消除重复代码约 30%"
+      ],
+      "isFlagship": false
+    },
+    {
+      "id": "cephalometric",
+      "name": "医学头影测量系统",
+      "tagline": {
+        "zh": "围绕医学测量和口腔模型建立图形交互能力,处理坐标系、测量计算、模型解析与选区交互。",
+        "en": "Built graphics interaction capabilities for medical measurement and oral models, handling coordinate systems, measurement math, mesh parsing, and region selection."
+      },
+      "stack": ["React", "Redux", "react-konva", "react-three-fiber", "Three.js", "vtk.js", "TypeScript", "Vite"],
+      "highlights": [
+        "使用 react-konva 通过 Group 层级解耦图片坐标系与测量逻辑坐标系,解决缩放时测量值漂移",
+        "基于策略模式将差异化测量计算抽象成可组合数学工具链,新增测量项无需修改核心逻辑",
+        "引入 vtk.js 解析 .vtp 多边形网格并转换为 BufferGeometry,用 Raycaster 实现精准分区上色与套索选区"
+      ],
+      "isFlagship": false
+    },
+    {
+      "id": "longmao-saas",
+      "name": "龙猫校园智能体测平台",
+      "tagline": {
+        "zh": "主导 qiankun 微前端重构,把高度耦合的 SaaS 单体拆解为多个独立子应用,支撑独立部署与快速迭代。",
+        "en": "Led a qiankun micro-frontend refactor, splitting a tightly coupled SaaS monolith into independently deployed sub-applications."
+      },
+      "stack": ["Vue2", "React", "qiankun", "React-Redux", "Ant Design", "ECharts", "Jenkins", "Docker"],
+      "highlights": [
+        "新功能上线周期从 2 周缩短到 3 天",
+        "搭建 Jenkins + Docker CI/CD 流水线,实现分支合并自动构建与灰度发布",
+        "配合 ApiFox 建立接口契约规范,前后端联调效率提升约 50%"
+      ],
+      "isFlagship": false
+    }
+  ],
+  "experience": [
+    {
+      "period": "2021.06 – 至今",
+      "role": "前端技术经理 / 高级前端工程师",
+      "company": "牙颜(上海)医疗科技有限公司",
+      "achievement": {
+        "zh": "独立全栈交付智能运维 AI 助手(Koa.js + React),基于 LangChain + Function Calling 构建多工具 Agent,告警根因定位从 15 分钟压缩至 2 分钟;首 token 延迟 <300ms",
+        "en": "Solely delivered an AIOps assistant (Koa.js + React); built a multi-tool agent via LangChain + Function Calling, cutting root-cause triage from 15 min to 2 min; first-token latency <300ms"
+      }
+    }
+  ],
+  "deepseekNote": "本站 Hero introduce 由 DeepSeek V4 Pro 驱动:在 /api/agent 中读取 profile 预筛字段与 GitHub pinned 数据,按 zh/en 生成单句自我介绍,并用 10min locale 分键缓存兜底。",
+  "contact": {
+    "email": "contact@yonjay.me",
+    "github": "https://github.com/Mt-Youya",
+    "extra": [
+      { "label": "个人网站", "url": "https://yonjay.me" },
+      { "label": "语雀", "url": "https://yuque.com/yonjay" },
+      { "label": "掘金", "url": "https://juejin.cn/user/JayDo257248" }
+    ]
+  }
+}

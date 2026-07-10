@@ -40,6 +40,15 @@
       "resumeCta": "下载简历 PDF",
       "terminalTitle": "live agent trace",
       "seal": "AI READY",
+      "positioning": "全栈工程师 · AI Agent 方向",
+      "fallbackAnswer": "你好,我是辞鸢的 Agent。他写前端出身,做过 Tauri 桌面端与 Node 后端,现在主要让我替他跑 Agent 工程的活——比如 TubePilot,一个把 YouTube 搬运到 Bilibili 的自动化流水线。国产模型用得多。",
+      "terminalTrace": {
+        "command": "$ agent run introduce --lang {lang}",
+        "plan": "▸ [plan]    读取 profile.json … done",
+        "fetch": "▸ [tool]    github.fetch(Mt-Youya) → {n} repos",
+        "select": "▸ [ctx]     deepseek.select(model=deepseek-v4-pro)",
+        "answerPrefix": "▸ [answer]  "
+      },
       "loopLabels": ["感知", "规划", "工具", "观察"],
       "stats": [
         {
@@ -84,6 +93,7 @@
           "text": "制定模板与 Few-shot 示例库，建立版本管理与灰度发布机制，将结构化 JSON 输出解析成功率稳定到 97%。"
         }
       ],
+      "runtimeAnnotations": ["github.fetch", "profile 预筛", "DeepSeek V4 Pro", "10min 缓存"],
       "runtimeSteps": [
         {
           "label": "runtime step 1",
@@ -107,6 +117,14 @@
       "sheet": "SHEET 03 — FRONTEND-LED FULL STACK",
       "title": "前端是优势，全栈是交付方式",
       "summary": "定位不是泛泛的全栈，而是以前端复杂交互、性能与工程化为根基，向 Node.js 后端、实时通信、AI 工具链与桌面端能力延伸。",
+      "layerLabels": {
+        "ui": "UI 层",
+        "state": "状态层",
+        "api": "API 层",
+        "data": "数据层",
+        "infra": "基建层"
+      },
+      "caption": "全栈 = 能把这台机器拆了再装回去。",
       "groups": [
         {
           "title": "前端框架与产品界面",
@@ -161,7 +179,7 @@
     "projects": {
       "sheet": "SHEET 04 — SELECTED WORK",
       "title": "项目经历按 Agent 与交付闭环重新组织",
-      "summary": "内容来自简历 PDF，但展示顺序做了调整：先讲 AI Agent，再讲复杂前端、设计系统、图形系统与工程化重构。",
+      "summary": "先讲 AI Agent，再讲复杂前端、设计系统、图形系统与工程化重构。",
       "primary": "AI CORE",
       "delivery": "DELIVERED",
       "items": [
@@ -211,8 +229,13 @@
         }
       ]
     },
+    "timeline": {
+      "sheet": "SHEET 05 — CAREER WAYPOINT",
+      "title": "当前交付记录",
+      "summary": "当前核心经历聚焦牙颜医疗：复杂前端、工程化治理与 AI 助手全栈交付。"
+    },
     "highlights": {
-      "sheet": "SHEET 05 — HIGHLIGHTS",
+      "sheet": "SHEET 06 — HIGHLIGHTS",
       "title": "可以被复用的能力，不只是项目经历",
       "summary": "这些能力决定了我适合做 AI Agent 产品化：前端体验能打磨到位，后端和工程链路也能独立推进。",
       "items": [
@@ -239,7 +262,7 @@
       ]
     },
     "contact": {
-      "sheet": "SHEET 06 — CONTACT",
+      "sheet": "SHEET 07 — CONTACT",
       "title": "想找一个能把 Agent 做进业务系统的人，可以从这里开始。",
       "summary": "武汉科技大学本科，当前在牙颜（上海）医疗科技有限公司担任前端技术经理。",
       "resume": "下载完整简历",

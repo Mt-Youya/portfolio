@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "辞鸢 Profile",
+  "description": "结构化档案真相源(ADR R3)。同时喂 Hero 真跑(DeepSeek 预筛关键字段)、SHEET 04 项目卡、SHEET 05 时间线。程序吃本文件,人吃简历 PDF。",
+  "type": "object",
+  "required": ["identity", "positioning", "stack", "projects", "experience", "contact"],
+  "properties": {
+    "identity": {
+      "type": "object",
+      "description": "身份元素",
+      "required": ["nameZh", "nameEn", "github"],
+      "properties": {
+        "nameZh": { "type": "string", "description": "中文名/网名,如「辞鸢」" },
+        "nameEn": { "type": "string", "description": "西文名,如「Cyrus」" },
+        "github": { "type": "string", "description": "GitHub 用户名,如「Mt-Youya」" }
+      }
+    },
+    "positioning": {
+      "type": "object",
+      "description": "定位标签,用于 Hero 大标题第二行与 DeepSeek prompt 预筛",
+      "required": ["zh", "en"],
+      "properties": {
+        "zh": { "type": "string", "example": "全栈工程师 · AI Agent 方向" },
+        "en": { "type": "string", "example": "Full-Stack Engineer, AI Agent Focused" }
+      }
+    },
+    "stack": {
+      "type": "object",
+      "description": "技术栈,按 SHEET 03 爆炸图五层组织。用于 DeepSeek prompt 预筛与标注线",
+      "required": ["ui", "state", "api", "data", "infra"],
+      "properties": {
+        "ui": { "type": "array", "items": { "type": "string" }, "description": "UI 层:React/Vue/TS 等" },
+        "state": { "type": "array", "items": { "type": "string" }, "description": "状态层" },
+        "api": { "type": "array", "items": { "type": "string" }, "description": "API 层:Node.js/Nest 等" },
+        "data": { "type": "array", "items": { "type": "string" }, "description": "数据层" },
+        "infra": { "type": "array", "items": { "type": "string" }, "description": "基建层:Rust/Tauri 等" }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "description": "代表项目(工作项目,简历真实交付)。展示优先级 = 数组顺序。首项为 AI Agent 主打(isFlagship=true,触发 FLAGSHIP 标记)。",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "tagline", "stack", "highlights"],
+        "properties": {
+          "id": { "type": "string", "description": "图号 slug,如「tubepilot」,用于 PROJ-01 编号" },
+          "name": { "type": "string" },
+          "url": { "type": "string", "description": "项目部署 URL,项目卡点击跳转" },
+          "tagline": { "type": "object", "required": ["zh", "en"], "properties": { "zh": { "type": "string" }, "en": { "type": "string" } }, "description": "一句话功能描述" },
+          "stack": { "type": "array", "items": { "type": "string" }, "description": "Mono 技术栈标签" },
+          "highlights": { "type": "array", "items": { "type": "string" }, "description": "技术亮点,用于 Dialog 详情" },
+          "isFlagship": { "type": "boolean", "description": "是否主打项目(仅 TubePilot true),触发 mini pipeline 动画" }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "description": "经历时间线(SHEET 05)。按时间倒序。数据真实,禁止造假(ADR-0003)",
+      "items": {
+        "type": "object",
+        "required": ["period", "role", "company", "achievement"],
+        "properties": {
+          "period": { "type": "string", "description": "Mono 小字时间,如「2023.06 – 至今」" },
+          "role": { "type": "string", "description": "角色,如「前端工程师」" },
+          "company": { "type": "string", "description": "公司,如「牙颜医疗」" },
+          "achievement": { "type": "object", "required": ["zh", "en"], "properties": { "zh": { "type": "string" }, "en": { "type": "string" } }, "description": "一句话成果" }
+        }
+      }
+    },
+    "deepseekNote": {
+      "type": "string",
+      "description": "DeepSeek 工程化一句话(SHEET 02 工具调用节点标注与 prompt 预筛用),如「选型理由 + 本站真跑驱动」。须真实(ADR-0003)"
+    },
+    "contact": {
+      "type": "object",
+      "required": ["email"],
+      "properties": {
+        "email": { "type": "string" },
+        "github": { "type": "string", "description": "GitHub 主页 URL" },
+        "extra": { "type": "array", "items": { "type": "object", "properties": { "label": { "type": "string" }, "url": { "type": "string" } } } }
+      }
+    }
+  }
+}

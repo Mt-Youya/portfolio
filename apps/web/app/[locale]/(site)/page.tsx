@@ -6,9 +6,11 @@ import { HeroSection } from "@/components/site/HeroSection"
 import { HighlightsSection } from "@/components/site/HighlightsSection"
 import { ProjectsSection } from "@/components/site/ProjectsSection"
 import { SiteHeader } from "@/components/site/SiteHeader"
-import { SkillsSection } from "@/components/site/SkillsSection"
-import type { Capability, Highlight, NavItem, Project, RuntimeStep, SkillGroup, Stat } from "@/components/site/types"
+import { StackExploded } from "@/components/site/StackExploded"
+import { Timeline } from "@/components/site/Timeline"
+import type { Capability, Highlight, NavItem, RuntimeStep, Stat } from "@/components/site/types"
 import { PortfolioMotion } from "@/components/motion/PortfolioMotion"
+import profile from "@/lib/profile"
 import { routing, type Locale } from "@/i18n/routing"
 
 type HomePageProps = {
@@ -34,12 +36,11 @@ export default async function HomePage({ params }: HomePageProps) {
 
   const t = await getTranslations("site")
   const navItems = t.raw("nav.items") as NavItem[]
-  const stats = t.raw("hero.stats") as Stat[]
+  // const stats = t.raw("hero.stats") as Stat[]
   const loopLabels = t.raw("hero.loopLabels") as string[]
   const capabilities = t.raw("agent.capabilities") as Capability[]
   const runtimeSteps = t.raw("agent.runtimeSteps") as RuntimeStep[]
-  const projects = t.raw("projects.items") as Project[]
-  const skillGroups = t.raw("skills.groups") as SkillGroup[]
+  const profileProjects = profile.projects
   const highlights = t.raw("highlights.items") as Highlight[]
   const nextLocale = locale === "zh" ? "en" : "zh"
   const localeHref = `/${nextLocale}`
@@ -57,23 +58,13 @@ export default async function HomePage({ params }: HomePageProps) {
       />
 
       <HeroSection
+        locale={locale}
         sheet={t("hero.sheet")}
         name={t("hero.name")}
         roleBadge={t("hero.roleBadge")}
-        title={t("hero.title")}
         subtitle={t("hero.subtitle")}
         primaryCta={t("hero.primaryCta")}
         resumeCta={t("hero.resumeCta")}
-        terminalTitle={t("hero.terminalTitle")}
-        seal={t("hero.seal")}
-        loopLabels={loopLabels}
-        stats={stats}
-        terminal={{
-          plan: t("hero.terminal.plan"),
-          tool: t("hero.terminal.tool"),
-          observe: t("hero.terminal.observe"),
-          answer: t("hero.terminal.answer"),
-        }}
       />
 
       <AgentSection
@@ -83,22 +74,41 @@ export default async function HomePage({ params }: HomePageProps) {
         capabilities={capabilities}
         loopLabels={loopLabels}
         runtimeSteps={runtimeSteps}
+        runtimeAnnotations={t.raw("agent.runtimeAnnotations") as string[]}
       />
 
-      <SkillsSection
+      <StackExploded
         sheet={t("skills.sheet")}
         title={t("skills.title")}
         summary={t("skills.summary")}
-        skillGroups={skillGroups}
+        stack={profile.stack}
+        locale={locale}
+        layerLabels={{
+          ui: t("skills.layerLabels.ui"),
+          state: t("skills.layerLabels.state"),
+          api: t("skills.layerLabels.api"),
+          data: t("skills.layerLabels.data"),
+          infra: t("skills.layerLabels.infra"),
+        }}
+        caption={t("skills.caption")}
       />
 
       <ProjectsSection
         sheet={t("projects.sheet")}
         title={t("projects.title")}
         summary={t("projects.summary")}
-        projects={projects}
+        projects={profileProjects}
+        locale={locale}
         primaryLabel={t("projects.primary")}
         deliveryLabel={t("projects.delivery")}
+      />
+
+      <Timeline
+        sheet={t("timeline.sheet")}
+        title={t("timeline.title")}
+        summary={t("timeline.summary")}
+        experience={profile.experience}
+        locale={locale}
       />
 
       <HighlightsSection
