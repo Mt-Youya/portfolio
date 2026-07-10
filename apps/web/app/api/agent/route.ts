@@ -12,6 +12,7 @@ const CACHE_TTL_SECONDS = 10 * 60
 const CACHE_TTL = CACHE_TTL_SECONDS * 1000
 type CacheValue = { answer: string; repoCount: number | null }
 type CacheEntry = CacheValue & { expires: number }
+type AgentSource = "cache" | "deepseek" | "fallback"
 const memCache = new Map<string, CacheEntry>()
 
 const DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
@@ -197,7 +198,7 @@ async function callDeepSeek(lang: Lang, repoCount: number): Promise<string> {
 
 async function getCached(key: string): Promise<CacheValue | null> {
   const entry = memCache.get(key)
-  if (entry && entry.expires > Date.now()) {
+  if (entry && entry.expires > Date.now() && entry.repoCount !== null) {
     return entry
   }
   if (entry) {
@@ -208,7 +209,7 @@ async function getCached(key: string): Promise<CacheValue | null> {
   if (redis) {
     try {
       const cached = await redis.get<CacheValue>(key)
-      if (cached?.answer) {
+      if (cached?.answer && cached.repoCount !== null) {
         return cached
       }
     } catch {
@@ -233,6 +234,12 @@ async function setCached(key: string, answer: string, repoCount: number | null) 
   }
 }
 
+function agentResponse(value: CacheValue, source: AgentSource, error?: unknown) {
+  const debug = process.env.NODE_ENV !== "production"
+  const body = debug && error instanceof Error ? { ...value, source, error: error.message } : { ...value, source }
+  return NextResponse.json(body)
+}
+
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url)
   const langParam = url.searchParams.get("lang")
@@ -245,17 +252,17 @@ export async function GET(request: Request): Promise<Response> {
   const cacheKey = `agent:intro:${lang}`
   const cached = await getCached(cacheKey)
   if (cached) {
-    return NextResponse.json({ answer: cached.answer, repoCount: cached.repoCount })
+    return agentResponse(cached, "cache")
   }
 
   try {
     const repoCount = await fetchGithubRepoCount()
     const answer = await callDeepSeek(lang, repoCount)
     await setCached(cacheKey, answer, repoCount)
-    return NextResponse.json({ answer, repoCount })
-  } catch {
+    return agentResponse({ answer, repoCount }, "deepseek")
+  } catch (error) {
+    console.error("[api/agent] fallback", error)
     const fallback = fallbackAnswer(lang)
-    await setCached(cacheKey, fallback, null)
-    return NextResponse.json({ answer: fallback, repoCount: null })
+    return agentResponse({ answer: fallback, repoCount: null }, "fallback", error)
   }
 }
