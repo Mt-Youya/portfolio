@@ -1,6 +1,7 @@
 "use client"
 
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import { useTranslations } from "next-intl"
 
 import { Button } from "@cyrus/ui/button"
@@ -15,7 +16,7 @@ export function ThemeToggle() {
 
   return (
     <Button type="button" variant="outline" size="icon" aria-label={label} title={label} onClick={toggleTheme}>
-      {theme === "dark" ? <Sun aria-hidden="true" size={18} /> : <Moon aria-hidden="true" size={18} />}
+      {theme === "dark" ? <HugeiconsIcon icon={Sun} size={18} /> : <HugeiconsIcon icon={Moon} aria-hidden="true" size={18} />}
     </Button>
   )
 }
