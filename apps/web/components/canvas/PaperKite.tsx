@@ -23,12 +23,7 @@ function KiteMesh() {
 
   const geometry = useMemo(() => {
     const g = new THREE.BufferGeometry()
-    const verts = new Float32Array([
-      0, 1.4, 0,
-      -1, 0, 0.15,
-      1, 0, 0.15,
-      0, -1.2, 0,
-    ])
+    const verts = new Float32Array([0, 1.4, 0, -1, 0, 0.15, 1, 0, 0.15, 0, -1.2, 0])
     g.setAttribute("position", new THREE.BufferAttribute(verts, 3))
     g.setIndex([0, 1, 2, 1, 2, 3])
     g.computeVertexNormals()

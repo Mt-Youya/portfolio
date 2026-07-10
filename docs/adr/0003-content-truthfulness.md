@@ -11,6 +11,7 @@
 **Status**: accepted
 
 **Considered Options**:
+
 - N4 真跑取数 + 展示项目=8 个已部署个人项目(非 pinned 约束) —— 采纳(修订:原「展示=pinned」改为「展示=已部署个人项目」,因 `links.ts` 有 8 个已部署项目且数据完整)
 - N1/N2/N3 —— 拒绝(见 grill 记录)
 - B1 保留 5 行改「选型评估」—— 拒绝:未做过 4 个选型评估
@@ -18,6 +19,7 @@
 - B3 保留 5 行降格「认知」—— 拒绝:太弱,撑不起卖点
 
 **Consequences**:
+
 - §0.1 卖点 #2、§2 SHEET 02 编排、§2 SHEET 04「6 个」均需修订(「6 个」→「8 个」)
 - SHEET 04 展示 8 个已部署个人项目,数据源 `content/profile.json`
 - SHEET 02 从「五模型 BOM + hover 验讫章」改版为「DeepSeek 单模型工程化详图」——印泥红在 SHEET 02 仅保留「本站驱动」一处(hover 验讫章随五模型删除而消失),全站印泥红仍 3 处:SHEET 00 印章、SHEET 02「本站驱动」、SHEET 06 终章印章,不超限

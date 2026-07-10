@@ -15,9 +15,7 @@ export function DrawLine({ className = "", vertical = false, length = "100%", la
         className="block bg-grid"
         style={vertical ? { width: "1px", height: "100%" } : { height: "1px", width: "100%" }}
       />
-      {label ? (
-        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-soft">{label}</span>
-      ) : null}
+      {label ? <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-soft">{label}</span> : null}
     </span>
   )
 }

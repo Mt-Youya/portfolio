@@ -6,9 +6,7 @@ type SheetLabelProps = {
 
 export function SheetLabel({ sheet, href, className = "" }: SheetLabelProps) {
   const content = (
-    <span className={`font-mono text-xs uppercase tracking-[0.24em] text-blueprint ${className}`}>
-      {sheet}
-    </span>
+    <span className={`font-mono text-xs uppercase tracking-[0.24em] text-blueprint ${className}`}>{sheet}</span>
   )
 
   if (!href) {

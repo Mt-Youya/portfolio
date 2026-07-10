@@ -2,6 +2,13 @@
   "name": "cyrus-portfolio",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @cyrus/web dev",
+    "build": "pnpm --filter @cyrus/web build",
+    "typecheck": "pnpm --filter @cyrus/web typecheck",
+    "lint": "oxlint .",
+    "fmt": "oxfmt --write ."
+  },
   "devDependencies": {
     "@types/node": "^26.1.0",
     "oxfmt": "^0.57.0",
@@ -12,11 +19,5 @@
     "node": ">=24.0.0",
     "pnpm": ">=11.0.0"
   },
-  "scripts": {
-    "dev": "pnpm --filter @cyrus/web dev",
-    "build": "pnpm --filter @cyrus/web build",
-    "typecheck": "pnpm --filter @cyrus/web typecheck",
-    "lint": "oxlint .",
-    "fmt": "oxfmt --write ."
-  }
+  "packageManager": "pnpm@11.11.0+sha512.4463f65fd80ed80d69bc1d4bf163ee94f605c7380fc318bb5b2ebe15f8cd12d49c51a4d59e951b401e764d3b6ca751cbf51bc50ed7001a6bcb4935e684c34882"
 }

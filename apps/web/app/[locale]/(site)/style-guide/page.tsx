@@ -20,9 +20,7 @@ export default function StyleGuidePage() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <SheetLabel sheet="SHEET SG — STYLE GUIDE" />
         <h1 className="mt-4 text-4xl font-semibold text-ink">蓝图设计系统</h1>
-        <p className="mt-3 text-base leading-8 text-ink-soft">
-          Tokens、字体、基础组件。所有 Section 由这些原子构成。
-        </p>
+        <p className="mt-3 text-base leading-8 text-ink-soft">Tokens、字体、基础组件。所有 Section 由这些原子构成。</p>
 
         <section className="mt-12">
           <SheetLabel sheet="01 — COLOR TOKENS" className="text-ink-soft" />

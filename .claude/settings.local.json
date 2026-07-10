@@ -1,7 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(Get-ChildItem *)"
-    ]
+    "allow": ["Bash(Get-ChildItem *)"]
   }
 }

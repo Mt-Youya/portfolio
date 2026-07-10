@@ -64,14 +64,7 @@ export function AgentRuntimeStage({ labels, steps, annotations }: AgentRuntimeSt
             return (
               <g key={label as string} data-runtime-node transform={`translate(${x} ${y})`}>
                 <circle r="46" fill="var(--paper-raised)" stroke={stroke} strokeWidth={isToolNode ? 2.5 : 2} />
-                <circle
-                  r="60"
-                  fill="none"
-                  stroke={stroke}
-                  strokeWidth="1"
-                  strokeDasharray="4 10"
-                  opacity="0.55"
-                />
+                <circle r="60" fill="none" stroke={stroke} strokeWidth="1" strokeDasharray="4 10" opacity="0.55" />
                 <text textAnchor="middle" y="5" fill="var(--ink)" fontSize="15" fontFamily="monospace">
                   {label as string}
                 </text>

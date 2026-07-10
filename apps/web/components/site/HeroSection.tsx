@@ -96,8 +96,6 @@ export function HeroSection({ locale, sheet, name, roleBadge, subtitle, primaryC
     },
     { scope: root, dependencies: [locale, reduced, subtitle] }
   )
-  console.log("resumeCta", resumeCta)
-
   return (
     <section
       ref={root}

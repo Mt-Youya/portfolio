@@ -25,7 +25,9 @@ export function Timeline({ sheet, title, summary, experience, locale }: Timeline
           {experience.map((item, index) => {
             const achievement = locale === "en" ? item.achievement.en : item.achievement.zh
             const company =
-              locale === "en" && item.company === "牙颜(上海)医疗科技有限公司" ? "Yayan Medical Technology" : item.company
+              locale === "en" && item.company === "牙颜(上海)医疗科技有限公司"
+                ? "Yayan Medical Technology"
+                : item.company
             const period = locale === "en" ? item.period.replace("至今", "Present") : item.period
             const role =
               locale === "en" && item.role === "前端技术经理 / 高级前端工程师"
@@ -63,16 +65,18 @@ export function Timeline({ sheet, title, summary, experience, locale }: Timeline
                       <span className="h-2.5 w-2.5 bg-current" />
                     </span>
                     <p className="mt-5 font-mono text-xs uppercase tracking-[0.2em] text-blueprint">{label}</p>
-                      <p className="mt-2 font-mono text-sm tracking-[0.14em] text-ink">{period}</p>
+                    <p className="mt-2 whitespace-nowrap font-mono text-sm tracking-[0.14em] text-ink">{period}</p>
                   </div>
 
                   <div className="relative p-6 sm:p-8">
-                    <div className="flex flex-col gap-5 2xl:flex-row 2xl:items-start 2xl:justify-between">
+                    <div className="flex flex-col gap-5">
                       <div>
                         <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft">{company}</p>
-                        <h3 className="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">{role}</h3>
+                        <h3 className="mt-3 max-w-[18ch] text-2xl font-semibold leading-tight text-ink sm:text-3xl lg:max-w-[24ch]">
+                          {role}
+                        </h3>
                       </div>
-                      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 2xl:min-w-[27rem]">
+                      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
                         {metrics.map((metric) => (
                           <span
                             key={metric}
@@ -84,9 +88,11 @@ export function Timeline({ sheet, title, summary, experience, locale }: Timeline
                       </div>
                     </div>
 
-                    <div className="mt-7 border-l-2 border-seal/80 pl-5">
+                    <div className="mt-7 border-t border-seal/70 pt-5">
                       <p className="font-mono text-xs uppercase tracking-[0.2em] text-seal">{scopeLabel}</p>
-                      <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-soft sm:text-base sm:leading-8">{achievement}</p>
+                      <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-soft sm:text-base sm:leading-8">
+                        {achievement}
+                      </p>
                     </div>
                   </div>
                 </div>

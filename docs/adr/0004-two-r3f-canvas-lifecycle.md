@@ -9,12 +9,14 @@ SHEET 03 canvas 驱动:`frameloop='demand'` + ScrollTrigger `onUpdate` → `inva
 **Status**: accepted
 
 **Considered Options**:
+
 - G1 互斥挂载,视口驱动 —— 拒绝:纸鸢重新挂载闪现,破坏叙事连续
 - G2 互斥挂载 + 纸鸢降级 SVG —— 采纳
 - G3 两者常驻 demand —— 拒绝:双 WebGL context 常驻,低端设备定时炸弹
 - G4 单 canvas 场景切换 —— 拒绝:架构复杂,与 §3.1 组件目录冲突,ScrollTrigger 跨 section 协调难
 
 **Consequences**:
+
 - §1.3「3D→SVG 切换」触发时机明确:Hero 离开视口即切 SVG,不只是移动端/reduced-motion
 - §2 SHEET 03 偏离原文「纯 CSS 3D」,改为 R3F 真爆炸图(E3)
 - SHEET 03 反向滚动收拢彩蛋保留(§2 原文「全栈 = 能把这台机器拆了再装回去」),R3F 下五层旋转归位实现

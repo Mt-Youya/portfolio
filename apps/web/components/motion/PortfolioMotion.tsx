@@ -7,6 +7,12 @@ import { ensurePlugins, gsap, ScrollTrigger } from "@/lib/gsap"
 
 type Cleanup = () => void
 
+function setIfAny(targets: Element[], vars: Parameters<typeof gsap.set>[1]) {
+  if (targets.length > 0) {
+    gsap.set(targets, vars)
+  }
+}
+
 export function PortfolioMotion() {
   const layerRef = useRef<HTMLDivElement>(null)
 
@@ -51,16 +57,28 @@ export function PortfolioMotion() {
     const restoreTitle = heroTitle ? splitTitle(heroTitle) : undefined
 
     const heroItems = q("[data-hero-motion]")
-    gsap.set(heroItems, { autoAlpha: 0, y: 24 })
-    gsap.set(q("[data-stat]"), { autoAlpha: 0, y: 28, clipPath: "inset(0 0 100% 0)" })
-    gsap.set(q("[data-hero-card]"), { autoAlpha: 0, y: 42, rotateX: 5, transformPerspective: 900 })
+    const stats = q("[data-stat]")
+    const heroCards = q("[data-hero-card]")
+    const heroKicker = q("[data-hero-kicker]")
+    const heroMeta = q("[data-hero-meta]")
+    const titleChars = q("[data-hero-title] .motion-char")
+    const heroCopy = q("[data-hero-copy]")
+    const heroActions = q("[data-hero-actions]")
+
+    setIfAny(heroItems, { autoAlpha: 0, y: 24 })
+    setIfAny(stats, { autoAlpha: 0, y: 28, clipPath: "inset(0 0 100% 0)" })
+    setIfAny(heroCards, { autoAlpha: 0, y: 42, rotateX: 5, transformPerspective: 900 })
 
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } })
-    heroTl
-      .to(q("[data-hero-kicker]"), { autoAlpha: 1, y: 0, duration: 0.42 })
-      .to(q("[data-hero-meta]"), { autoAlpha: 1, y: 0, duration: 0.48 }, "-=0.18")
-      .fromTo(
-        q("[data-hero-title] .motion-char"),
+    if (heroKicker.length > 0) {
+      heroTl.to(heroKicker, { autoAlpha: 1, y: 0, duration: 0.42 })
+    }
+    if (heroMeta.length > 0) {
+      heroTl.to(heroMeta, { autoAlpha: 1, y: 0, duration: 0.48 }, "-=0.18")
+    }
+    if (titleChars.length > 0) {
+      heroTl.fromTo(
+        titleChars,
         {
           autoAlpha: 0,
           clipPath: "inset(0 100% 0 0)",
@@ -79,10 +97,19 @@ export function PortfolioMotion() {
         },
         "-=0.12"
       )
-      .to(q("[data-hero-copy]"), { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2")
-      .to(q("[data-hero-actions]"), { autoAlpha: 1, y: 0, duration: 0.42 }, "-=0.22")
-      .to(q("[data-stat]"), { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 0.48, stagger: 0.1 }, "-=0.14")
-      .to(q("[data-hero-card]"), { autoAlpha: 1, y: 0, rotateX: 0, duration: 0.62 }, "-=0.16")
+    }
+    if (heroCopy.length > 0) {
+      heroTl.to(heroCopy, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2")
+    }
+    if (heroActions.length > 0) {
+      heroTl.to(heroActions, { autoAlpha: 1, y: 0, duration: 0.42 }, "-=0.22")
+    }
+    if (stats.length > 0) {
+      heroTl.to(stats, { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 0.48, stagger: 0.1 }, "-=0.14")
+    }
+    if (heroCards.length > 0) {
+      heroTl.to(heroCards, { autoAlpha: 1, y: 0, rotateX: 0, duration: 0.62 }, "-=0.16")
+    }
 
     const terminalLines = q("[data-terminal-line]") as HTMLElement[]
     terminalLines.forEach((line) => {
@@ -162,33 +189,48 @@ function animateHeroCore(q: ReturnType<typeof gsap.utils.selector>, cleanup: Cle
   const scan = q("[data-core-scan]")
   const terminalScan = q("[data-terminal-scan]")
 
-  gsap.set([...rings, ...beams, ...pulse, ...scan], {
+  setIfAny([...rings, ...beams, ...pulse, ...scan], {
     autoAlpha: 0,
     scale: 0.72,
     transformOrigin: "center",
   })
 
-  gsap
-    .timeline({ defaults: { ease: "power3.out" } })
-    .to(rings, { autoAlpha: 1, scale: 1, duration: 0.9, stagger: 0.09 }, 0.15)
-    .to(beams, { autoAlpha: 1, scale: 1, duration: 0.72, stagger: 0.08 }, 0.32)
-    .to(pulse, { autoAlpha: 1, scale: 1, duration: 0.62 }, 0.42)
-    .to(scan, { autoAlpha: 1, scale: 1, duration: 0.44 }, 0.5)
+  const coreTl = gsap.timeline({ defaults: { ease: "power3.out" } })
+  if (rings.length > 0) {
+    coreTl.to(rings, { autoAlpha: 1, scale: 1, duration: 0.9, stagger: 0.09 }, 0.15)
+  }
+  if (beams.length > 0) {
+    coreTl.to(beams, { autoAlpha: 1, scale: 1, duration: 0.72, stagger: 0.08 }, 0.32)
+    gsap.to(beams, { strokeDashoffset: -160, duration: 8, repeat: -1, ease: "none" })
+  }
+  if (pulse.length > 0) {
+    coreTl.to(pulse, { autoAlpha: 1, scale: 1, duration: 0.62 }, 0.42)
+    gsap.to(pulse, { scale: 1.16, autoAlpha: 0.74, duration: 1.7, repeat: -1, yoyo: true, ease: "sine.inOut" })
+  }
+  if (scan.length > 0) {
+    coreTl.to(scan, { autoAlpha: 1, scale: 1, duration: 0.44 }, 0.5)
+    gsap.to(scan, { rotation: 360, duration: 5.8, repeat: -1, ease: "none" })
+  }
 
-  gsap.to(rings[0], { rotation: 360, duration: 46, repeat: -1, ease: "none" })
-  gsap.to(rings[1], { rotation: -360, duration: 28, repeat: -1, ease: "none" })
-  gsap.to(rings[2], { rotation: 360, duration: 18, repeat: -1, ease: "none" })
-  gsap.to(beams, { strokeDashoffset: -160, duration: 8, repeat: -1, ease: "none" })
-  gsap.to(pulse, { scale: 1.16, autoAlpha: 0.74, duration: 1.7, repeat: -1, yoyo: true, ease: "sine.inOut" })
-  gsap.to(scan, { rotation: 360, duration: 5.8, repeat: -1, ease: "none" })
-  gsap.to(terminalScan, {
-    autoAlpha: 0.34,
-    y: 380,
-    duration: 2.2,
-    repeat: -1,
-    ease: "power1.inOut",
-    repeatDelay: 0.4,
-  })
+  if (rings[0]) {
+    gsap.to(rings[0], { rotation: 360, duration: 46, repeat: -1, ease: "none" })
+  }
+  if (rings[1]) {
+    gsap.to(rings[1], { rotation: -360, duration: 28, repeat: -1, ease: "none" })
+  }
+  if (rings[2]) {
+    gsap.to(rings[2], { rotation: 360, duration: 18, repeat: -1, ease: "none" })
+  }
+  if (terminalScan.length > 0) {
+    gsap.to(terminalScan, {
+      autoAlpha: 0.34,
+      y: 380,
+      duration: 2.2,
+      repeat: -1,
+      ease: "power1.inOut",
+      repeatDelay: 0.4,
+    })
+  }
 
   const onPointerMove = (event: PointerEvent) => {
     const x = (event.clientX / window.innerWidth - 0.5) * 28

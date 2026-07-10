@@ -54,6 +54,7 @@
 ## 5. 本轮(2026-07-08)修复记录
 
 ### 5.1 read-image-cli 工具(美团内网读图)
+
 - 仓库:`ssh://git@git.sankuai.com/~liuyangke02/read-image-tools.git`,克隆到 `/tmp/read-image-tools`
 - 全局安装:`pnpm link --global`(需 `PNPM_HOME=/Users/yonjay/.pnpm/bin` 前缀绕过 PATH 报错)
 - 配置:`~/.read-image-cli/config.json` `{apiKey:"21965762100027891721", baseUrl:"https://aigc.sankuai.com/v1/openai/native", model:"gemini-3.1-flash-lite-preview"}`
@@ -62,12 +63,14 @@
 - ⚠️ symlink 源在 `/tmp`,重启会失效,建议移到 `~/.local/share/read-image-tools` 后重新 link
 
 ### 5.2 profile.json 数据修正
+
 - **stack.data**:删假数据 `[SQLx,Supabase,Upstash Redis,SRT,Trace Events,Structured JSON]` → 改为简历真实 `[MySQL,Redis,知识库检索,日志检索,Function Calling,MCP]`
 - **stack.infra**:补充 `pnpm Monorepo / 私有 npm`(原仅 Vite/Webpack/qiankun/Jenkins/Docker)
 - **stack.ui**:补充 `Tailwind CSS / shadcn/ui`
 - **stack.api**:用户明确要求**不动**,保持 `[Node.js, Koa.js]`
 
 ### 5.3 项目还原(重要!)
+
 - 用户反馈:此前误将 8 个个人项目(links.ts)替换了简历 4 个工作项目,工作项目才是给招聘方看的
 - 已把 `profile.json` 的 `projects` 从 8 个人项目 → **4 个工作项目**:
   1. `ops-agent` 智能运维 AI 助手(isFlagship=true)
@@ -79,6 +82,7 @@
 - schema 描述里"TubePilot 必为首项"过时说明已改
 
 ### 5.4 StackExploded 布局修复
+
 - 问题:5 层卡片 `absolute` + `translateY(-28px)` 递增,28px 远小于卡片高度 → 严重重叠、文字撞在一起、底部溢出容器压到网格背景
 - 修复(`apps/web/components/site/StackExploded.tsx`):
   - `LAYER_GAP = 96`(原 28)

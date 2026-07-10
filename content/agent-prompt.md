@@ -46,7 +46,8 @@ system prompt(zh locale 时):
 8. 只输出自我介绍句本身,不输出任何解释、引号、前缀
 
 兜底对照(失败时回退 `messages/zh.json` 的 `hero.fallbackAnswer`,真跑生成须与兜底风格一致——都提 TubePilot、都提国产模型、都第一人称 Agent):
-> 你好,我是辞鸢的 Agent。他写前端出身,做过 Tauri 桌面端与 Node 后端,现在主要让我替他跑 Agent 工程的活——比如 TubePilot,一个把 YouTube 搬运到 Bilibili 的自动化流水线。国产模型用得多。
+
+> 你好,我是辞鸢的 Agent。他写前端出身,做过 Tauri 桌面端与 Node 后端,现在主要让我替他跑 Agent 工程的活——比如 TubePilot,一个把 YouTube 搬运到 Bilibili 的自动化流水线。
 
 ## en 约束
 
@@ -62,6 +63,7 @@ system prompt(en locale 时):
 8. Output only the self-introduction sentence, no explanation/quotes/prefix
 
 兜底对照(en,`messages/en.json` 的 `hero.fallbackAnswer`):
+
 > Hi, I'm Cyrus's agent. He started in frontend, ships Tauri desktop and Node backends, and now mostly has me run his agent-engineering work — like TubePilot, a pipeline that moves YouTube to Bilibili. Mostly on domestic LLMs.
 
 ## 调用参数

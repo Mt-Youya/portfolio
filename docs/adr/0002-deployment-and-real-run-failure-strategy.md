@@ -7,18 +7,21 @@
 **Status**: accepted
 
 **Considered Options(部署)**:
+
 - D1 整站 Vercel —— 采纳(起步),预留 D2/D3 接口
 - D2 前端国内 CDN 镜像 + 真跑走 Vercel —— 预留
 - D3 真跑搬国内 serverless —— 预留
 - D4 全栈搬国内 serverless —— 拒绝:海外访客体验下降、偏离 Plan 原意最远
 
 **Considered Options(失败兜底)**:
+
 - F1 硬真跑,失败即暴露 —— 拒绝:portfolio 第一印象高于失败可见的诚实
 - F2 失败静默回退预录 —— 采纳
 - F3 失败回退 + 轻量标记 —— 拒绝:标记行破坏 Agent 叙事纯粹、访客理解成本高
 - F4 真跑非阻塞,先播预录后追加 —— 拒绝:实现复杂、trace 自我修正违和
 
 **Consequences**:
+
 - `/api/agent` 必须设计为可迁移单元(不与 Next.js route handler 耦合死),便于后续搬国内 serverless
 - 兜底文案进 `messages/{zh,en}.json` 的 `hero.fallbackAnswer`,不破坏「禁止硬编码文案」规则
 - 兜底文案须提及 TubePilot,故 DeepSeek 真跑的 system prompt 须引导提及主打项目,以免兜底与真跑风格不一露馅

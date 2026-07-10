@@ -73,15 +73,8 @@ export function ProjectsSection({
                 {project.highlights.length > 0 ? (
                   <ul className="mt-5 space-y-3">
                     {project.highlights.map((bullet: string) => (
-                      <li
-                        key={bullet}
-                        data-project-bullet
-                        className="flex gap-3 text-sm leading-6 text-ink"
-                      >
-                        <span
-                          className="mt-2 h-1.5 w-1.5 shrink-0 bg-blueprint"
-                          aria-hidden="true"
-                        />
+                      <li key={bullet} data-project-bullet className="flex gap-3 text-sm leading-6 text-ink">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-blueprint" aria-hidden="true" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -89,9 +82,7 @@ export function ProjectsSection({
                 ) : null}
 
                 <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-grid pt-4">
-                  <p className="font-mono text-xs leading-6 text-ink-soft">
-                    {project.stack.join(" / ")}
-                  </p>
+                  <p className="font-mono text-xs leading-6 text-ink-soft">{project.stack.join(" / ")}</p>
                   {project.url ? (
                     <a
                       href={project.url}
@@ -107,9 +98,7 @@ export function ProjectsSection({
                 {isFlagship ? (
                   <div className="mt-4 flex items-center gap-2">
                     <Seal label="AI CORE" variant="approved" />
-                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-soft">
-                      FLAGSHIP
-                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-soft">FLAGSHIP</span>
                   </div>
                 ) : null}
               </article>

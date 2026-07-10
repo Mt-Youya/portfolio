@@ -12,12 +12,14 @@ grill 产生的 ADR 多处修订 PLAN.md §0/§2 原文(卖点 #2 五模型→De
 **Status**: accepted
 
 **Considered Options**:
+
 - D1 ADR 最高真相,PRODUCT 写修订版 —— 拒绝:PRODUCT 派生自 ADR 但 ADR 是决策非产品文档,职责混
 - D2 PRODUCT 写原文,ADR 补丁层 —— 拒绝:执行者认知负担大,需先读 PRODUCT 再翻 ADR
 - D3 直接修订 PLAN —— 拒绝:丢推理过程,施工者不知哪里被动过
 - D4 ADR=why, PRODUCT=what, DESIGN=tokens, PLAN=历史 —— 采纳
 
 **Consequences**:
+
 - PLAN.md 顶部加 superseded 标注
 - Phase 1 impeccable init 必须从 PRODUCT.md 读取(非 PLAN.md),需先撰写 PRODUCT.md
 - §4「tokens 冲突以 PLAN 为准」改为「以 DESIGN.md 为准」

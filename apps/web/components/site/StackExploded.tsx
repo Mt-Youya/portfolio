@@ -23,15 +23,7 @@ const LAYER_COLORS = [
 ]
 const LAYER_GAP = 96
 
-export function StackExploded({
-  sheet,
-  title,
-  summary,
-  stack,
-  locale,
-  layerLabels,
-  caption,
-}: StackExplodedProps) {
+export function StackExploded({ sheet, title, summary, stack, locale, layerLabels, caption }: StackExplodedProps) {
   const layers = LAYER_ORDER.map((key, index) => ({
     key,
     label: layerLabels[key],
@@ -78,22 +70,16 @@ export function StackExploded({
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-blueprint">
                     L{index + 1} · {layer.label}
                   </span>
-                  <span className="font-mono text-[10px] text-ink-soft">
-                    {layer.items.length} items
-                  </span>
+                  <span className="font-mono text-[10px] text-ink-soft">{layer.items.length} items</span>
                 </div>
-                <p className="mt-2 text-sm leading-6 text-ink">
-                  {layer.items.join(" / ") || "—"}
-                </p>
+                <p className="mt-2 text-sm leading-6 text-ink">{layer.items.join(" / ") || "—"}</p>
               </div>
             ))}
           </div>
 
           <div data-stack-caption className="lg:pl-8">
             <p className="text-base leading-8 text-ink-soft">{caption}</p>
-            <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-blueprint">
-              FIG. 03 — EXPLODED VIEW
-            </p>
+            <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-blueprint">FIG. 03 — EXPLODED VIEW</p>
           </div>
         </div>
       </div>

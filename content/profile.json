@@ -24,7 +24,18 @@
         "zh": "独立全栈交付智能运维 AI 助手,覆盖交互界面、后端服务、工具调用、上下文治理、Prompt 规范和上线机制。",
         "en": "Independently delivered the operations AI assistant end to end, covering UI, backend services, tool calls, context governance, prompt standards, and rollout mechanics."
       },
-      "stack": ["React 18", "Redux", "Zustand", "TypeScript", "Next.js", "Koa.js", "LangChain", "MCP", "SSE", "WebSocket"],
+      "stack": [
+        "React 18",
+        "Redux",
+        "Zustand",
+        "TypeScript",
+        "Next.js",
+        "Koa.js",
+        "LangChain",
+        "MCP",
+        "SSE",
+        "WebSocket"
+      ],
       "highlights": [
         "支持 SSE 流式渲染、Markdown / 代码块高亮、上下文操作与工具结果卡片,首 token 延迟低于 300ms",
         "LangChain + Function Calling 集成监控 API、日志检索与知识库检索,将告警研判从 15 分钟压缩到 2 分钟以内",
