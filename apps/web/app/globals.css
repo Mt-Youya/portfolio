@@ -1,6 +1,5 @@
 @import "tailwindcss";
-
-@source "../../../packages/ui";
+@import "@cyrus/ui/style.css";
 
 :root {
   --paper: #f4f3ee;
@@ -13,6 +12,25 @@
   --seal: #b5382e;
   --terminal-bg: #10131a;
   --terminal-green: #7bd88f;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-raised);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-raised);
+  --popover-foreground: var(--ink);
+  --primary: var(--blueprint);
+  --primary-foreground: var(--paper-raised);
+  --secondary: var(--paper-raised);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-raised);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--paper-raised);
+  --accent-foreground: var(--ink);
+  --destructive: var(--seal);
+  --border: var(--grid);
+  --input: var(--grid);
+  --ring: var(--blueprint);
+  --radius: 2px;
 }
 
 .dark {

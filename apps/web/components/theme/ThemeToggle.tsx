@@ -16,7 +16,11 @@ export function ThemeToggle() {
 
   return (
     <Button type="button" variant="outline" size="icon" aria-label={label} title={label} onClick={toggleTheme}>
-      {theme === "dark" ? <HugeiconsIcon icon={Sun} size={18} /> : <HugeiconsIcon icon={Moon} aria-hidden="true" size={18} />}
+      {theme === "dark" ? (
+        <HugeiconsIcon icon={Sun} size={18} />
+      ) : (
+        <HugeiconsIcon icon={Moon} aria-hidden="true" size={18} />
+      )}
     </Button>
   )
 }

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "辞鸢 · 全栈偏前端 · AI Agent 工程",
-    "description": "基于 React、Koa、LangChain、MCP 与 SSE 的全栈偏前端 AI Agent 工程实践。"
+    "description": "基于 React、NestJS、LangChain、MCP 与 SSE 的全栈偏前端 AI Agent 工程实践。"
   },
   "site": {
     "nav": {
@@ -35,7 +35,7 @@
       "name": "辞鸢",
       "roleBadge": "全栈偏前端 · AI Agent 工程",
       "title": "用前端体验把 AI Agent 变成可交付产品",
-      "subtitle": "我从复杂前端和工程化出发，向 Koa.js、实时通信、LangChain、Function Calling 与 MCP 扩展，能独立完成 AI 助手从界面、工具调用、上下文管理到上线验收的全栈闭环。",
+      "subtitle": "我从复杂前端和工程化出发，向 NestJS、实时通信、LangChain、Function Calling 与 MCP 扩展，能独立完成 AI 助手从界面、工具调用、上下文管理到上线验收的全栈闭环。",
       "primaryCta": "查看 Agent 能力",
       "resumeCta": "下载简历 PDF",
       "terminalTitle": "live agent trace",
@@ -74,7 +74,7 @@
     "agent": {
       "sheet": "SHEET 02 — AI AGENT ENGINEERING",
       "title": "重点不是接一个聊天框，而是把 Agent 跑进真实业务流程",
-      "summary": "简历里的 AI 助手不是 Demo：它覆盖前端交互、Koa 后端、SSE 流式输出、工具调用、日志检索、知识库检索、Prompt 规范、灰度发布和数据清洗管道。",
+      "summary": "简历里的 AI 助手不是 Demo：它覆盖前端交互、NestJS 后端、SSE 流式输出、工具调用、日志检索、知识库检索、Prompt 规范、灰度发布和数据清洗管道。",
       "capabilities": [
         {
           "label": "Agent 编排",
@@ -153,7 +153,7 @@
         {
           "title": "全栈后端与工程化",
           "items": [
-            "Node.js / Koa.js 中间件设计、RESTful API、JWT 鉴权",
+            "Node.js / NestJS 服务设计、RESTful API、JWT 鉴权",
             "Vite / Webpack 插件开发、构建优化、分包策略",
             "pnpm Monorepo、Jenkins CI/CD、ApiFox 接口契约、私有 npm 包发布"
           ]
@@ -185,14 +185,14 @@
       "items": [
         {
           "eyebrow": "PROJECT 01 · 智能运维 AI 助手",
-          "title": "Koa + React 的生产级多工具 Agent",
+          "title": "NestJS + React 的生产级多工具 Agent",
           "summary": "独立全栈交付智能运维 AI 助手，覆盖交互界面、后端服务、工具调用、上下文治理、Prompt 规范和上线机制。",
           "bullets": [
             "支持 SSE 流式渲染、Markdown / 代码块高亮、上下文操作与工具结果卡片，首 token 延迟低于 300ms",
             "LangChain + Function Calling 集成监控 API、日志检索与知识库检索，将告警研判从 15 分钟压缩到 2 分钟以内",
             "MCP 统一多模型上下文，Prompt 模板与 Few-shot 示例库让结构化输出解析成功率达到 97%"
           ],
-          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / Koa.js / LangChain / MCP / SSE / WebSocket"
+          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / NestJS / LangChain / MCP / SSE / WebSocket"
         },
         {
           "eyebrow": "PROJECT 02 · 口腔医学智能平台",

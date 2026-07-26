@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
-    "lib": ["DOM", "DOM.Iterable", "ES2024"],
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "types": ["react"]
+    "types": ["react"],
+    "paths": {
+      "@cyrus/ui/*": ["./src/*"]
+    }
   },
-  "include": ["components/**/*.ts", "components/**/*.tsx", "lib/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

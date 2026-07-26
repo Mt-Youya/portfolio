@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Frontend-leaning Full-stack · AI Agent Engineering",
-    "description": "A frontend-leaning full-stack portfolio focused on React, Koa, LangChain, MCP, SSE, and AI Agent delivery."
+    "description": "A frontend-leaning full-stack portfolio focused on React, NestJS, LangChain, MCP, SSE, and AI Agent delivery."
   },
   "site": {
     "nav": {
@@ -35,7 +35,7 @@
       "name": "Cyrus",
       "roleBadge": "Frontend-leaning full-stack · AI Agent engineering",
       "title": "Turning AI Agents into product-grade frontend experiences",
-      "subtitle": "I start from complex frontend systems and engineering practice, then extend into Koa.js, real-time communication, LangChain, Function Calling, and MCP. I can deliver an AI assistant end to end: interface, tool calls, context management, and production rollout.",
+      "subtitle": "I start from complex frontend systems and engineering practice, then extend into NestJS, real-time communication, LangChain, Function Calling, and MCP. I can deliver an AI assistant end to end: interface, tool calls, context management, and production rollout.",
       "primaryCta": "View Agent capability",
       "resumeCta": "Download resume PDF",
       "terminalTitle": "live agent trace",
@@ -74,7 +74,7 @@
     "agent": {
       "sheet": "SHEET 02 — AI AGENT ENGINEERING",
       "title": "The point is not a chat box. It is an Agent inside a real workflow.",
-      "summary": "The AI assistant in the resume is not a demo. It covers frontend interaction, Koa backend services, SSE streaming, tool calling, log search, knowledge retrieval, prompt governance, staged rollout, and data cleaning pipelines.",
+      "summary": "The AI assistant in the resume is not a demo. It covers frontend interaction, NestJS backend services, SSE streaming, tool calling, log search, knowledge retrieval, prompt governance, staged rollout, and data cleaning pipelines.",
       "capabilities": [
         {
           "label": "Agent orchestration",
@@ -153,7 +153,7 @@
         {
           "title": "Backend and engineering systems",
           "items": [
-            "Node.js / Koa.js middleware design, RESTful APIs, and JWT authentication",
+            "Node.js / NestJS service design, RESTful APIs, and JWT authentication",
             "Vite / Webpack plugin development, build optimization, and code splitting",
             "pnpm Monorepo, Jenkins CI/CD, ApiFox contracts, and private npm package releases"
           ]
@@ -185,14 +185,14 @@
       "items": [
         {
           "eyebrow": "PROJECT 01 · Operations AI Assistant",
-          "title": "A production multi-tool Agent with Koa + React",
+          "title": "A production multi-tool Agent with NestJS + React",
           "summary": "Independently delivered the operations AI assistant end to end, covering UI, backend services, tool calls, context governance, prompt standards, and rollout mechanics.",
           "bullets": [
             "Supported SSE streaming, Markdown and code highlighting, context actions, and tool-result cards, with first-token latency under 300ms",
             "Integrated monitoring APIs, log search, and knowledge retrieval through LangChain + Function Calling, reducing alert diagnosis from 15 minutes to under 2 minutes",
             "Used MCP for unified multi-model context; prompt templates and Few-shot examples brought structured JSON parsing to 97%"
           ],
-          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / Koa.js / LangChain / MCP / SSE / WebSocket"
+          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / NestJS / LangChain / MCP / SSE / WebSocket"
         },
         {
           "eyebrow": "PROJECT 02 · Oral Medical Intelligence Platform",

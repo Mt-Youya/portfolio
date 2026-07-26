@@ -12,7 +12,7 @@
   "stack": {
     "ui": ["React 18", "Vue 2/3", "TypeScript", "Next.js", "Tailwind CSS", "shadcn/ui"],
     "state": ["Redux", "Zustand", "Pinia"],
-    "api": ["Node.js", "Koa.js"],
+    "api": ["Node.js", "NestJS"],
     "data": ["MySQL", "Redis", "知识库检索", "日志检索", "Function Calling", "MCP"],
     "infra": ["Vite", "Webpack", "qiankun", "Jenkins", "Docker", "pnpm Monorepo", "私有 npm"]
   },
@@ -30,7 +30,7 @@
         "Zustand",
         "TypeScript",
         "Next.js",
-        "Koa.js",
+        "NestJS",
         "LangChain",
         "MCP",
         "SSE",
@@ -95,8 +95,8 @@
       "role": "前端技术经理 / 高级前端工程师",
       "company": "牙颜(上海)医疗科技有限公司",
       "achievement": {
-        "zh": "独立全栈交付智能运维 AI 助手(Koa.js + React),基于 LangChain + Function Calling 构建多工具 Agent,告警根因定位从 15 分钟压缩至 2 分钟;首 token 延迟 <300ms",
-        "en": "Solely delivered an AIOps assistant (Koa.js + React); built a multi-tool agent via LangChain + Function Calling, cutting root-cause triage from 15 min to 2 min; first-token latency <300ms"
+        "zh": "独立全栈交付智能运维 AI 助手(NestJS + React),基于 LangChain + Function Calling 构建多工具 Agent,告警根因定位从 15 分钟压缩至 2 分钟;首 token 延迟 <300ms",
+        "en": "Solely delivered an AIOps assistant (NestJS + React); built a multi-tool agent via LangChain + Function Calling, cutting root-cause triage from 15 min to 2 min; first-token latency <300ms"
       }
     }
   ],

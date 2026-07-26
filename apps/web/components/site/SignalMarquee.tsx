@@ -1,5 +1,5 @@
 export function SignalMarquee() {
-  const items = ["LANGCHAIN", "MCP", "FUNCTION CALLING", "SSE", "TOOL RESULT", "KOA", "REACT", "CONTEXT LOOP"]
+  const items = ["LANGCHAIN", "MCP", "FUNCTION CALLING", "SSE", "TOOL RESULT", "NESTJS", "REACT", "CONTEXT LOOP"]
 
   return (
     <div

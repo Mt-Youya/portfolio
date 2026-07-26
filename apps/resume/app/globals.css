@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "@cyrus/ui/style.css";
+@import "../styles/global.css";
+
+:root {
+  --paper: #f4f3ee;
+  --paper-raised: #ffffff;
+  --ink: #1b2430;
+  --ink-soft: #64748b;
+  --grid: #d9e0ea;
+  --blueprint: #2563eb;
+  --blueprint-soft: #bed0fa;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-raised);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-raised);
+  --popover-foreground: var(--ink);
+  --primary: var(--blueprint);
+  --primary-foreground: var(--paper-raised);
+  --secondary: var(--paper-raised);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--paper);
+  --accent-foreground: var(--ink);
+  --destructive: #b5382e;
+  --border: var(--grid);
+  --input: var(--grid);
+  --ring: var(--blueprint);
+  --radius: 2px;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-grid: var(--grid);
+  --color-blueprint: var(--blueprint);
+  --color-blueprint-soft: var(--blueprint-soft);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    var(--paper);
+  background-size: 32px 32px;
+  color: var(--ink);
+  font-family: Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+}
+
+.resume-public-shell {
+  min-height: 100vh;
+  padding: 28px 16px 64px;
+}
+
+.resume-public-toolbar {
+  display: flex;
+  width: min(210mm, 100%);
+  margin: 0 auto 18px;
+  padding: 10px 14px 11px;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff;
+  border-bottom: 1px solid #c8d8f5;
+}
+
+.resume-public-eyebrow {
+  position: relative;
+  margin: 0;
+  padding-left: 11px;
+  color: #0b5394;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+}
+
+.resume-public-eyebrow::before {
+  position: absolute;
+  top: 0.25em;
+  left: 0;
+  width: 5px;
+  height: 1em;
+  background: #0b5394;
+  content: "";
+}
+
+.resume-public-note {
+  margin: 4px 0 0 11px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .resume-public-shell {
+    padding-top: 16px;
+  }
+
+  .resume-public-toolbar {
+    margin-bottom: 14px;
+  }
+}
+
+a {
+  color: inherit;
+}
