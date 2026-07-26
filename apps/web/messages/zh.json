@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "辞鸢 · 全栈偏前端 · AI Agent 工程",
-    "description": "基于 React、NestJS、LangChain、MCP 与 SSE 的全栈偏前端 AI Agent 工程实践。"
+    "title": "辞鸢 · 高级全栈工程师 · AI Agent 工程化",
+    "description": "面向企业数字化交付的高级全栈工程师，聚焦 React、NestJS、PostgreSQL 与 AI Agent 工程化。"
   },
   "site": {
     "nav": {
@@ -33,15 +33,15 @@
     "hero": {
       "sheet": "SHEET 01 — AGENT-FIRST PORTFOLIO",
       "name": "辞鸢",
-      "roleBadge": "全栈偏前端 · AI Agent 工程",
-      "title": "用前端体验把 AI Agent 变成可交付产品",
-      "subtitle": "我从复杂前端和工程化出发，向 NestJS、实时通信、LangChain、Function Calling 与 MCP 扩展，能独立完成 AI 助手从界面、工具调用、上下文管理到上线验收的全栈闭环。",
+      "roleBadge": "高级全栈工程师 · AI Agent 工程化",
+      "title": "把 AI Agent 做进企业数字化系统",
+      "subtitle": "围绕产品与业务需求，完成 React 界面、NestJS 服务、PostgreSQL 持久化、SSE 流式交互与上线工程化的端到端交付。",
       "primaryCta": "查看 Agent 能力",
       "resumeCta": "下载简历 PDF",
       "terminalTitle": "live agent trace",
       "seal": "AI READY",
-      "positioning": "全栈工程师 · AI Agent 方向",
-      "fallbackAnswer": "你好,我是辞鸢的 Agent。他写前端出身,做过 Tauri 桌面端与 Node 后端,现在主要让我替他跑 Agent 工程的活——比如 TubePilot,一个把 YouTube 搬运到 Bilibili 的自动化流水线。",
+      "positioning": "高级全栈工程师｜AI Agent 工程化",
+      "fallbackAnswer": "你好，我是辞鸢的 Agent。他围绕企业数字化需求做全栈与 Agent 工程，Agnito 用代码知识图谱、NestJS 和 SSE 支持可追溯的在线问答。",
       "terminalTrace": {
         "command": "$ agent run introduce --lang {lang}",
         "plan": "▸ [plan]    读取 profile.json … done",
@@ -74,7 +74,7 @@
     "agent": {
       "sheet": "SHEET 02 — AI AGENT ENGINEERING",
       "title": "重点不是接一个聊天框，而是把 Agent 跑进真实业务流程",
-      "summary": "简历里的 AI 助手不是 Demo：它覆盖前端交互、NestJS 后端、SSE 流式输出、工具调用、日志检索、知识库检索、Prompt 规范、灰度发布和数据清洗管道。",
+      "summary": "智能运维 AI 助手不是 Demo：它覆盖前端交互、NestJS 后端、SSE 流式输出、工具调用、日志检索、知识库检索、Prompt 规范、灰度发布和数据清洗管道。",
       "capabilities": [
         {
           "label": "Agent 编排",
@@ -114,9 +114,9 @@
       ]
     },
     "skills": {
-      "sheet": "SHEET 03 — FRONTEND-LED FULL STACK",
-      "title": "前端是优势，全栈是交付方式",
-      "summary": "定位不是泛泛的全栈，而是以前端复杂交互、性能与工程化为根基，向 Node.js 后端、实时通信、AI 工具链与桌面端能力延伸。",
+      "sheet": "SHEET 03 — FULL-STACK AGENT DELIVERY",
+      "title": "企业数字化全栈交付，AI Agent 工程化",
+      "summary": "面向企业数字化需求，覆盖产品界面、NestJS 服务、PostgreSQL 数据、实时通信、AI 工具链与上线工程化。",
       "layerLabels": {
         "ui": "UI 层",
         "state": "状态层",
@@ -131,7 +131,7 @@
           "items": [
             "React 18 + TypeScript，Redux / Zustand，熟悉 Fiber 调度与 Hooks 设计模式",
             "Vue 2/3，Pinia / VueRouter，掌握 Composition API 与响应式原理",
-            "Next.js 13+、Tailwind CSS、shadcn/ui，能快速搭建可维护的产品界面"
+            "Next.js 13+、Ant Design、Tailwind CSS、shadcn/ui，能够构建企业级表单、权限与数据看板"
           ]
         },
         {
@@ -154,14 +154,15 @@
           "title": "全栈后端与工程化",
           "items": [
             "Node.js / NestJS 服务设计、RESTful API、JWT 鉴权",
+            "PostgreSQL（JSONB 持久化与查询设计）、Redis；熟悉 Linux 研发环境与常用命令",
             "Vite / Webpack 插件开发、构建优化、分包策略",
-            "pnpm Monorepo、Jenkins CI/CD、ApiFox 接口契约、私有 npm 包发布"
+            "Git 协作、代码审查、pnpm Monorepo、Jenkins CI/CD、ApiFox 接口契约与私有 npm 包发布"
           ]
         },
         {
           "title": "架构与性能治理",
           "items": [
-            "qiankun 微前端拆分、主子应用通信、沙箱隔离与独立部署",
+            "企业级动态表单、角色权限、审计日志与数据看板的端到端交付",
             "Core Web Vitals 治理、懒加载、Tree-shaking、长任务拆分",
             "从需求拆解、架构设计、编码实现到上线验收的闭环交付"
           ]
@@ -178,56 +179,10 @@
     },
     "projects": {
       "sheet": "SHEET 04 — SELECTED WORK",
-      "title": "项目经历按 Agent 与交付闭环重新组织",
-      "summary": "先讲 AI Agent，再讲复杂前端、设计系统、图形系统与工程化重构。",
+      "title": "项目经历按 Agent 与企业数字化交付重新组织",
+      "summary": "先讲 Agnito 与智能运维 AI 助手，再讲企业级医疗系统与医学图形交互。",
       "primary": "AI CORE",
-      "delivery": "DELIVERED",
-      "items": [
-        {
-          "eyebrow": "PROJECT 01 · 智能运维 AI 助手",
-          "title": "NestJS + React 的生产级多工具 Agent",
-          "summary": "独立全栈交付智能运维 AI 助手，覆盖交互界面、后端服务、工具调用、上下文治理、Prompt 规范和上线机制。",
-          "bullets": [
-            "支持 SSE 流式渲染、Markdown / 代码块高亮、上下文操作与工具结果卡片，首 token 延迟低于 300ms",
-            "LangChain + Function Calling 集成监控 API、日志检索与知识库检索，将告警研判从 15 分钟压缩到 2 分钟以内",
-            "MCP 统一多模型上下文，Prompt 模板与 Few-shot 示例库让结构化输出解析成功率达到 97%"
-          ],
-          "stack": "React 18 / Redux / Zustand / TypeScript / Next.js / NestJS / LangChain / MCP / SSE / WebSocket"
-        },
-        {
-          "eyebrow": "PROJECT 02 · 口腔医学智能平台",
-          "title": "工单系统、管理后台与动态表单引擎",
-          "summary": "主导医学端病例工单全流程页面与管理后台，支撑医生、技师、管理员三类角色的差异化权限体系。",
-          "bullets": [
-            "实现策略配置面板、角色权限管理、审计日志检索与业务数据看板",
-            "用链表结构设计动态表单引擎，解决子项依赖父项状态的校验难题，迭代周期缩短约 40%",
-            "建设公共设计系统与组件库，抽取私有 npm 包供多子应用复用，消除重复代码约 30%"
-          ],
-          "stack": "Vue3 / Pinia / VueRouter / Element Plus / TypeScript / Vite / pnpm"
-        },
-        {
-          "eyebrow": "PROJECT 03 · 医学头影测量系统",
-          "title": "Canvas 测量引擎与 3D 医学模型交互",
-          "summary": "围绕医学测量和口腔模型建立图形交互能力，处理坐标系、测量计算、模型解析与选区交互。",
-          "bullets": [
-            "使用 react-konva 通过 Group 层级解耦图片坐标系与测量逻辑坐标系，解决缩放时测量值漂移",
-            "基于策略模式将差异化测量计算抽象成可组合数学工具链，新增测量项无需修改核心逻辑",
-            "引入 vtk.js 解析 .vtp 多边形网格并转换为 BufferGeometry，用 Raycaster 实现精准分区上色与套索选区"
-          ],
-          "stack": "React / Redux / react-konva / react-three-fiber / Three.js / vtk.js / TypeScript / Vite"
-        },
-        {
-          "eyebrow": "PROJECT 04 · 龙猫校园智能体测平台",
-          "title": "SaaS 微前端重构与 CI/CD 流水线",
-          "summary": "主导 qiankun 微前端重构，把高度耦合的 SaaS 单体拆解为多个独立子应用，支撑独立部署与快速迭代。",
-          "bullets": [
-            "新功能上线周期从 2 周缩短到 3 天",
-            "搭建 Jenkins + Docker CI/CD 流水线，实现分支合并自动构建与灰度发布",
-            "配合 ApiFox 建立接口契约规范，前后端联调效率提升约 50%"
-          ],
-          "stack": "Vue2 / React / qiankun / React-Redux / Ant Design / ECharts / Jenkins / Docker"
-        }
-      ]
+      "delivery": "DELIVERED"
     },
     "timeline": {
       "sheet": "SHEET 05 — CAREER WAYPOINT",
@@ -253,7 +208,7 @@
         },
         {
           "title": "组长经验",
-          "text": "担任前端技术经理 2 年，主导微前端重构、CI/CD 流程与接口文档规范，建立技术方案与 Code Review 机制。"
+          "text": "担任前端技术经理 2 年，推动企业数字化系统的需求拆解、技术方案与 Git 协作 / 代码审查机制。"
         },
         {
           "title": "工程化",

@@ -22,12 +22,18 @@ const LAYER_COLORS = [
   "var(--blueprint)",
 ]
 const LAYER_GAP = 96
+const ENGLISH_STACK_LABELS: Record<string, string> = {
+  知识库检索: "Knowledge retrieval",
+  日志检索: "Log search",
+  "Git 协作 / Code Review": "Git collaboration / Code Review",
+  "私有 npm": "Private npm",
+}
 
 export function StackExploded({ sheet, title, summary, stack, locale, layerLabels, caption }: StackExplodedProps) {
   const layers = LAYER_ORDER.map((key, index) => ({
     key,
     label: layerLabels[key],
-    items: stack[key],
+    items: stack[key].map((item) => (locale === "en" ? (ENGLISH_STACK_LABELS[item] ?? item) : item)),
     color: LAYER_COLORS[index],
     offset: index * LAYER_GAP,
   }))

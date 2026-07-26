@@ -6,20 +6,42 @@
     "github": "Mt-Youya"
   },
   "positioning": {
-    "zh": "全栈工程师 · AI Agent 方向",
-    "en": "Full-Stack Engineer, AI Agent Focused"
+    "zh": "高级全栈工程师｜AI Agent 工程化",
+    "en": "Senior Full-stack Engineer · AI Agent Engineering"
   },
   "stack": {
-    "ui": ["React 18", "Vue 2/3", "TypeScript", "Next.js", "Tailwind CSS", "shadcn/ui"],
+    "ui": ["React 18", "Vue 2/3", "TypeScript", "Next.js", "Ant Design", "Tailwind CSS", "shadcn/ui"],
     "state": ["Redux", "Zustand", "Pinia"],
     "api": ["Node.js", "NestJS"],
-    "data": ["MySQL", "Redis", "知识库检索", "日志检索", "Function Calling", "MCP"],
-    "infra": ["Vite", "Webpack", "qiankun", "Jenkins", "Docker", "pnpm Monorepo", "私有 npm"]
+    "data": ["MySQL", "PostgreSQL", "Redis", "知识库检索", "日志检索", "Function Calling", "MCP"],
+    "infra": ["Vite", "Webpack", "Linux", "Git 协作 / Code Review", "Jenkins", "Docker", "pnpm Monorepo", "私有 npm"]
   },
   "projects": [
     {
+      "id": "agnito",
+      "name": "Agnito",
+      "nameEn": "Agnito",
+      "tagline": {
+        "zh": "代码知识图谱与 AI Agent 工作台，覆盖关系图谱浏览、在线问答与可追溯的执行记录。",
+        "en": "A code knowledge-graph and AI Agent workbench for relation-graph exploration, online Q&A, and traceable execution records."
+      },
+      "stack": ["TypeScript", "React", "React Flow", "NestJS", "PostgreSQL", "SSE"],
+      "highlights": [
+        "构建以代码关系图为核心的知识图谱工作台，使用 React Flow 呈现模块、依赖与证据关系，支持图谱检索、详情追溯及本地仓库知识浏览",
+        "设计 NestJS API 与 Agent 在线问答链路，通过 SSE 输出并支持按事件序列恢复；前端以 Last-Event-ID 衔接流式结果",
+        "完成 PostgreSQL 持久化设计与实现：以 JSONB 存储问答执行协议和事件数据，通过幂等写入与按凭据/工作区查询支撑可追溯记录"
+      ],
+      "highlightsEn": [
+        "Built a code knowledge-graph workbench around code relations, using React Flow to present modules, dependencies, and evidence with search, detail tracing, and local-repository exploration",
+        "Designed NestJS APIs and the Agent Q&A flow with SSE output and event-sequence recovery; the frontend resumes streams through Last-Event-ID",
+        "Designed and implemented PostgreSQL persistence: JSONB stores execution contracts and event data, while idempotent writes and credential/workspace queries support traceable records"
+      ],
+      "isFlagship": true
+    },
+    {
       "id": "ops-agent",
       "name": "智能运维 AI 助手",
+      "nameEn": "Operations AI Assistant",
       "tagline": {
         "zh": "独立全栈交付智能运维 AI 助手,覆盖交互界面、后端服务、工具调用、上下文治理、Prompt 规范和上线机制。",
         "en": "Independently delivered the operations AI assistant end to end, covering UI, backend services, tool calls, context governance, prompt standards, and rollout mechanics."
@@ -41,11 +63,17 @@
         "LangChain + Function Calling 集成监控 API、日志检索与知识库检索,将告警研判从 15 分钟压缩到 2 分钟以内",
         "MCP 统一多模型上下文,Prompt 模板与 Few-shot 示例库让结构化输出解析成功率达到 97%"
       ],
-      "isFlagship": true
+      "highlightsEn": [
+        "Delivered SSE streaming, Markdown and code highlighting, context actions, and tool-result cards, with first-token latency under 300ms",
+        "Integrated monitoring APIs, log search, and knowledge retrieval through LangChain and Function Calling, reducing alert diagnosis from 15 minutes to under 2 minutes",
+        "Used MCP for unified multi-model context; prompt templates and Few-shot examples brought structured JSON parsing to 97%"
+      ],
+      "isFlagship": false
     },
     {
       "id": "oral-medical",
       "name": "口腔医学智能平台",
+      "nameEn": "Oral Medical Intelligence Platform",
       "tagline": {
         "zh": "主导医学端病例工单全流程页面与管理后台,支撑医生、技师、管理员三类角色的差异化权限体系。",
         "en": "Led the full medical ticket workflow and admin console, supporting differentiated permissions for doctors, technicians, and administrators."
@@ -56,11 +84,17 @@
         "用链表结构设计动态表单引擎,解决子项依赖父项状态的校验难题,迭代周期缩短约 40%",
         "建设公共设计系统与组件库,抽取私有 npm 包供多子应用复用,消除重复代码约 30%"
       ],
+      "highlightsEn": [
+        "Built strategy configuration, role-permission management, audit-log search, and business dashboards",
+        "Designed a linked-list-style dynamic form engine for parent-child validation dependencies, shortening iteration cycles by about 40%",
+        "Built a shared design system and component library packaged as private npm modules, reducing repeated code by about 30%"
+      ],
       "isFlagship": false
     },
     {
       "id": "cephalometric",
       "name": "医学头影测量系统",
+      "nameEn": "Cephalometric and Oral Model Systems",
       "tagline": {
         "zh": "围绕医学测量和口腔模型建立图形交互能力,处理坐标系、测量计算、模型解析与选区交互。",
         "en": "Built graphics interaction capabilities for medical measurement and oral models, handling coordinate systems, measurement math, mesh parsing, and region selection."
@@ -71,20 +105,10 @@
         "基于策略模式将差异化测量计算抽象成可组合数学工具链,新增测量项无需修改核心逻辑",
         "引入 vtk.js 解析 .vtp 多边形网格并转换为 BufferGeometry,用 Raycaster 实现精准分区上色与套索选区"
       ],
-      "isFlagship": false
-    },
-    {
-      "id": "longmao-saas",
-      "name": "龙猫校园智能体测平台",
-      "tagline": {
-        "zh": "主导 qiankun 微前端重构,把高度耦合的 SaaS 单体拆解为多个独立子应用,支撑独立部署与快速迭代。",
-        "en": "Led a qiankun micro-frontend refactor, splitting a tightly coupled SaaS monolith into independently deployed sub-applications."
-      },
-      "stack": ["Vue2", "React", "qiankun", "React-Redux", "Ant Design", "ECharts", "Jenkins", "Docker"],
-      "highlights": [
-        "新功能上线周期从 2 周缩短到 3 天",
-        "搭建 Jenkins + Docker CI/CD 流水线,实现分支合并自动构建与灰度发布",
-        "配合 ApiFox 建立接口契约规范,前后端联调效率提升约 50%"
+      "highlightsEn": [
+        "Used react-konva Group layers to decouple image coordinates from measurement coordinates, fixing value drift during scaling",
+        "Abstracted measurement calculations into composable strategy-based math tools, allowing new measurement items without changing core logic",
+        "Parsed .vtp polygon meshes with vtk.js, converted them to BufferGeometry, and used Raycaster for accurate region coloring and lasso selection"
       ],
       "isFlagship": false
     }

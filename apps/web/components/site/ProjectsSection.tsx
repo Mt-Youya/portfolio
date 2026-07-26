@@ -42,6 +42,8 @@ export function ProjectsSection({
             const isFlagship = project.isFlagship ?? index === 0
             const eyebrow = `PROJ-${NUMERALS[index] ?? index + 1}`
             const tagline = locale === "en" ? project.tagline.en : project.tagline.zh
+            const name = locale === "en" ? (project.nameEn ?? project.name) : project.name
+            const highlights = locale === "en" ? (project.highlightsEn ?? project.highlights) : project.highlights
 
             return (
               <article
@@ -54,9 +56,9 @@ export function ProjectsSection({
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-blueprint">
-                      {eyebrow} · {project.name}
+                      {eyebrow} · {name}
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold text-ink">{project.name}</h3>
+                    <h3 className="mt-3 text-2xl font-semibold text-ink">{name}</h3>
                   </div>
                   <span
                     className={cn(
@@ -70,9 +72,9 @@ export function ProjectsSection({
 
                 <p className="mt-5 text-sm leading-7 text-ink-soft">{tagline}</p>
 
-                {project.highlights.length > 0 ? (
+                {highlights.length > 0 ? (
                   <ul className="mt-5 space-y-3">
-                    {project.highlights.map((bullet: string) => (
+                    {highlights.map((bullet: string) => (
                       <li key={bullet} data-project-bullet className="flex gap-3 text-sm leading-6 text-ink">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-blueprint" aria-hidden="true" />
                         <span>{bullet}</span>

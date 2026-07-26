@@ -20,8 +20,8 @@
       "description": "定位标签,用于 Hero 大标题第二行与 DeepSeek prompt 预筛",
       "required": ["zh", "en"],
       "properties": {
-        "zh": { "type": "string", "example": "全栈工程师 · AI Agent 方向" },
-        "en": { "type": "string", "example": "Full-Stack Engineer, AI Agent Focused" }
+        "zh": { "type": "string", "example": "高级全栈工程师｜AI Agent 工程化" },
+        "en": { "type": "string", "example": "Senior Full-stack Engineer · AI Agent Engineering" }
       }
     },
     "stack": {
@@ -33,7 +33,11 @@
         "state": { "type": "array", "items": { "type": "string" }, "description": "状态层" },
         "api": { "type": "array", "items": { "type": "string" }, "description": "API 层:Node.js/Nest 等" },
         "data": { "type": "array", "items": { "type": "string" }, "description": "数据层" },
-        "infra": { "type": "array", "items": { "type": "string" }, "description": "基建层:Rust/Tauri 等" }
+        "infra": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "基建层:Linux、CI/CD、容器与包管理等"
+        }
       }
     },
     "projects": {
@@ -43,8 +47,9 @@
         "type": "object",
         "required": ["id", "name", "tagline", "stack", "highlights"],
         "properties": {
-          "id": { "type": "string", "description": "图号 slug,如「tubepilot」,用于 PROJ-01 编号" },
+          "id": { "type": "string", "description": "图号 slug,如「agnito」,用于 PROJ-01 编号" },
           "name": { "type": "string" },
+          "nameEn": { "type": "string", "description": "英文项目名称" },
           "url": { "type": "string", "description": "项目部署 URL,项目卡点击跳转" },
           "tagline": {
             "type": "object",
@@ -54,7 +59,8 @@
           },
           "stack": { "type": "array", "items": { "type": "string" }, "description": "Mono 技术栈标签" },
           "highlights": { "type": "array", "items": { "type": "string" }, "description": "技术亮点,用于 Dialog 详情" },
-          "isFlagship": { "type": "boolean", "description": "是否主打项目(仅 TubePilot true),触发 mini pipeline 动画" }
+          "highlightsEn": { "type": "array", "items": { "type": "string" }, "description": "英文技术亮点" },
+          "isFlagship": { "type": "boolean", "description": "是否主打项目，触发旗舰标记" }
         }
       }
     },

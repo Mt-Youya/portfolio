@@ -10,6 +10,7 @@ export const dynamic = "force-dynamic"
 
 const CACHE_TTL_SECONDS = 10 * 60
 const CACHE_TTL = CACHE_TTL_SECONDS * 1000
+const AGENT_NARRATIVE_VERSION = "v2"
 type CacheValue = { answer: string; repoCount: number | null }
 type CacheEntry = CacheValue & { expires: number }
 type AgentSource = "cache" | "deepseek" | "fallback"
@@ -53,8 +54,8 @@ function prefilterProfile(lang: Lang) {
   const tagline = lang === "en" ? flagship.tagline.en : flagship.tagline.zh
   const stackOverview = [
     ...p.stack.ui.slice(0, 2),
-    ...(p.stack.api[0] ? [p.stack.api[0]] : []),
-    ...(p.stack.infra[0] ? [p.stack.infra[0]] : []),
+    ...(p.stack.api.at(-1) ? [p.stack.api.at(-1)] : []),
+    ...(p.stack.data.includes("PostgreSQL") ? ["PostgreSQL"] : []),
   ].join(" / ")
 
   return {
@@ -62,7 +63,7 @@ function prefilterProfile(lang: Lang) {
     github: p.identity.github,
     positioning,
     stackOverview,
-    flagshipName: flagship.name,
+    flagshipName: lang === "en" ? (flagship.nameEn ?? flagship.name) : flagship.name,
     flagshipTagline: tagline,
     deepseekNote: p.deepseekNote,
   }
@@ -112,8 +113,8 @@ function buildPrompt(lang: Lang, repoCount: number) {
       ? [
           `You are "${f.name}'s agent", first-person self-introduction, not the master speaking.`,
           "Output a single sentence, <= 33 words, fits one terminal line.",
-          "Must mention flagship project TubePilot (may append one-line function).",
-          "Carry narrative order: frontend origin -> full-stack (Tauri/Node) -> now agent-engineering.",
+          `Must mention flagship project ${f.flagshipName} (may append one-line function).`,
+          "Carry narrative order: senior full-stack enterprise delivery -> NestJS and PostgreSQL -> AI Agent engineering.",
           "No exaggeration, no fabrication beyond the profile.",
           "Plain tone, agent's statement, no sloganeering.",
           "Output only the self-introduction sentence, no explanation/quotes/prefix.",
@@ -121,8 +122,8 @@ function buildPrompt(lang: Lang, repoCount: number) {
       : [
           `你是「${f.name}的 Agent」,第一人称自我介绍,不是主人在说话。`,
           "输出单句,≤ 80 字,终端一行可容。",
-          "必须提及主打项目 TubePilot(可附一句话功能)。",
-          "承载叙事顺序:前端出身 → 全栈(Tauri/Node)→ 现在跑 Agent 工程。",
+          `必须提及主打项目 ${f.flagshipName}(可附一句话功能)。`,
+          "承载叙事顺序:高级全栈企业交付 → NestJS 与 PostgreSQL → AI Agent 工程化。",
           "不夸大、不编造未在档案中的经历。",
           "口吻平实,像 Agent 的陈述,不喊口号。",
           "只输出自我介绍句本身,不输出任何解释、引号、前缀。",
@@ -253,7 +254,7 @@ export async function GET(request: Request): Promise<Response> {
   }
   const lang: Lang = langParam
 
-  const cacheKey = `agent:intro:${lang}`
+  const cacheKey = `agent:intro:${AGENT_NARRATIVE_VERSION}:${profile.projects[0].id}:${lang}`
   const cached = await getCached(cacheKey)
   if (cached) {
     return agentResponse(cached, "cache")

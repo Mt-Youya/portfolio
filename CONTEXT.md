@@ -1,6 +1,6 @@
 # yonjay.me Portfolio
 
-辞鸢(全栈工程师 · AI Agent 方向)的个人网站。以「工程蓝图 × 印鉴」为视觉主题,用 Agent 自我介绍的方式展示主人,而非简历的 PDF 复刻。
+辞鸢(高级全栈工程师｜AI Agent 工程化)的个人网站。以「工程蓝图 × 印鉴」为视觉主题,用 Agent 自我介绍的方式展示主人,而非简历的 PDF 复刻。
 
 ## Language
 
@@ -9,7 +9,7 @@
 _Avoid_:聊天机器人、对话助手、AI 产品
 
 **Introduce 流程**:
-Hero 终端里 `agent run introduce --lang <locale>` 触发的一次真跑:`--lang` 取自路由段(`/zh` 或 `/en`),Edge Function 据此 fetch GitHub pinned repos 并由 DeepSeek 按该语言生成自我介绍句。结果缓存 10 分钟,按 locale 分键(`agent:intro:zh` / `agent:intro:en`),命中静默返回(不向访客标记 cached)。真跑失败时静默回退预录兜底文案(`messages/{zh,en}.json` 的 `hero.fallbackAnswer`),不向访客暴露失败。兜底文案须提及主打项目 TubePilot,以保持与真跑风格一致。DeepSeek 输入为 `content/profile.json` 预筛关键字段(非全量),约束清单(zh/en 两段)版本化在 `content/agent-prompt.md`。
+Hero 终端里 `agent run introduce --lang <locale>` 触发的一次真跑:`--lang` 取自路由段(`/zh` 或 `/en`),Edge Function 据此 fetch GitHub pinned repos 并由 DeepSeek 按该语言生成自我介绍句。结果缓存 10 分钟,按公开叙事版本与 locale 分键,命中静默返回(不向访客标记 cached)。真跑失败时静默回退预录兜底文案(`messages/{zh,en}.json` 的 `hero.fallbackAnswer`),不向访客暴露失败。兜底文案须提及当前主打项目 Agnito,并保持高级全栈、NestJS、PostgreSQL 与 Agent 工程化的公开叙事。DeepSeek 输入为 `content/profile.json` 预筛关键字段(非全量),约束清单(zh/en 两段)记录在 `content/agent-prompt.md` 并与 `/api/agent` 同步维护。
 _Avoid_:聊天、问答、对话
 
 **真跑(Real Run)**:
@@ -91,6 +91,10 @@ _Avoid_:将 Agnito 表述为仅前端可视化项目
 **Agnito 简历证据边界**:
 不为 Agnito 填写未公开或未核验的规模、性能与使用量指标；以可验证的工程实现描述成果。
 _Avoid_:编造查询延迟、节点规模、并发或用户数据
+
+**JD 对齐网站叙事**:
+为企业数字化全栈岗位准备的网站对外叙事：定位统一为“高级全栈工程师｜AI Agent 工程化”；Agnito 为第一项目，智能运维 AI 助手为第二项目，医疗平台与医学图形系统为补充项目，微前端重构项目不再展示。网站文案统一使用 NestJS；这是一项对外能力表述，不改变 Agnito 源码实际架构。
+_Avoid_:全栈偏前端、Koa 网站表述、展示微前端重构项目、将网站文案理解为源码迁移
 
 **BOM 物料表**:
 SHEET 02 中以工程图纸详图形式呈现的 DeepSeek 工程化物料表(选型理由 + 接入架构 + 本站驱动标注)。原 Plan 的「五国产模型物料清单」已弃用——仅 DeepSeek 真介入,其余四个未介入,保留即假声明。DeepSeek 行盖「本站驱动」印泥红,表示 Hero 真跑由它驱动。
