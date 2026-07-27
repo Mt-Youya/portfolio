@@ -1,1 +1,1 @@
-../../.agents/skills/create-orphan-branch.md
+../../.agents/skills/create-orphan-branch/SKILL.md

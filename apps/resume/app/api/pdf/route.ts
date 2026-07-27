@@ -62,7 +62,7 @@ export async function GET() {
     return new NextResponse(pdf as unknown as BodyInit, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename*=UTF-8''${encodeURIComponent(`${resume.name}_简历.pdf`)}`,
+        "Content-Disposition": `attachment; filename*=UTF-8''${encodeURIComponent(`${resume.name}_全栈工程师.pdf`)}`,
         "Cache-Control": "public, max-age=0, s-maxage=300",
         "X-Resume-Pages": String(pageCount),
       },

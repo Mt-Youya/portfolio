@@ -1,1 +1,1 @@
-../../.agents/skills/gen-commit.md
+../../.agents/skills/gen-commit/SKILL.md
