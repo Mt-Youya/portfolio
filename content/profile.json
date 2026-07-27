@@ -1,7 +1,7 @@
 {
   "$schema": "./profile.schema.json",
   "identity": {
-    "nameZh": "辞鸢",
+    "nameZh": "窦扬杰-辞鸢",
     "nameEn": "Cyrus",
     "github": "Mt-Youya"
   },
@@ -10,7 +10,7 @@
     "en": "Senior Full-stack Engineer · AI Agent Engineering"
   },
   "stack": {
-    "ui": ["React 18", "Vue 2/3", "TypeScript", "Next.js", "Ant Design", "Tailwind CSS", "shadcn/ui"],
+    "ui": ["React 18/19", "Vue 2/3", "TypeScript", "Next.js", "Ant Design", "Tailwind CSS", "shadcn/ui"],
     "state": ["Redux", "Zustand", "Pinia"],
     "api": ["Node.js", "NestJS"],
     "data": ["MySQL", "PostgreSQL", "Redis", "知识库检索", "日志检索", "Function Calling", "MCP"],
