@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react"
 
+import { contactParts, resumeIcons, type ResumeIconName } from "@/lib/icons"
 import type { ResumeDocument, ResumeEntry } from "@/lib/resume-contract"
 
 function Inline({ value }: { value: string }) {
@@ -22,9 +23,29 @@ function Inline({ value }: { value: string }) {
   })
 }
 
-function SectionTitle({ children, skill = false }: { children: string; skill?: boolean }) {
+function ResumeIcon({ name }: { name: ResumeIconName }) {
+  return <span className="resume-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: resumeIcons[name] }} />
+}
+
+function ContactLine({ value }: { value: string }) {
+  return contactParts(value).map((part, index) =>
+    part.type === "separator" ? (
+      <span className="contact-separator" key={index}>
+        {part.value}
+      </span>
+    ) : (
+      <span className="contact-item" key={part.value}>
+        <ResumeIcon name={part.icon} />
+        <Inline value={part.value} />
+      </span>
+    )
+  )
+}
+
+function SectionTitle({ children, icon, skill = false }: { children: string; icon: ResumeIconName; skill?: boolean }) {
   return (
     <div className="section-title" id={skill ? "skill" : undefined}>
+      <ResumeIcon name={icon} />
       <h2>{children}</h2>
     </div>
   )
@@ -39,6 +60,7 @@ function Project({ entry }: { entry: ResumeEntry }) {
   return (
     <div className="project" data-resume-block>
       <div className="project-title">
+        <ResumeIcon name="project" />
         <Inline value={entry.title} />
       </div>
       <ul>
@@ -107,15 +129,23 @@ function ResumeFlow({ resume, style }: { resume: ResumeDocument; style?: CSSProp
           <Inline value={resume.title} />
         </div>
         <div className="meta">
-          {[...education, ...resume.meta, contact].filter(Boolean).map((line) => (
+          {[...education, ...resume.meta].filter(Boolean).map((line) => (
             <span key={line}>
+              <ResumeIcon name="education" />
               <Inline value={line!} />
             </span>
           ))}
+          {contact && (
+            <span>
+              <ContactLine value={contact} />
+            </span>
+          )}
         </div>
       </header>
 
-      <SectionTitle skill>{resume.skillsTitle}</SectionTitle>
+      <SectionTitle icon="skills" skill>
+        {resume.skillsTitle}
+      </SectionTitle>
       <div className="skills-grid">
         {resume.skills.flatMap((skill) => [
           <span className="skill-label" key={`${skill.label}-label`}>
@@ -129,7 +159,7 @@ function ResumeFlow({ resume, style }: { resume: ResumeDocument; style?: CSSProp
 
       {work && workTitle && (
         <>
-          <SectionTitle>工作经历</SectionTitle>
+          <SectionTitle icon="experience">工作经历</SectionTitle>
           <article className="job" id="yayan-job">
             <div className="job-header">
               <div>
@@ -141,7 +171,10 @@ function ResumeFlow({ resume, style }: { resume: ResumeDocument; style?: CSSProp
               </span>
             </div>
             <div className="project" data-resume-block>
-              <div className="project-title">工作职责</div>
+              <div className="project-title">
+                <ResumeIcon name="responsibility" />
+                工作职责
+              </div>
               <ul>
                 {work.bullets.map((bullet) => (
                   <li key={bullet}>
@@ -157,7 +190,7 @@ function ResumeFlow({ resume, style }: { resume: ResumeDocument; style?: CSSProp
         </>
       )}
 
-      <SectionTitle>个人概述</SectionTitle>
+      <SectionTitle icon="summary">个人概述</SectionTitle>
       <ul className="highlights">
         {resume.summary.map((paragraph) => (
           <li key={paragraph}>

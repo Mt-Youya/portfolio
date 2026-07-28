@@ -7,7 +7,7 @@
 ## 教育与联系信息
 
 武汉科技大学 · 软件工程 · 2017～2021<br>
-contact@yonjay.me ｜ [GitHub](https://github.com/Mt-Youya) ｜ [个人网站](https://yonjay.me)
+contact@yonjay.me ｜ [GitHub](https://github.com/Mt-Youya) ｜ [个人网站](https://yonjay.me) | +86-15795096824
 
 ## 个人概述
 

@@ -1,4 +1,5 @@
 import type { ResumeDocument, ResumeEntry } from "@/lib/resume-contract"
+import { contactParts, resumeIcon, type ResumeIconName } from "@/lib/icons"
 
 function escapeHtml(value: string) {
   return value.replace(
@@ -37,14 +38,24 @@ function splitWorkTitle(title: string) {
 
 function projectHtml(entry: ResumeEntry) {
   return `<div class="project" data-resume-block>
-  <div class="project-title">${inlineHtml(entry.title)}</div>
+  <div class="project-title">${resumeIcon("project")}${inlineHtml(entry.title)}</div>
   <ul>${entry.bullets.map((bullet) => `<li>${inlineHtml(bullet)}</li>`).join("")}</ul>
   <div class="tech-stack"><strong>技术栈：</strong>${inlineHtml(entry.meta)}</div>
 </div>`
 }
 
-function sectionTitle(title: string, skill = false) {
-  return `<div class="section-title"${skill ? ' id="skill"' : ""}><h2>${escapeHtml(title)}</h2></div>`
+function sectionTitle(title: string, icon: ResumeIconName, skill = false) {
+  return `<div class="section-title"${skill ? ' id="skill"' : ""}>${resumeIcon(icon)}<h2>${escapeHtml(title)}</h2></div>`
+}
+
+function contactHtml(value: string) {
+  return contactParts(value)
+    .map((part) =>
+      part.type === "separator"
+        ? `<span class="contact-separator">${escapeHtml(part.value)}</span>`
+        : `<span class="contact-item">${resumeIcon(part.icon)}${inlineHtml(part.value)}</span>`
+    )
+    .join("")
 }
 
 function flowHtml(resume: ResumeDocument) {
@@ -57,24 +68,24 @@ function flowHtml(resume: ResumeDocument) {
   <header class="header">
     <h1>${escapeHtml(resume.name)}</h1>
     <div class="subtitle">${inlineHtml(resume.title)}</div>
-    <div class="meta">${[...education, ...resume.meta, contact]
+    <div class="meta">${[...education, ...resume.meta]
       .filter(Boolean)
-      .map((line) => `<span>${inlineHtml(line!)}</span>`)
-      .join("")}</div>
+      .map((line) => `<span>${resumeIcon("education")}${inlineHtml(line!)}</span>`)
+      .join("")}${contact ? `<span>${contactHtml(contact)}</span>` : ""}</div>
   </header>
-  ${sectionTitle(resume.skillsTitle, true)}
+  ${sectionTitle(resume.skillsTitle, "skills", true)}
   <div class="skills-grid">${resume.skills.map((skill) => `<span class="skill-label">${escapeHtml(skill.label)}</span><span class="skill-value">${inlineHtml(skill.value)}</span>`).join("")}</div>
   ${
     work && workTitle
-      ? `${sectionTitle("工作经历")}
+      ? `${sectionTitle("工作经历", "experience")}
   <article class="job" id="yayan-job">
     <div class="job-header"><div><span class="company">${escapeHtml(workTitle.company)}</span>${workTitle.role ? `<span class="role">${escapeHtml(workTitle.role)}</span>` : ""}</div><span class="period">${inlineHtml(work.meta)}</span></div>
-    <div class="project" data-resume-block><div class="project-title">工作职责</div><ul>${work.bullets.map((bullet) => `<li>${inlineHtml(bullet)}</li>`).join("")}</ul></div>
+    <div class="project" data-resume-block><div class="project-title">${resumeIcon("responsibility")}工作职责</div><ul>${work.bullets.map((bullet) => `<li>${inlineHtml(bullet)}</li>`).join("")}</ul></div>
     ${resume.projects.map(projectHtml).join("")}
   </article>`
       : ""
   }
-  ${sectionTitle("个人概述")}
+  ${sectionTitle("个人概述", "summary")}
   <ul class="highlights">${resume.summary.map((paragraph) => `<li>${inlineHtml(paragraph)}</li>`).join("")}</ul>
 </div>`
 }
