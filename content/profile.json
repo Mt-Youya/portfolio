@@ -116,7 +116,7 @@
   "experience": [
     {
       "period": "2021.06 – 至今",
-      "role": "前端技术经理 / 高级前端工程师",
+      "role": "前端技术经理 / 全栈工程师",
       "company": "牙颜(上海)医疗科技有限公司",
       "achievement": {
         "zh": "独立全栈交付智能运维 AI 助手(NestJS + React),基于 LangChain + Function Calling 构建多工具 Agent,告警根因定位从 15 分钟压缩至 2 分钟;首 token 延迟 <300ms",

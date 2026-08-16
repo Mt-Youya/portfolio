@@ -30,7 +30,7 @@ export function Timeline({ sheet, title, summary, experience, locale }: Timeline
                 : item.company
             const period = locale === "en" ? item.period.replace("至今", "Present") : item.period
             const role =
-              locale === "en" && item.role === "前端技术经理 / 高级前端工程师"
+              locale === "en" && item.role === "前端技术经理 / 全栈工程师"
                 ? "Frontend Technical Manager / Senior Frontend Engineer"
                 : item.role
             const isCurrent = index === 0
