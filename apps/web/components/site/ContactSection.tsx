@@ -52,7 +52,7 @@ export function ContactSection({
             <Link href={social.github} className={buttonVariants({ variant: "outline", size: "md" })}>
               {githubLabel}
             </Link>
-            <Link href="https://yuque.com/yonjay" className={buttonVariants({ variant: "outline", size: "md" })}>
+            <Link href="https://yuque.com/cyrusdoyle" className={buttonVariants({ variant: "outline", size: "md" })}>
               {yuqueLabel}
             </Link>
             <Link href="https://juejin.cn" className={buttonVariants({ variant: "outline", size: "md" })}>

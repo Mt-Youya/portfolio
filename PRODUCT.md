@@ -1,4 +1,4 @@
-# PRODUCT.md — yonjay.me Portfolio 产品真相源
+# PRODUCT.md — cyrusdoyle.me Portfolio 产品真相源
 
 > 执行真相源(ADR-0005)。本文记「做什么」;`docs/adr/` 记「为什么」;`DESIGN.md` 记设计 tokens;`PLAN.md` 已冻结为历史草稿。
 > Codex 施工以本文 + ADR 为准。
@@ -33,7 +33,7 @@
 
 - 程序吃 `content/profile.json`(结构化真相源,ADR R3);人吃简历 PDF(下载入口,§0.2)。
 - 网站不是简历 PDF 复刻:网站讲故事,PDF 供下载,每个 section 底部保留下载入口。
-- 简历 PDF:`https://www.yonjay.me/assets/resume.pdf`(有 bot 防护,需手动镜像或保留现有)。
+- 简历 PDF:`https://www.cyrusdoyle.me/assets/resume.pdf`(有 bot 防护,需手动镜像或保留现有)。
 
 ## 4. 逐屏编排(grill 修订版)
 

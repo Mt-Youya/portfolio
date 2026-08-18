@@ -1,4 +1,4 @@
-# yonjay.me 个人网站重构计划(v3 · 全栈 + AI Agent 方向)
+# cyrusdoyle.me 个人网站重构计划(v3 · 全栈 + AI Agent 方向)
 
 > ⚠️ 本文件已 superseded,执行以 PRODUCT.md + docs/adr/ 为准,DESIGN.md 为设计 tokens 真相源。本文件保留为历史草稿,不再维护。
 >
@@ -28,7 +28,7 @@
 
 ### 0.2 内容来源
 
-- 简历 PDF 在 `https://www.yonjay.me/assets/resume.pdf`(⚠️ 有 bot 防护,Codex 抓不到就让 Jay 手动把文本贴进 `content/resume.zh.md`)
+- 简历 PDF 在 `https://www.cyrusdoyle.me/assets/resume.pdf`(⚠️ 有 bot 防护,Codex 抓不到就让 Jay 手动把文本贴进 `content/resume.zh.md`)
 - 网站不是简历的 PDF 复刻:**网站讲故事,PDF 供下载**。每个 section 底部保留「下载完整简历」入口
 
 ---

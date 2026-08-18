@@ -20,7 +20,7 @@ export function SiteHeader({
     <header className="sticky top-0 z-20 border-b border-grid bg-paper/95 px-5 backdrop-blur sm:px-8">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4">
         <Link href={`/${locale}`} className="font-mono text-xs uppercase tracking-[0.24em] text-blueprint">
-          yonjay.me
+          cyrusdoyle.me
         </Link>
 
         <nav aria-label={navLabel} className="hidden items-center gap-5 md:flex">

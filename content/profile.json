@@ -126,11 +126,11 @@
   ],
   "deepseekNote": "本站 Hero introduce 由 DeepSeek V4 Pro 驱动:在 /api/agent 中读取 profile 预筛字段与 GitHub pinned 数据,按 zh/en 生成单句自我介绍,并用 10min locale 分键缓存兜底。",
   "contact": {
-    "email": "contact@yonjay.me",
+    "email": "contact@cyrusdoyle.me",
     "github": "https://github.com/Mt-Youya",
     "extra": [
-      { "label": "个人网站", "url": "https://yonjay.me" },
-      { "label": "语雀", "url": "https://yuque.com/yonjay" },
+      { "label": "个人网站", "url": "https://cyrusdoyle.me" },
+      { "label": "语雀", "url": "https://yuque.com/cyrusdoyle" },
       { "label": "掘金", "url": "https://juejin.cn/user/JayDo257248" }
     ]
   }
