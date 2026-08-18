@@ -1,13 +1,13 @@
 <!-- 本文件为中文投递简历；内容以本次已确认的经历与项目事实为准。 -->
 
-# 辞鸢（Cyrus）
+# 窦扬杰-辞鸢（Cyrus）
 
 **高级全栈工程师｜AI Agent 工程化**<br>
 
 ## 教育与联系信息
 
 武汉科技大学 · 软件工程 · 2017～2021<br>
-contact@yonjay.me ｜ [GitHub](https://github.com/Mt-Youya) ｜ [个人网站](https://yonjay.me) | +86-15795096824
+contact@cyrusdoyle.me ｜ [GitHub](https://github.com/Mt-Youya) ｜ [个人网站](https://cyrusdoyle.me) | +86-15795096824
 
 ## 个人概述
 
@@ -17,12 +17,12 @@ contact@yonjay.me ｜ [GitHub](https://github.com/Mt-Youya) ｜ [个人网站](h
 
 - **前端：** TypeScript、React 18/19（Hooks、Context、Zustand）、Vue 2/3、Next.js、Vite；熟悉 Ant Design、Element Plus，能够构建复杂企业级表单、权限与数据看板。
 - **AI Agent：** LangChain、Function Calling、MCP、Prompt 模板与 Few-shot、知识库/日志检索；具备 Agent 工具编排、上下文治理、结构化输出和 SSE 流式交互实践。
-- **后端与数据：** Node.js、NestJS、REST API、SSE、WebSocket；PostgreSQL（JSONB 持久化与查询设计）、Redis。
+- **后端与数据：** Node.js、NestJS、Python、REST API、SSE、WebSocket；PostgreSQL（JSONB 持久化与查询设计）、Redis。
 - **工程化：** pnpm Monorepo、Docker、Jenkins、私有 npm 包、Git 协作与代码审查；熟悉 Linux 研发环境与常用命令。
 
 ## 工作经历
 
-### 牙颜（上海）医疗科技有限公司｜前端技术经理 / 全栈（偏前端）工程师
+### 牙颜（上海）医疗科技有限公司｜前端技术经理 / 全栈工程师
 
 **2021.06 – 至今**
 
@@ -39,7 +39,7 @@ contact@yonjay.me ｜ [GitHub](https://github.com/Mt-Youya) ｜ [个人网站](h
 - 亲自完成 PostgreSQL 持久化设计与实现：以 JSONB 存储问答执行协议和事件数据，通过幂等写入、序列化事件及按凭据/工作区查询，支撑可追溯的 Agent 执行记录。
 - 将图谱数据、API、Agent 协议和前端交互拆分为可独立验证的模块，配套 TypeScript 类型检查、单元/集成测试及构建校验。
 
-技术栈：TypeScript · React · React Flow · Rest · PostgreSQL · SSE · FastAPI
+技术栈：TypeScript · React · React Flow · Rest · PostgreSQL · SSE · Python · FastAPI
 
 ### 智能运维 AI 助手
 

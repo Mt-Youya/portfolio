@@ -12,9 +12,9 @@
   "stack": {
     "ui": ["React 18/19", "Vue 2/3", "TypeScript", "Next.js", "Ant Design", "Tailwind CSS", "shadcn/ui"],
     "state": ["Redux", "Zustand", "Pinia"],
-    "api": ["Node.js", "NestJS"],
-    "data": ["MySQL", "PostgreSQL", "Redis", "知识库检索", "日志检索", "Function Calling", "MCP"],
-    "infra": ["Vite", "Webpack", "Linux", "Git 协作 / Code Review", "Jenkins", "Docker", "pnpm Monorepo", "私有 npm"]
+    "api": ["Node.js", "NestJS", "Python","Fast API"],
+    "data": ["PostgreSQL", "Redis", "Agent", "Web_Search/Web_Fetch", "Function Calling", "MCP Server"],
+    "infra": ["Vite", "Webpack", "Jenkins", "Docker", "pnpm Monorepo", "私有 npm"]
   },
   "projects": [
     {
